@@ -1,73 +1,131 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Shayan Taherkhani</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <style>
-        body {
-            background-color: #0f0f0f;
-            color: #f4f4f4;
-            font-family: 'Playfair Display', serif;
-            text-align: center;
-            padding: 60px 20px;
-        }
-        h1 {
-            font-size: 42px;
-            margin-bottom: 10px;
-            color: #d4af37;
-        }
-        p.bio {
-            font-size: 18px;
-            max-width: 800px;
-            margin: 0 auto 50px;
-            line-height: 1.6;
-        }
-        .link {
-            margin: 20px auto;
-            padding: 15px 25px;
-            border: 1px solid #d4af37;
-            border-radius: 10px;
-            width: 300px;
-            transition: background 0.3s, transform 0.2s;
-            background: rgba(255, 255, 255, 0.03);
-            color: #fff;
-            text-decoration: none;
-            display: block;
-            font-size: 18px;
-            animation: fadeInUp 1s ease forwards;
-            opacity: 0;
-        }
-        .link i {
-            margin-right: 10px;
-            color: #d4af37;
-        }
-        .link:hover {
-            background: #d4af37;
-            color: #000;
-            transform: scale(1.05);
-        }
-        @keyframes fadeInUp {
-            from { transform: translateY(20px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-        .delay-1 { animation-delay: 0.3s; }
-        .delay-2 { animation-delay: 0.6s; }
-        .delay-3 { animation-delay: 0.9s; }
-        .delay-4 { animation-delay: 1.2s; }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shayan Taherkhani</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Cormorant+Garamond:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background: #0f1516;
+      color: #eae5d9;
+      font-family: 'Cormorant Garamond', serif;
+      text-align: center;
+      padding: 60px 20px;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    /* ✨ Animated Background Layer */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at center, #1c2b2d 20%, #0f0f0f 100%);
+      background-size: 400% 400%;
+      animation: moveBg 20s ease infinite;
+      z-index: -1;
+      opacity: 0.35;
+    }
+
+    @keyframes moveBg {
+      0% { background-position: 0% 0%; }
+      50% { background-position: 100% 100%; }
+      100% { background-position: 0% 0%; }
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 48px;
+      margin-bottom: 20px;
+      color: #d4af37;
+      letter-spacing: 1px;
+      text-shadow: 0 0 5px #000;
+      border-bottom: 2px solid #d4af37;
+      display: inline-block;
+      padding-bottom: 8px;
+    }
+
+    p.bio {
+      font-size: 20px;
+      max-width: 700px;
+      margin: 20px auto 60px;
+      line-height: 1.8;
+      color: #e0ddd0;
+    }
+
+    .link-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .link {
+      padding: 15px 25px;
+      border: 1px solid #d4af37;
+      border-radius: 15px;
+      background: rgba(255, 255, 255, 0.04);
+      color: #eae5d9;
+      text-decoration: none;
+      font-size: 19px;
+      font-weight: 500;
+      backdrop-filter: blur(6px);
+      transition: background 0.4s, transform 0.3s, color 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.2);
+    }
+
+    .link i {
+      color: #d4af37;
+      font-size: 20px;
+    }
+
+    .link:hover {
+      background: #d4af37;
+      color: #1c2b2d;
+      transform: translateY(-5px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 40px 10px;
+      }
+      h1 {
+        font-size: 36px;
+      }
+      .link {
+        font-size: 17px;
+        padding: 12px 15px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <h1>Shayan Taherkhani</h1>
-    <p class="bio">
-        You can see me at : <br>
-    </p>
-
-    <a class="link delay-1" href="https://linkedin.com/in/shayantaherkhani" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-    <a class="link delay-2" href="https://github.com/shayanthn" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-    <a class="link delay-3" href="https://www.researchgate.net/profile/Shayan-Taherkhani" target="_blank"><i class="fas fa-flask"></i> ResearchGate</a>
-    <a class="link delay-4" href="mailto:shayanthn78@gmail.com"><i class="fas fa-envelope"></i> Email Me</a>
+  <h1>Shayan Taherkhani</h1>
+  <p class="bio">
+    You can see me at:
+  </p>
+  <div class="link-container">
+    <a class="link" href="https://linkedin.com/in/shayantaherkhani" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+    <a class="link" href="https://www.researchgate.net/profile/Shayan-Taherkhani" target="_blank"><i class="fas fa-flask"></i> ResearchGate</a>
+    <a class="link" href="https://github.com/shayanthn" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+    <a class="link" href="mailto:shayanthn78@gmail.com"><i class="fas fa-envelope"></i> Email Me</a>
+  </div>
 </body>
 </html>
