@@ -50,6 +50,7 @@
       width: 100%;
       height: 100%;
       z-index: 1;
+      opacity: 0.3;
     }
     
     main {
@@ -58,36 +59,51 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       min-height: 100vh;
-      padding: 20px;
+      padding-top: 10vh;
       text-align: center;
       box-sizing: border-box;
     }
     
     h1 {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(2rem, 5vw, 3rem);
+      font-size: clamp(2.5rem, 6vw, 4rem);
       color: var(--gold);
       margin: 0 0 1rem 0;
-      border-bottom: 2px solid var(--gold);
       padding-bottom: 8px;
-      text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+      text-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+      position: relative;
+      z-index: 3;
+      background: rgba(15, 21, 22, 0.7);
+      padding: 15px 30px;
+      border-radius: 10px;
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+    }
+    
+    #typed-container {
+      background: rgba(15, 21, 22, 0.7);
+      padding: 15px 25px;
+      border-radius: 10px;
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      margin: 1rem 0;
     }
     
     #typed {
-      font-size: clamp(1.1rem, 3vw, 1.4rem);
-      margin: 1rem 0;
+      font-size: clamp(1.3rem, 3.5vw, 1.8rem);
       color: var(--light-text);
       min-height: 2.5rem;
+      font-weight: 500;
     }
     
     .link-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 15px;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
       width: 100%;
-      max-width: 800px;
+      max-width: 900px;
       margin: 2rem auto;
       padding: 0 20px;
       box-sizing: border-box;
@@ -97,54 +113,68 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 12px 15px;
+      padding: 15px 20px;
       border: 1px solid var(--gold);
-      border-radius: 10px;
-      background: rgba(15, 21, 22, 0.7);
+      border-radius: 12px;
+      background: rgba(15, 21, 22, 0.8);
       color: var(--cream);
-      font-size: 1rem;
+      font-size: 1.1rem;
       text-decoration: none;
-      gap: 10px;
-      backdrop-filter: blur(4px);
-      transition: all 0.3s ease;
+      gap: 12px;
+      backdrop-filter: blur(5px);
+      transition: all 0.4s ease;
     }
     
     .link i { 
       color: var(--gold);
-      font-size: 1.2rem;
+      font-size: 1.3rem;
+      transition: all 0.3s ease;
     }
     
     .link:hover {
       background: var(--gold);
       color: var(--dark-bg);
-      transform: translateY(-3px);
-      box-shadow: 0 5px 15px rgba(212, 175, 55, 0.5);
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(212, 175, 55, 0.5);
     }
     
     .link:hover i {
       color: var(--dark-bg);
+      transform: scale(1.2);
     }
     
     footer {
-      margin-top: 2rem;
+      margin-top: 3rem;
       font-size: 0.9rem;
       color: #888;
+      background: rgba(15, 21, 22, 0.7);
+      padding: 10px 20px;
+      border-radius: 8px;
+      backdrop-filter: blur(5px);
     }
     
-    @media (max-width: 600px) {
+    @media (max-width: 768px) {
       .link-container {
         grid-template-columns: 1fr;
-        max-width: 300px;
+        max-width: 350px;
       }
       
-      #globeViz {
-        max-width: 150vw;
-        max-height: 150vh;
+      main {
+        padding-top: 5vh;
+      }
+      
+      h1 {
+        font-size: 2.2rem;
+      }
+      
+      #typed {
+        font-size: 1.2rem;
       }
     }
   </style>
   <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/controls/OrbitControls.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/loaders/GLTFLoader.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/globe.gl@2.24.2/dist/globe.gl.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/tsparticles@3/tsparticles.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/typeit@8.7.1/dist/index.umd.js"></script>
@@ -156,7 +186,9 @@
   <div id="tsparticles"></div>
   <main>
     <h1>Shayan Taherkhani</h1>
-    <div id="typed"></div>
+    <div id="typed-container">
+      <div id="typed"></div>
+    </div>
     <div class="link-container">
       <a class="link" href="https://linkedin.com/in/shayantaherkhani" target="_blank" rel="noopener noreferrer">
         <i class="fab fa-linkedin"></i> LinkedIn
@@ -180,10 +212,10 @@
       fpsLimit: 60,
       particles: {
         number: { 
-          value: 100,
+          value: 80,
           density: {
             enable: true,
-            value_area: 800
+            value_area: 1000
           }
         },
         color: {
@@ -193,35 +225,35 @@
           type: "circle"
         },
         opacity: {
-          value: 0.3,
+          value: 0.2,
           random: true,
           anim: {
             enable: true,
             speed: 1,
-            opacity_min: 0.1,
+            opacity_min: 0.05,
             sync: false
           }
         },
         size: {
-          value: 2,
+          value: 2.5,
           random: true,
           anim: {
             enable: true,
             speed: 2,
-            size_min: 0.3,
+            size_min: 0.5,
             sync: false
           }
         },
         line_linked: {
           enable: true,
-          distance: 150,
+          distance: 200,
           color: "#d4af37",
           opacity: 0.1,
-          width: 1
+          width: 1.2
         },
         move: {
           enable: true,
-          speed: 0.5,
+          speed: 0.3,
           direction: "none",
           random: true,
           straight: false,
@@ -229,8 +261,8 @@
           bounce: false,
           attract: {
             enable: true,
-            rotateX: 600,
-            rotateY: 1200
+            rotateX: 800,
+            rotateY: 1600
           }
         }
       },
@@ -249,45 +281,45 @@
         },
         modes: {
           repulse: {
-            distance: 100,
-            duration: 0.4
+            distance: 120,
+            duration: 0.5
           },
           push: {
-            particles_nb: 4
+            particles_nb: 3
           }
         }
       },
       retina_detect: true
     });
 
-    // Typed text animation
+    // Typed text animation with enhanced styling
     new TypeIt("#typed", {
       strings: [
-        "Developer.",
-        "Researcher.",
-        "AI Enthusiast.",
-        "Open Source Contributor."
+        "Senior Developer.",
+        "Lead Researcher.",
+        "AI Architect.",
+        "Innovation Strategist."
       ],
-      speed: 80,
-      deleteSpeed: 50,
+      speed: 70,
+      deleteSpeed: 40,
       lifeLike: true,
       breakLines: false,
       loop: true,
-      loopDelay: 2000,
-      nextStringDelay: 1000
+      loopDelay: 2500,
+      nextStringDelay: 1200
     }).go();
 
-    // Advanced Globe Configuration
+    // Ultra HD Globe Configuration
     document.addEventListener('DOMContentLoaded', () => {
-      // Create globe instance
+      // Create globe instance with ultra HD textures
       const globe = Globe()
-        .globeImageUrl('https://unpkg.com/three-globe/example/img/earth-blue-marble.jpg')
-        .bumpImageUrl('https://unpkg.com/three-globe/example/img/earth-topology.png')
-        .backgroundImageUrl('https://unpkg.com/three-globe/example/img/night-sky.png')
+        .globeImageUrl('https://cdn.jsdelivr.net/npm/three-globe@2.28.0/example/img/earth-blue-marble-8k.jpg')
+        .bumpImageUrl('https://cdn.jsdelivr.net/npm/three-globe@2.28.0/example/img/earth-topology-8k.png')
+        .backgroundImageUrl('https://cdn.jsdelivr.net/npm/three-globe@2.28.0/example/img/night-sky-8k.png')
         .showAtmosphere(true)
         .atmosphereColor('#3a228a')
-        .atmosphereAltitude(0.25)
-        .pointOfView({ lat: 22, lng: 0, altitude: 1.5 });
+        .atmosphereAltitude(0.3)
+        .pointOfView({ lat: 25, lng: 0, altitude: 1.8 });
       
       // Add to DOM
       const globeEl = document.getElementById('globeViz');
@@ -299,31 +331,78 @@
       const renderer = globe.renderer();
       const controls = globe.controls();
       
-      // Configure renderer
-      renderer.setPixelRatio(window.devicePixelRatio);
+      // Configure renderer for ultra quality
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      renderer.antialias = true;
       renderer.setClearColor(0x000000, 0);
       
-      // Configure controls
+      // Configure controls for smooth rotation
       controls.autoRotate = true;
-      controls.autoRotateSpeed = 0.8;
+      controls.autoRotateSpeed = 0.5;
       controls.enableDamping = true;
-      controls.dampingFactor = 0.1;
-      controls.minDistance = 200;
-      controls.maxDistance = 500;
+      controls.dampingFactor = 0.05;
+      controls.minDistance = 300;
+      controls.maxDistance = 600;
+      controls.enablePan = false;
+      controls.enableZoom = false;
       
-      // Add ambient light
-      const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
+      // Enhanced lighting
+      const ambientLight = new THREE.AmbientLight(0xffffff, 0.7);
       scene.add(ambientLight);
       
-      // Add directional light
-      const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
-      directionalLight.position.set(1, 1, 1);
-      scene.add(directionalLight);
+      const directionalLight1 = new THREE.DirectionalLight(0xffffff, 1);
+      directionalLight1.position.set(1, 1, 1);
+      scene.add(directionalLight1);
       
-      // Add point light for glow effect
-      const pointLight = new THREE.PointLight(0x3a228a, 1, 200);
-      pointLight.position.set(0, 0, 50);
+      const directionalLight2 = new THREE.DirectionalLight(0x3a228a, 0.5);
+      directionalLight2.position.set(-1, -1, -1);
+      scene.add(directionalLight2);
+      
+      const pointLight = new THREE.PointLight(0x3a228a, 1.5, 300);
+      pointLight.position.set(0, 0, 100);
       scene.add(pointLight);
+      
+      // Add subtle glow effect
+      const glowShader = {
+        uniforms: {
+          "c": { type: "f", value: 0.7 },
+          "p": { type: "f", value: 2.5 },
+          glowColor: { type: "c", value: new THREE.Color(0x3a228a) },
+          viewVector: { type: "v3", value: camera.position }
+        },
+        vertexShader: `
+          uniform vec3 viewVector;
+          uniform float c;
+          uniform float p;
+          varying float intensity;
+          void main() {
+            gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+            vec3 actual_normal = normalize(normalMatrix * normal);
+            intensity = pow(c - dot(actual_normal, normalize(viewVector)), p);
+          }
+        `,
+        fragmentShader: `
+          uniform vec3 glowColor;
+          varying float intensity;
+          void main() {
+            vec3 glow = glowColor * intensity;
+            gl_FragColor = vec4(glow, 1.0);
+          }
+        `
+      };
+      
+      const glowMaterial = new THREE.ShaderMaterial({
+        uniforms: glowShader.uniforms,
+        vertexShader: glowShader.vertexShader,
+        fragmentShader: glowShader.fragmentShader,
+        side: THREE.BackSide,
+        blending: THREE.AdditiveBlending,
+        transparent: true
+      });
+      
+      const glowMesh = new THREE.Mesh(globe.globeGeometry(), glowMaterial);
+      glowMesh.scale.set(1.1, 1.1, 1.1);
+      scene.add(glowMesh);
       
       // Handle window resize
       function handleResize() {
@@ -339,11 +418,15 @@
       window.addEventListener('resize', handleResize);
       handleResize();
       
-      // Animation loop
+      // Smooth animation loop
       function animate() {
         requestAnimationFrame(animate);
         controls.update();
         renderer.render(scene, camera);
+        
+        // Update glow effect
+        glowMaterial.uniforms.viewVector.value = 
+          new THREE.Vector3().subVectors(camera.position, globe.globeMesh().position);
       }
       animate();
     });
