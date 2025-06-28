@@ -4,32 +4,47 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Shayan Taherkhani</title>
+  <link rel="icon" href="https://www.favicon.cc/logo3d/920474.png" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Cormorant+Garamond:wght@500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
+    :root {
+      --gold: #d4af37;
+      --cream: #eae5d9;
+      --dark-bg: #0f1516;
+      --light-text: #e0ddd0;
+    }
+    
     html, body {
       margin: 0;
       padding: 0;
       height: 100%;
-      background: #0f1516;
-      color: #eae5d9;
+      background: var(--dark-bg);
+      color: var(--cream);
       font-family: 'Cormorant Garamond', serif;
-      overflow: hidden;
+      overflow-x: hidden;
     }
+    
     #globeViz {
       position: fixed;
-      top: 0;
-      left: 0;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       z-index: 0;
-      width: 100%;
-      height: 100%;
+      width: 100vmin;
+      height: 100vmin;
+      max-width: 800px;
+      max-height: 800px;
+      opacity: 0.8;
     }
+    
     #tsparticles {
       position: fixed;
       width: 100%;
       height: 100%;
       z-index: 1;
     }
+    
     main {
       position: relative;
       z-index: 2;
@@ -40,62 +55,84 @@
       min-height: 100vh;
       padding: 20px;
       text-align: center;
+      box-sizing: border-box;
     }
-    .logo {
-      width: 80px;
-      height: auto;
-      margin-bottom: 20px;
-      filter: drop-shadow(0 0 5px #d4af37);
-    }
+    
     h1 {
       font-family: 'Playfair Display', serif;
-      font-size: 48px;
-      color: #d4af37;
-      margin: 0;
-      border-bottom: 2px solid #d4af37;
+      font-size: clamp(2rem, 5vw, 3rem);
+      color: var(--gold);
+      margin: 0 0 1rem 0;
+      border-bottom: 2px solid var(--gold);
       padding-bottom: 8px;
     }
+    
     #typed {
-      font-size: 22px;
-      margin: 20px 0;
-      color: #e0ddd0;
+      font-size: clamp(1.1rem, 3vw, 1.4rem);
+      margin: 1rem 0;
+      color: var(--light-text);
+      min-height: 2.5rem;
     }
+    
     .link-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 15px;
-      max-width: 700px;
-      margin: 30px auto;
+      width: 100%;
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 20px;
+      box-sizing: border-box;
     }
+    
     .link {
       display: flex;
       align-items: center;
       justify-content: center;
       padding: 12px 15px;
-      border: 1px solid #d4af37;
+      border: 1px solid var(--gold);
       border-radius: 10px;
       background: rgba(255,255,255,0.05);
-      color: #eae5d9;
-      font-size: 18px;
+      color: var(--cream);
+      font-size: 1rem;
       text-decoration: none;
       gap: 10px;
       backdrop-filter: blur(4px);
       transition: all 0.3s ease;
     }
-    .link i { color: #d4af37; }
-    .link:hover {
-      background: #d4af37;
-      color: #0f1516;
-      transform: translateY(-3px);
+    
+    .link i { 
+      color: var(--gold);
+      font-size: 1.2rem;
     }
+    
+    .link:hover {
+      background: var(--gold);
+      color: var(--dark-bg);
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+    }
+    
+    .link:hover i {
+      color: var(--dark-bg);
+    }
+    
     footer {
-      margin-top: 30px;
-      font-size: 14px;
+      margin-top: 2rem;
+      font-size: 0.9rem;
       color: #888;
     }
-    @media(max-width:500px){
-      h1{font-size:34px;}
-      #typed{font-size:18px;}
+    
+    @media (max-width: 600px) {
+      .link-container {
+        grid-template-columns: 1fr;
+        max-width: 300px;
+      }
+      
+      #globeViz {
+        width: 150vmin;
+        height: 150vmin;
+      }
     }
   </style>
   <script src="https://cdn.jsdelivr.net/npm/tsparticles@3/tsparticles.bundle.min.js"></script>
@@ -106,34 +143,77 @@
   <div id="globeViz"></div>
   <div id="tsparticles"></div>
   <main>
-    <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/3/37/Pixel_person.png" alt="Pixel Logo" />
     <h1>Shayan Taherkhani</h1>
     <div id="typed"></div>
     <div class="link-container">
-      <a class="link" href="https://linkedin.com/in/shayantaherkhani" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-      <a class="link" href="https://github.com/shayanthn" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-      <a class="link" href="mailto:shayanthn78@gmail.com"><i class="fas fa-envelope"></i> Email</a>
-      <a class="link" href="https://www.researchgate.net/profile/Shayan-Taherkhani" target="_blank"><i class="fas fa-flask"></i> ResearchGate</a>
+      <a class="link" href="https://linkedin.com/in/shayantaherkhani" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-linkedin"></i> LinkedIn
+      </a>
+      <a class="link" href="https://github.com/shayanthn" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-github"></i> GitHub
+      </a>
+      <a class="link" href="mailto:shayanthn78@gmail.com">
+        <i class="fas fa-envelope"></i> Email
+      </a>
+      <a class="link" href="https://www.researchgate.net/profile/Shayan-Taherkhani" target="_blank" rel="noopener noreferrer">
+        <i class="fas fa-flask"></i> ResearchGate
+      </a>
     </div>
     <footer>© 2025 Shayan Taherkhani. All rights reserved.</footer>
   </main>
   <script>
-    // Particles
+    // Initialize particles
     tsParticles.load("tsparticles", {
       particles: {
-        number: { value: 100 },
-        size: { value: 2 },
-        color: { value: "#d4af37" },
-        opacity: { value: 0.3 },
-        move: { enable: true, speed: 0.4 },
-        links: { enable: true, color: "#d4af37", opacity:0.1 }
+        number: { 
+          value: 80,
+          density: {
+            enable: true,
+            value_area: 800
+          }
+        },
+        size: { 
+          value: 2,
+          random: true
+        },
+        color: { 
+          value: "#d4af37" 
+        },
+        opacity: { 
+          value: 0.3,
+          anim: {
+            enable: true,
+            speed: 1,
+            opacity_min: 0.1
+          }
+        },
+        move: { 
+          enable: true, 
+          speed: 0.5,
+          direction: "none",
+          random: true,
+          straight: false,
+          out_mode: "out"
+        },
+        links: { 
+          enable: true, 
+          color: "#d4af37", 
+          opacity: 0.1,
+          distance: 150
+        }
       },
       interactivity: {
-        events: { onhover: { enable: true, mode: "repulse" } }
-      }
+        events: { 
+          onhover: { 
+            enable: true, 
+            mode: "repulse" 
+          } 
+        }
+      },
+      retina_detect: true
     });
 
-    // Typed Text
+    // Typed text animation
     new TypeIt("#typed", {
       strings: [
         "Developer.",
@@ -142,22 +222,39 @@
         "Open Source Contributor."
       ],
       speed: 80,
+      deleteSpeed: 50,
+      lifeLike: true,
       breakLines: false,
-      loop: true
+      loop: true,
+      loopDelay: 2000,
+      nextStringDelay: 1000
     }).go();
 
-    // Globe
-    window.addEventListener('load', () => {
-      const myGlobe = Globe()(document.getElementById('globeViz'))
+    // Globe initialization
+    document.addEventListener('DOMContentLoaded', () => {
+      const globeElement = document.getElementById('globeViz');
+      const myGlobe = Globe()
         .globeImageUrl('https://unpkg.com/three-globe/example/img/earth-night.jpg')
         .bumpImageUrl('https://unpkg.com/three-globe/example/img/earth-topology.png')
         .showAtmosphere(true)
         .atmosphereColor('#d4af37')
-        .atmosphereAltitude(0.25)
-        .pointOfView({ lat: 20, lng: 0, altitude: 2 });
+        .atmosphereAltitude(0.2)
+        .pointOfView({ lat: 20, lng: 0, altitude: 1.5 });
 
+      // Adjust globe size based on viewport
+      function resizeGlobe() {
+        const size = Math.min(window.innerWidth, window.innerHeight) * 0.9;
+        globeElement.style.width = `${size}px`;
+        globeElement.style.height = `${size}px`;
+      }
+
+      window.addEventListener('resize', resizeGlobe);
+      resizeGlobe();
+
+      // Render globe
+      myGlobe(globeElement);
       myGlobe.controls().autoRotate = true;
-      myGlobe.controls().autoRotateSpeed = 0.4;
+      myGlobe.controls().autoRotateSpeed = 0.3;
     });
   </script>
 </body>
