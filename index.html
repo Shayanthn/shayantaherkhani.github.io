@@ -22,20 +22,27 @@
       background: var(--dark-bg);
       color: var(--cream);
       font-family: 'Cormorant Garamond', serif;
-      overflow-x: hidden;
+      overflow: hidden;
+    }
+    
+    #globeContainer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
     
     #globeViz {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 0;
-      width: 100vmin;
-      height: 100vmin;
-      max-width: 800px;
-      max-height: 800px;
-      opacity: 0.8;
+      width: 100%;
+      height: 100%;
+      max-width: 100vh;
+      max-height: 100vw;
+      opacity: 0.9;
     }
     
     #tsparticles {
@@ -65,6 +72,7 @@
       margin: 0 0 1rem 0;
       border-bottom: 2px solid var(--gold);
       padding-bottom: 8px;
+      text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
     }
     
     #typed {
@@ -92,7 +100,7 @@
       padding: 12px 15px;
       border: 1px solid var(--gold);
       border-radius: 10px;
-      background: rgba(255,255,255,0.05);
+      background: rgba(15, 21, 22, 0.7);
       color: var(--cream);
       font-size: 1rem;
       text-decoration: none;
@@ -110,7 +118,7 @@
       background: var(--gold);
       color: var(--dark-bg);
       transform: translateY(-3px);
-      box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+      box-shadow: 0 5px 15px rgba(212, 175, 55, 0.5);
     }
     
     .link:hover i {
@@ -130,17 +138,21 @@
       }
       
       #globeViz {
-        width: 150vmin;
-        height: 150vmin;
+        max-width: 150vw;
+        max-height: 150vh;
       }
     }
   </style>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/controls/OrbitControls.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/globe.gl@2.24.2/dist/globe.gl.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/tsparticles@3/tsparticles.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/typeit@8.7.1/dist/index.umd.js"></script>
-  <script src="https://unpkg.com/globe.gl"></script>
 </head>
 <body>
-  <div id="globeViz"></div>
+  <div id="globeContainer">
+    <div id="globeViz"></div>
+  </div>
   <div id="tsparticles"></div>
   <main>
     <h1>Shayan Taherkhani</h1>
@@ -161,53 +173,88 @@
     </div>
     <footer>© 2025 Shayan Taherkhani. All rights reserved.</footer>
   </main>
+
   <script>
-    // Initialize particles
+    // Enhanced particles configuration
     tsParticles.load("tsparticles", {
+      fpsLimit: 60,
       particles: {
         number: { 
-          value: 80,
+          value: 100,
           density: {
             enable: true,
             value_area: 800
           }
         },
-        size: { 
-          value: 2,
-          random: true
+        color: {
+          value: "#d4af37"
         },
-        color: { 
-          value: "#d4af37" 
+        shape: {
+          type: "circle"
         },
-        opacity: { 
+        opacity: {
           value: 0.3,
+          random: true,
           anim: {
             enable: true,
             speed: 1,
-            opacity_min: 0.1
+            opacity_min: 0.1,
+            sync: false
           }
         },
-        move: { 
-          enable: true, 
+        size: {
+          value: 2,
+          random: true,
+          anim: {
+            enable: true,
+            speed: 2,
+            size_min: 0.3,
+            sync: false
+          }
+        },
+        line_linked: {
+          enable: true,
+          distance: 150,
+          color: "#d4af37",
+          opacity: 0.1,
+          width: 1
+        },
+        move: {
+          enable: true,
           speed: 0.5,
           direction: "none",
           random: true,
           straight: false,
-          out_mode: "out"
-        },
-        links: { 
-          enable: true, 
-          color: "#d4af37", 
-          opacity: 0.1,
-          distance: 150
+          out_mode: "out",
+          bounce: false,
+          attract: {
+            enable: true,
+            rotateX: 600,
+            rotateY: 1200
+          }
         }
       },
       interactivity: {
-        events: { 
-          onhover: { 
-            enable: true, 
-            mode: "repulse" 
-          } 
+        detect_on: "canvas",
+        events: {
+          onhover: {
+            enable: true,
+            mode: "repulse"
+          },
+          onclick: {
+            enable: true,
+            mode: "push"
+          },
+          resize: true
+        },
+        modes: {
+          repulse: {
+            distance: 100,
+            duration: 0.4
+          },
+          push: {
+            particles_nb: 4
+          }
         }
       },
       retina_detect: true
@@ -230,31 +277,75 @@
       nextStringDelay: 1000
     }).go();
 
-    // Globe initialization
+    // Advanced Globe Configuration
     document.addEventListener('DOMContentLoaded', () => {
-      const globeElement = document.getElementById('globeViz');
-      const myGlobe = Globe()
-        .globeImageUrl('https://unpkg.com/three-globe/example/img/earth-night.jpg')
+      // Create globe instance
+      const globe = Globe()
+        .globeImageUrl('https://unpkg.com/three-globe/example/img/earth-blue-marble.jpg')
         .bumpImageUrl('https://unpkg.com/three-globe/example/img/earth-topology.png')
+        .backgroundImageUrl('https://unpkg.com/three-globe/example/img/night-sky.png')
         .showAtmosphere(true)
-        .atmosphereColor('#d4af37')
-        .atmosphereAltitude(0.2)
-        .pointOfView({ lat: 20, lng: 0, altitude: 1.5 });
-
-      // Adjust globe size based on viewport
-      function resizeGlobe() {
-        const size = Math.min(window.innerWidth, window.innerHeight) * 0.9;
-        globeElement.style.width = `${size}px`;
-        globeElement.style.height = `${size}px`;
+        .atmosphereColor('#3a228a')
+        .atmosphereAltitude(0.25)
+        .pointOfView({ lat: 22, lng: 0, altitude: 1.5 });
+      
+      // Add to DOM
+      const globeEl = document.getElementById('globeViz');
+      globe(globeEl);
+      
+      // Get ThreeJS objects
+      const scene = globe.scene();
+      const camera = globe.camera();
+      const renderer = globe.renderer();
+      const controls = globe.controls();
+      
+      // Configure renderer
+      renderer.setPixelRatio(window.devicePixelRatio);
+      renderer.setClearColor(0x000000, 0);
+      
+      // Configure controls
+      controls.autoRotate = true;
+      controls.autoRotateSpeed = 0.8;
+      controls.enableDamping = true;
+      controls.dampingFactor = 0.1;
+      controls.minDistance = 200;
+      controls.maxDistance = 500;
+      
+      // Add ambient light
+      const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
+      scene.add(ambientLight);
+      
+      // Add directional light
+      const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+      directionalLight.position.set(1, 1, 1);
+      scene.add(directionalLight);
+      
+      // Add point light for glow effect
+      const pointLight = new THREE.PointLight(0x3a228a, 1, 200);
+      pointLight.position.set(0, 0, 50);
+      scene.add(pointLight);
+      
+      // Handle window resize
+      function handleResize() {
+        const width = globeEl.clientWidth;
+        const height = globeEl.clientHeight;
+        
+        camera.aspect = width / height;
+        camera.updateProjectionMatrix();
+        
+        renderer.setSize(width, height);
       }
-
-      window.addEventListener('resize', resizeGlobe);
-      resizeGlobe();
-
-      // Render globe
-      myGlobe(globeElement);
-      myGlobe.controls().autoRotate = true;
-      myGlobe.controls().autoRotateSpeed = 0.3;
+      
+      window.addEventListener('resize', handleResize);
+      handleResize();
+      
+      // Animation loop
+      function animate() {
+        requestAnimationFrame(animate);
+        controls.update();
+        renderer.render(scene, camera);
+      }
+      animate();
     });
   </script>
 </body>
