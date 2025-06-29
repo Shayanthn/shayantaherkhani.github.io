@@ -3,19 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shayan Taherkhani | Elite Portfolio</title>
-  <link rel="icon" href="https://www.favicon.cc/logo3d/920474.png" type="image/png">
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Marcellus+SC&family=MedievalSharp&display=swap" rel="stylesheet">
+  <title>Shayan Taherkhani | Official</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
     :root {
-      --gold: #D4AF37;
-      --dark-gold: #996515;
-      --emerald: #005F40;
-      --dark-emerald: #003820;
-      --cream: #F5F5DC;
-      --ivory: #FFFFF0;
       --black: #0A0A0A;
+      --dark-gray: #1A1A1A;
+      --gold: #D4AF37;
+      --light-gold: #E6C875;
+      --cream: #F5F5F0;
     }
     
     html, body {
@@ -24,80 +23,63 @@
       height: 100%;
       background: var(--black);
       color: var(--cream);
-      font-family: 'Marcellus SC', serif;
+      font-family: 'EB Garamond', serif;
+      font-weight: 500;
       overflow-x: hidden;
+      line-height: 1.6;
     }
     
     body {
-      background: 
-        radial-gradient(circle at center, var(--dark-emerald) 0%, var(--black) 70%),
-        url('https://www.transparenttextures.com/patterns/black-thread-light.png');
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
     
     .container {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 2rem;
-      position: relative;
-      z-index: 2;
+      padding: 0 2rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
     }
     
     header {
-      text-align: center;
+      padding: 3rem 0;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.2);
       margin-bottom: 3rem;
-      position: relative;
-    }
-    
-    .seal {
-      width: 120px;
-      height: 120px;
-      margin: 0 auto 1rem;
-      background: var(--emerald);
-      border: 3px solid var(--gold);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 0 25px rgba(212, 175, 55, 0.5);
-    }
-    
-    .seal-inner {
-      width: 100px;
-      height: 100px;
-      border: 2px solid var(--gold);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2.5rem;
-      color: var(--gold);
+      text-align: center;
     }
     
     h1 {
-      font-family: 'Cinzel Decorative', serif;
-      font-size: 3.5rem;
-      color: var(--gold);
-      margin: 0.5rem 0;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-      letter-spacing: 2px;
+      font-family: 'EB Garamond', serif;
+      font-weight: 600;
+      font-size: 3rem;
+      color: var(--cream);
+      margin: 0;
+      letter-spacing: 1px;
       position: relative;
+      display: inline-block;
     }
     
     h1::after {
       content: '';
-      display: block;
-      width: 150px;
-      height: 2px;
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 100%;
+      height: 1px;
       background: linear-gradient(90deg, transparent, var(--gold), transparent);
-      margin: 0.5rem auto;
     }
     
     .title {
-      font-family: 'MedievalSharp', cursive;
-      font-size: 1.5rem;
-      color: var(--cream);
-      margin-bottom: 2rem;
-      letter-spacing: 1px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 1.1rem;
+      color: var(--light-gold);
+      margin-top: 0.5rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
     }
     
     .links {
@@ -107,157 +89,122 @@
       margin: 3rem 0;
     }
     
-    .link-card {
-      background: rgba(0, 31, 24, 0.7);
-      border: 1px solid var(--dark-gold);
-      border-radius: 8px;
-      padding: 1.5rem;
-      text-align: center;
+    .link-item {
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      padding: 2rem;
       transition: all 0.3s ease;
-      backdrop-filter: blur(5px);
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      text-align: center;
       position: relative;
-      overflow: hidden;
     }
     
-    .link-card::before {
+    .link-item::before {
       content: '';
       position: absolute;
-      top: -2px;
-      left: -2px;
-      right: -2px;
-      bottom: -2px;
-      border: 1px solid var(--gold);
-      border-radius: 8px;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(212, 175, 55, 0.05), transparent);
       opacity: 0;
       transition: opacity 0.3s ease;
     }
     
-    .link-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
-      background: rgba(0, 47, 36, 0.8);
+    .link-item:hover {
+      border-color: var(--gold);
+      transform: translateY(-3px);
     }
     
-    .link-card:hover::before {
-      opacity: 0.7;
+    .link-item:hover::before {
+      opacity: 1;
     }
     
-    .link-card i {
-      font-size: 2rem;
+    .link-icon {
+      font-size: 1.5rem;
       color: var(--gold);
       margin-bottom: 1rem;
-      display: block;
     }
     
     .link-title {
-      font-family: 'Cinzel Decorative', serif;
+      font-family: 'EB Garamond', serif;
+      font-weight: 600;
       font-size: 1.2rem;
-      color: var(--gold);
+      color: var(--cream);
       margin-bottom: 0.5rem;
     }
     
     .link-desc {
-      color: var(--cream);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
       font-size: 0.9rem;
+      color: var(--light-gold);
     }
     
     footer {
       text-align: center;
+      padding: 2rem 0;
       margin-top: 3rem;
-      padding: 1.5rem;
-      border-top: 1px solid rgba(212, 175, 55, 0.3);
-      color: var(--cream);
-      font-size: 0.9rem;
-    }
-    
-    .ornament {
-      position: absolute;
-      opacity: 0.1;
-      z-index: 1;
-    }
-    
-    .ornament-1 {
-      top: 50px;
-      left: 50px;
-      font-size: 5rem;
-      color: var(--gold);
-    }
-    
-    .ornament-2 {
-      bottom: 50px;
-      right: 50px;
-      font-size: 5rem;
-      color: var(--gold);
+      border-top: 1px solid rgba(212, 175, 55, 0.2);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 0.8rem;
+      color: var(--light-gold);
     }
     
     @media (max-width: 768px) {
       h1 {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
       }
       
       .title {
-        font-size: 1.2rem;
+        font-size: 0.9rem;
       }
       
       .links {
         grid-template-columns: 1fr;
       }
       
-      .seal {
-        width: 100px;
-        height: 100px;
-      }
-      
-      .seal-inner {
-        width: 80px;
-        height: 80px;
-        font-size: 2rem;
+      .link-item {
+        padding: 1.5rem;
       }
     }
   </style>
 </head>
 <body>
-  <div class="ornament ornament-1">
-    <i class="fas fa-crown"></i>
-  </div>
-  
-  <div class="ornament ornament-2">
-    <i class="fas fa-crown"></i>
-  </div>
-  
   <div class="container">
     <header>
-      <div class="seal">
-        <div class="seal-inner">
-          <i class="fas fa-ring"></i>
-        </div>
-      </div>
       <h1>SHAYAN TAHERKHANI</h1>
-      <div class="title">Elite Developer • Visionary Leader • Strategic Innovator</div>
+      <div class="title">You can find me @ </div>
     </header>
     
     <div class="links">
-      <a href="https://linkedin.com/in/shayantaherkhani" target="_blank" rel="noopener noreferrer" class="link-card">
-        <i class="fab fa-linkedin"></i>
+      <a href="https://linkedin.com/in/shayantaherkhani" target="_blank" rel="noopener noreferrer" class="link-item">
+        <div class="link-icon">
+          <i class="fab fa-linkedin"></i>
+        </div>
         <div class="link-title">LinkedIn</div>
         <div class="link-desc">Professional Network</div>
       </a>
       
-      <a href="https://github.com/shayanthn" target="_blank" rel="noopener noreferrer" class="link-card">
-        <i class="fab fa-github"></i>
+      <a href="https://github.com/shayanthn" target="_blank" rel="noopener noreferrer" class="link-item">
+        <div class="link-icon">
+          <i class="fab fa-github"></i>
+        </div>
         <div class="link-title">GitHub</div>
         <div class="link-desc">Code Repository</div>
       </a>
       
-      <a href="mailto:shayanthn78@gmail.com" class="link-card">
-        <i class="fas fa-envelope"></i>
+      <a href="mailto:shayanthn78@gmail.com" class="link-item">
+        <div class="link-icon">
+          <i class="fas fa-envelope"></i>
+        </div>
         <div class="link-title">Email</div>
         <div class="link-desc">Direct Communication</div>
       </a>
       
-      <a href="https://www.researchgate.net/profile/Shayan-Taherkhani" target="_blank" rel="noopener noreferrer" class="link-card">
-        <i class="fas fa-flask"></i>
+      <a href="https://www.researchgate.net/profile/Shayan-Taherkhani" target="_blank" rel="noopener noreferrer" class="link-item">
+        <div class="link-icon">
+          <i class="fas fa-flask"></i>
+        </div>
         <div class="link-title">ResearchGate</div>
         <div class="link-desc">Academic Publications</div>
       </a>
