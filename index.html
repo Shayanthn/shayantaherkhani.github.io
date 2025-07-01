@@ -1,133 +1,233 @@
-<!DOCTYPE html>  
-<html lang="en">  
-<head>  
-  <meta charset="UTF-8" />  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
-  <title>Shayan Taherkhani</title>  
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Cormorant+Garamond:wght@500&display=swap" rel="stylesheet">  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />  
-  <style>  
-    * {  
-      box-sizing: border-box;  
-      margin: 0;  
-      padding: 0;  
-    }  
-    body {  
-      background: #0f1516;  
-      color: #eae5d9;  
-      font-family: 'Cormorant Garamond', serif;  
-      text-align: center;  
-      padding: 60px 20px;  
-      position: relative;  
-      overflow: hidden;  
-      z-index: 1;  
-    }  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shayan Taherkhani</title>
   
-    /* ✨ Animated Background Layer */  
-    body::before {  
-      content: "";  
-      position: fixed;  
-      top: 0;  
-      left: 0;  
-      width: 200%;  
-      height: 200%;  
-      background: radial-gradient(circle at center, #1c2b2d 20%, #0f0f0f 100%);  
-      background-size: 400% 400%;  
-      animation: moveBg 20s ease infinite;  
-      z-index: -1;  
-      opacity: 0.35;  
-    }  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,700&family=Manrope:wght@400;500&display=swap" rel="stylesheet">
   
-    @keyframes moveBg {  
-      0% { background-position: 0% 0%; }  
-      50% { background-position: 100% 100%; }  
-      100% { background-position: 0% 0%; }  
-    }  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   
-    h1 {  
-      font-family: 'Playfair Display', serif;  
-      font-size: 48px;  
-      margin-bottom: 20px;  
-      color: #d4af37;  
-      letter-spacing: 1px;  
-      text-shadow: 0 0 5px #000;  
-      border-bottom: 2px solid #d4af37;  
-      display: inline-block;  
-      padding-bottom: 8px;  
-    }  
+  <style>
+    :root {
+      --bg-color: #0D0D0F;
+      --card-background: rgba(22, 24, 28, 0.6);
+      --border-color: rgba(255, 255, 255, 0.1);
+      --text-primary: #F5F5F7;
+      --text-secondary: #A1A1A6;
+      --accent-hover: rgba(255, 255, 255, 0.08);
+      --font-heading: 'Bodoni Moda', serif;
+      --font-body: 'Manrope', sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+      overflow: hidden;
+      position: relative;
+      /* This is needed for the 3D tilt effect */
+      perspective: 1000px;
+    }
+
+    /* Aurora Background Effect */
+    .aurora-background {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: -1;
+    }
+    .aurora-background .shape {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(120px);
+    }
+    .shape.shape-1 {
+      width: 450px; height: 450px;
+      background-color: rgba(69, 97, 219, 0.4);
+      top: -50px; left: -100px;
+      animation: move 20s infinite alternate;
+    }
+    .shape.shape-2 {
+      width: 400px; height: 400px;
+      background-color: rgba(144, 53, 212, 0.4);
+      bottom: -80px; right: -120px;
+      animation: move 25s infinite alternate-reverse;
+    }
+     .shape.shape-3 {
+      width: 300px; height: 300px;
+      background-color: rgba(53, 212, 178, 0.3);
+      top: 100px; right: 200px;
+      animation: move 18s infinite alternate;
+    }
+    @keyframes move {
+      from { transform: translate(0, 0) rotate(0deg); }
+      to { transform: translate(150px, 50px) rotate(60deg); }
+    }
+    
+    /* The Glass Card - Now with 3D tilt transition */
+    .glass-card {
+      background: var(--card-background);
+      backdrop-filter: blur(25px);
+      -webkit-backdrop-filter: blur(25px);
+      border: 1px solid var(--border-color);
+      border-radius: 24px;
+      padding: 40px;
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+      transition: transform 0.1s ease-out; /* Smooth transition for the tilt */
+      will-change: transform;
+    }
+    
+    h1 {
+      font-family: var(--font-heading);
+      font-size: 42px; /* Adjusted for the new font */
+      font-weight: 700;
+      margin-bottom: 12px;
+      letter-spacing: 0.5px;
+    }
+
+    p.bio {
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--text-secondary);
+      margin-bottom: 40px;
+    }
+
+    .link-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    .link {
+      background: rgba(255, 255, 255, 0.04);
+      border-radius: 12px;
+      padding: 14px;
+      color: var(--text-primary);
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border: 1px solid transparent;
+      /* Transition for the magnetic effect */
+      transition: background 0.2s ease, border-color 0.2s ease, transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      will-change: transform;
+    }
+    
+    .link:hover {
+      background: var(--accent-hover);
+      border-color: var(--border-color);
+    }
+
+    .link i { font-size: 18px; }
+    
+    footer {
+      margin-top: 40px;
+      font-size: 12px;
+      color: var(--text-secondary);
+      opacity: 0.7;
+    }
+    footer .company { font-size: 11px; }
+    
+    @media (max-width: 480px) {
+      .glass-card { padding: 30px 20px; }
+      h1 { font-size: 34px; }
+      .link-container { grid-template-columns: 1fr; }
+    }
+  </style>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1801526381696835"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <div class="aurora-background">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+  </div>
+
+  <div class="glass-card">
+    <h1>Shayan Taherkhani</h1>
+    <p class="bio">
+      I'm someone who can't stop exploring
+    </p>
+    <div class="link-container">
+      <a class="link" href="https://linkedin.com/in/shayantaherkhani" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      <a class="link" href="https://github.com/shayanthn" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+      <a class="link" href="https://www.researchgate.net/profile/Shayan-Taherkhani" target="_blank"><i class="fas fa-flask"></i> ResearchGate</a>
+      <a class="link" href="mailto:shayanthn78@gmail.com"><i class="fas fa-envelope"></i> Email Me</a>
+    </div>
+    <footer>
+      <div class="copyright">© 2025 Shayan Taherkhani</div>
+      <div class="company">aetherostech company owner</div>
+    </footer>
+  </div>
   
-    p.bio {  
-      font-size: 20px;  
-      max-width: 700px;  
-      margin: 20px auto 60px;  
-      line-height: 1.8;  
-      color: #e0ddd0;  
-    }  
-  
-    .link-container {  
-      display: grid;  
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));  
-      gap: 25px;  
-      max-width: 800px;  
-      margin: 0 auto;  
-    }  
-  
-    .link {  
-      padding: 15px 25px;  
-      border: 1px solid #d4af37;  
-      border-radius: 15px;  
-      background: rgba(255, 255, 255, 0.04);  
-      color: #eae5d9;  
-      text-decoration: none;  
-      font-size: 19px;  
-      font-weight: 500;  
-      backdrop-filter: blur(6px);  
-      transition: background 0.4s, transform 0.3s, color 0.3s;  
-      display: flex;  
-      align-items: center;  
-      justify-content: center;  
-      gap: 12px;  
-      box-shadow: 0 0 8px rgba(0,0,0,0.2);  
-    }  
-  
-    .link i {  
-      color: #d4af37;  
-      font-size: 20px;  
-    }  
-  
-    .link:hover {  
-      background: #d4af37;  
-      color: #1c2b2d;  
-      transform: translateY(-5px);  
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);  
-    }  
-  
-    @media (max-width: 480px) {  
-      body {  
-        padding: 40px 10px;  
-      }  
-      h1 {  
-        font-size: 36px;  
-      }  
-      .link {  
-        font-size: 17px;  
-        padding: 12px 15px;  
-      }  
-    }  
-  </style>  
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1801526381696835"  
-     crossorigin="anonymous"></script>  
-</head>  
-<body>  
-  <h1>Shayan Taherkhani</h1>  
-  <p class="bio">  
-    You can see me at:  
-  </p>  
-  <div class="link-container">  
-    <a class="link" href="https://linkedin.com/in/shayantaherkhani" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>  
-    <a class="link" href="https://www.researchgate.net/profile/Shayan-Taherkhani" target="_blank"><i class="fas fa-flask"></i> ResearchGate</a>  
-    <a class="link" href="https://github.com/shayanthn" target="_blank"><i class="fab fa-github"></i> GitHub</a>  
-    <a class="link" href="mailto:shayanthn78@gmail.com"><i class="fas fa-envelope"></i> Email Me</a>  
-  </div>  
-</body>  
+  <script>
+    const card = document.querySelector('.glass-card');
+
+    document.body.addEventListener('mousemove', e => {
+      requestAnimationFrame(() => {
+        // ✨ 3D Card Tilt Logic ✨
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        const rotateX = ((y - centerY) / centerY) * -5; // Tilt strength
+        const rotateY = ((x - centerX) / centerX) * 5; // Tilt strength
+        card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+
+        // 🧲 Magnetic Buttons Logic 🧲
+        magneticLinks(e);
+      });
+    });
+
+    // Reset card tilt when mouse leaves the body
+    document.body.addEventListener('mouseleave', () => {
+        card.style.transform = 'rotateX(0) rotateY(0)';
+    });
+
+
+    const magneticLinks = (e) => {
+      const links = document.querySelectorAll('.link');
+      const mouseX = e.clientX;
+      const mouseY = e.clientY;
+
+      links.forEach(link => {
+        const rect = link.getBoundingClientRect();
+        const linkCenterX = rect.left + rect.width / 2;
+        const linkCenterY = rect.top + rect.height / 2;
+        const distance = Math.sqrt(Math.pow(mouseX - linkCenterX, 2) + Math.pow(mouseY - linkCenterY, 2));
+        const maxDistance = 120; // Radius of magnetic field
+        
+        if (distance < maxDistance) {
+          const pullFactor = 1 - (distance / maxDistance);
+          const pullX = (mouseX - linkCenterX) * 0.5 * pullFactor; // Max pull strength
+          const pullY = (mouseY - linkCenterY) * 0.5 * pullFactor; // Max pull strength
+          link.style.transform = `translate(${pullX}px, ${pullY}px)`;
+        } else {
+          link.style.transform = 'translate(0, 0)';
+        }
+      });
+    };
+  </script>
+
+</body>
 </html>
