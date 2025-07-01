@@ -51,15 +51,17 @@ This project is an **interactive personal profile card** built with:
 ## 🎯 How to Use
 
 1. **Clone this repository:**
+
    ```bash
    git clone https://github.com/Shayanthn/shayantaherkhani.github.io.git
 ````
 
 2. **Open `index.html` in your browser.**
+
 3. **Or deploy it directly on GitHub Pages:**
 
    * Go to **Settings > Pages**
-   * Select `main` branch and `/root`
+   * Select `main` branch and `/ (root)`
    * 🎉 Done!
 
 ---
@@ -117,3 +119,5 @@ The design follows a **Neo-Aurora Glassmorphism** aesthetic:
 ## ⭐️ Show Your Support
 
 If you like this project, star it ⭐️ or share it with your friends!
+
+```
