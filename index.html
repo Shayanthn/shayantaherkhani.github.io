@@ -5,11 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Shayan Taherkhani</title>
   
-  <link rel="icon" href="https://raw.githubusercontent.com/Shayanthn/shayantaherkhani.github.io/main/file_000000003c7061f698c731eb9caef603.png
-" type="image/x-icon">
-  <link rel="shortcut icon" href="https://raw.githubusercontent.com/Shayanthn/shayantaherkhani.github.io/main/file_000000003c7061f698c731eb9caef603.png
-" type="image/x-icon">
-
+  <link rel="icon" href="https://raw.githubusercontent.com/Shayanthn/shayantaherkhani.github.io/main/file_000000003c7061f698c731eb9caef603.png" type="image/png">
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Manrope:wght@400;500&display=swap" rel="stylesheet">
@@ -17,7 +14,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   
   <style>
-    /* ✨ THEME VARIABLES ✨ */
     :root {
       /* Dark Mode (Default) */
       --bg-color: #0D0D0F;
@@ -59,13 +55,12 @@
       transition: background-color 0.4s ease;
     }
 
-    /* Aurora Background with Parallax */
     .aurora-background {
       position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
     }
     .aurora-background .shape {
       position: absolute; border-radius: 50%; filter: blur(120px);
-      transition: transform 0.2s ease-out; /* For parallax smoothness */
+      transition: transform 0.2s ease-out;
     }
     .shape.shape-1 {
       width: 450px; height: 450px;
@@ -82,7 +77,6 @@
     @keyframes move-1 { from { transform: translate(0, 0) rotate(0deg); } to { transform: translate(150px, 50px) rotate(60deg); } }
     @keyframes move-2 { from { transform: translate(0, 0) rotate(0deg); } to { transform: translate(-100px, -50px) rotate(-40deg); } }
     
-    /* Glass Card with Glow and Fade-in Animation */
     .glass-card {
       background: var(--card-background);
       backdrop-filter: blur(30px);
@@ -101,17 +95,15 @@
     }
     @keyframes fadeIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
 
-    /* Avatar/Logo */
     .avatar {
         width: 80px; height: 80px;
         border-radius: 50%;
         border: 2px solid var(--border-color);
         margin: 0 auto 20px;
         object-fit: cover;
-        background-color: rgba(255,255,255,0.05); /* A slight background in case image is transparent */
+        background-color: rgba(255,255,255,0.05);
     }
     
-    /* Header Font */
     h1 {
       font-family: var(--font-heading);
       font-size: 40px;
@@ -130,7 +122,6 @@
 
     .link-container { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
 
-    /* Link Hover Effect */
     .link {
       position: relative;
       background: transparent;
@@ -171,7 +162,6 @@
     }
     footer .company { font-size: 11px; }
 
-    /* Light Mode Toggle */
     .theme-toggle {
         position: absolute; top: 25px; right: 25px;
         background: var(--card-background); border: 1px solid var(--border-color);
@@ -185,13 +175,15 @@
     body.light-mode .theme-toggle .fa-sun { display: block; }
     body.light-mode .theme-toggle .fa-moon { display: none; }
     
-    /* Mobile Improvements */
+    /* ✨ 2. Improved Mobile Layout ✨ */
     @media (max-width: 480px) {
       .glass-card { padding: 30px 20px; }
-      h1 { font-size: 32px; }
-      .link-container { grid-template-columns: 1fr; gap: 18px; }
-      .link { padding: 18px; font-size: 17px; }
-      .theme-toggle { top: 15px; right: 15px; }
+      .avatar { width: 70px; height: 70px; margin-bottom: 15px; }
+      h1 { font-size: 30px; }
+      p.bio { margin-bottom: 30px; }
+      .link-container { grid-template-columns: 1fr; gap: 15px; }
+      .link { padding: 16px; font-size: 16px; }
+      .theme-toggle { top: 20px; right: 20px; }
     }
   </style>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1801526381696835" crossorigin="anonymous"></script>
@@ -209,7 +201,7 @@
   </button>
 
   <div class="glass-card">
-    <img src="https://raw.githubusercontent.com/Shayanthn/shayantaherkhani.github.io/main/icon.ico" alt="Avatar" class="avatar">
+    <img src="https://raw.githubusercontent.com/Shayanthn/shayantaherkhani.github.io/main/file_000000003c7061f698c731eb9caef603.png" alt="Avatar" class="avatar">
     
     <h1>Shayan Taherkhani</h1>
     <p class="bio">I'm someone who can't stop exploring</p>
@@ -232,10 +224,8 @@
         const links = document.querySelectorAll('.link');
         const themeToggle = document.querySelector('.theme-toggle');
 
-        // Combined Mousemove Handler for Tilt & Parallax
         document.body.addEventListener('mousemove', e => {
             requestAnimationFrame(() => {
-                // Card Tilt
                 const rect = card.getBoundingClientRect();
                 const x = e.clientX - rect.left;
                 const y = e.clientY - rect.top;
@@ -245,7 +235,6 @@
                 const rotateY = ((x - centerX) / centerX) * 3.5;
                 card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
 
-                // Aurora Parallax
                 shapes.forEach(shape => {
                     const speed = shape.getAttribute('data-speed');
                     const moveX = (window.innerWidth / 2 - e.clientX) * speed;
@@ -253,7 +242,6 @@
                     shape.style.transform = `translate(${moveX}px, ${moveY}px)`;
                 });
                 
-                // Magnetic Links
                 magneticLinks(e);
             });
         });
@@ -283,7 +271,6 @@
             });
         };
 
-        // Light/Dark Mode Logic
         const currentTheme = localStorage.getItem('theme');
         if (currentTheme === 'light') {
             document.body.classList.add('light-mode');
