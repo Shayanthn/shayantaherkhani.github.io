@@ -1,36 +1,3 @@
-باشه حتما. طبق درخواست شما، لینک LinkedIn با لینک GitHub جایگزین شد و لینک GitHub هم با لینک Google Scholar تعویض شد. آیکون مربوط به Google Scholar هم به کد اضافه شد.
-
-در واقع این بخش از کد:
-
-```html
-<div class="link-container">
-      <a class="link" href="https://linkedin.com/in/shayantaherkhani" target="_blank"><span class="content"><i class="fab fa-linkedin"></i> LinkedIn</span></a>
-      <a class="link" href="https://github.com/shayanthn" target="_blank"><span class="content"><i class="fab fa-github"></i> GitHub</span></a>
-      <a class="link" href="https://www.researchgate.net/profile/Shayan-Taherkhani" target="_blank"><span class="content"><i class="fas fa-flask"></i> ResearchGate</span></a>
-      <a class="link" href="mailto:shayanthn78@gmail.com"><span class="content"><i class="fas fa-envelope"></i> Email Me</span></a>
-</div>
-```
-
-به این شکل تغییر پیدا کرد:
-
-```html
-<div class="link-container">
-      <a class="link" href="https://github.com/shayanthn" target="_blank"><span class="content"><i class="fab fa-github"></i> GitHub</span></a>
-      <a class="link" href="https://scholar.google.com/citations?user=S0jy4-IAAAAJ&hl=en" target="_blank"><span class="content"><i class="fas fa-graduation-cap"></i> Google Scholar</span></a>
-      <a class="link" href="https://www.researchgate.net/profile/Shayan-Taherkhani" target="_blank"><span class="content"><i class="fas fa-flask"></i> ResearchGate</span></a>
-      <a class="link" href="mailto:shayanthn78@gmail.com"><span class="content"><i class="fas fa-envelope"></i> Email Me</span></a>
-</div>
-```
-
-**نکته:** برای نمایش آیکون Google Scholar از کلاس `fas fa-graduation-cap` استفاده شد که در کتابخانه Font Awesome موجود در کد شما وجود دارد.
-
------
-
-### کد کامل و اصلاح شده:
-
-در زیر می‌توانید کل کد HTML را با تغییرات اعمال شده کپی کنید:
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
