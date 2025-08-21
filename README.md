@@ -12,7 +12,7 @@
     <a href="https://shayantaherkhani.ir" target="_blank">
       <img src="https://img.shields.io/badge/Website-0D1117?style=for-the-badge&logo=About.me&logoColor=white" alt="Website"/>
     </a>
-    <a href="https://linkedin.com/in/shayantaherkhani78" target="_blank">
+    <a href="https://linkedin.com/in/SHAYANTAHERKHANI78" target="_blank">
       <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
     </a>
     <a href="https://github.com/shayanthn" target="_blank">
