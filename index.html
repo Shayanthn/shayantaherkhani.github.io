@@ -9,6 +9,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Manrope:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <!-- فونت فارسی جذاب -->
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@500;700&display=swap" rel="stylesheet">
   <style>
     :root {
       /* Dark Mode (Default) */
@@ -108,6 +110,16 @@
       transition: color 0.4s ease;
     }
     .link-container { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+      /* استایل ویژه برای ستون‌های فارسی */
+    /* حذف استایل سفارشی برای هماهنگی کامل افکت */
+      .fancy-fa-col .link .content {
+        font-family: 'Vazirmatn', 'Manrope', sans-serif;
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #222;
+        background: none;
+        gap: 12px;
+      }
     .link {
       position: relative;
       background: transparent;
@@ -184,12 +196,26 @@
     <img src="https://raw.githubusercontent.com/Shayanthn/shayantaherkhani.github.io/main/file_000000003c7061f698c731eb9caef603.png" alt="Avatar" class="avatar">
     <h1>Shayan Taherkhani</h1>
     <p class="bio">I'm someone who can't stop exploring</p>
-    <div class="link-container">
-      <a class="link" href="https://scholar.google.com/citations?user=S0jy4-IAAAAJ&hl=en" target="_blank"><span class="content"><i class="fab fa-google"></i> Google Scholar</span></a>
-      <a class="link" href="https://github.com/shayanthn" target="_blank"><span class="content"><i class="fab fa-github"></i> GitHub</span></a>
-      <a class="link" href="https://www.researchgate.net/profile/Shayan-Taherkhani" target="_blank"><span class="content"><i class="fas fa-flask"></i> ResearcherGate</span></a>
-      <a class="link" href="mailto:admin@shayantaherkhani.ir"><span class="content"><i class="fas fa-envelope"></i> Direct Contact</span></a>
-    </div>
+      <div class="link-container">
+        <a class="link" href="https://github.com/shayanthn" target="_blank"><span class="content"><i class="fab fa-github"></i> GitHub</span></a>
+        <a class="link" href="https://www.researchgate.net/profile/Shayan-Taherkhani" target="_blank"><span class="content"><i class="fas fa-flask"></i> ResearcherGate</span></a>
+        <a class="link" href="mailto:admin@shayantaherkhani.ir"><span class="content"><i class="fas fa-envelope"></i> Direct Contact</span></a>
+        <a class="link" href="https://www.linkedin.com/in/shayantaherkhani78" target="_blank"><span class="content"><i class="fab fa-linkedin"></i> LinkedIn</span></a>
+      </div>
+      <div class="link-container" style="margin-top:32px; grid-template-columns: 1fr;">
+        <a class="link" href="https://stickerino.ir" target="_blank">
+          <span class="content" style="font-family: 'Vazirmatn', 'Manrope', sans-serif; font-size:1.25rem; font-weight:700; text-align:right; width:100%; display:flex; align-items:center; gap:12px;">
+            <i class="fas fa-sticky-note"></i>
+            مرجع تخصصی فروش استیکر
+          </span>
+        </a>
+        <a class="link" href="https://aetherai.ir" target="_blank">
+          <span class="content" style="font-family: 'Vazirmatn', 'Manrope', sans-serif; font-size:1.25rem; font-weight:700; text-align:right; width:100%; display:flex; align-items:center; gap:12px;">
+            <i class="fas fa-gamepad"></i>
+            بازی فکری
+          </span>
+        </a>
+      </div>
     <footer>
       <div class="copyright">© 2025 Shayan Taherkhani</div>
       <div class="company">AetherosTech</div>
