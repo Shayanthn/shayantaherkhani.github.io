@@ -1,6 +1,6 @@
 <div align="center">
 
-  <img src="https://raw.githubusercontent.com/Shayanthn/shayantaherkhani.github.io/main/file_000000003c7061f698c731eb9caef603.png" alt="Shayan Taherkhani's Avatar" width="140" style="border-radius:50%; border: 3px solid #333; box-shadow: 0 4px 20px rgba(0,0,0,0.4);">
+  <img src="https://raw.githubusercontent.com/Shayanthn/shayantaherkhani.github.io/main/avatar.png" alt="Shayan Taherkhani's Avatar" width="140" style="border-radius:50%; border: 3px solid #333; box-shadow: 0 4px 20px rgba(0,0,0,0.4);">
 
   # **Shayan Taherkhani's Digital Presence**
 
