@@ -7,8 +7,8 @@
   <!-- Primary Meta Tags -->
   <title>Shayan Taherkhani</title>
   <meta name="title" content="Shayan Taherkhani" />
-  <meta name="description" content="Shayan Taherkhani's personal website. Explore innovative projects including Sticker online shop and 2048 reward game. Connect with a passionate developer and researcher." />
-  <meta name="keywords" content="Shayan Taherkhani, developer, programmer, tech explorer, portfolio, web development, sticker shop, gaming, research, AetherosTech" />
+  <meta name="description" content="Shayan Taherkhani's personal portfolio. Developer, researcher and tech explorer." />
+  <meta name="keywords" content="Shayan Taherkhani, developer, programmer, tech explorer, portfolio, web development, research, AetherosTech" />
   <meta name="author" content="Shayan Taherkhani" />
   <meta name="robots" content="index, follow" />
   <meta name="language" content="English" />
@@ -18,7 +18,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://shayantaherkhani.github.io/" />
   <meta property="og:title" content="Shayan Taherkhani - Developer & Tech Explorer" />
-  <meta property="og:description" content="Explore innovative projects and connect with a passionate developer and researcher. Visit my portfolio to see latest work including Sticker online shop and 2048 reward game." />
+  <meta property="og:description" content="Personal portfolio of Shayan Taherkhani – developer, researcher and tech enthusiast." />
   <meta property="og:image" content="https://shayantaherkhani.github.io/avatar.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -29,7 +29,7 @@
   <meta property="twitter:card" content="summary_large_image" />
   <meta property="twitter:url" content="https://shayantaherkhani.github.io/" />
   <meta property="twitter:title" content="Shayan Taherkhani - Developer & Tech Explorer" />
-  <meta property="twitter:description" content="Explore innovative projects and connect with a passionate developer and researcher." />
+  <meta property="twitter:description" content="Personal portfolio of Shayan Taherkhani – developer, researcher and tech enthusiast." />
   <meta property="twitter:image" content="https://shayantaherkhani.github.io/avatar.png" />
   <meta name="twitter:creator" content="@shayantaherkhani" />
   
@@ -53,18 +53,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-  <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
   
   <!-- DNS Prefetch -->
   <link rel="dns-prefetch" href="//github.com">
   <link rel="dns-prefetch" href="//linkedin.com">
   <link rel="dns-prefetch" href="//researchgate.net">
-  <link rel="dns-prefetch" href="//stickerino.ir">
-  <link rel="dns-prefetch" href="//aetherai.ir">
   
-  <!-- Fonts with display=swap for better performance -->
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Manrope:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
   
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
@@ -83,20 +80,15 @@
     "sameAs": [
       "https://github.com/shayanthn",
       "https://www.linkedin.com/in/shayantaherkhani78",
-      "https://www.researchgate.net/profile/Shayan-Taherkhani"
-    ],
-    "knowsAbout": ["Web Development", "Software Engineering", "Research", "Technology Innovation"],
-    "alumniOf": {
-      "@type": "EducationalOrganization",
-      "name": "Academic Institution"
-    }
+      "https://www.researchgate.net/profile/Shayan-Taherkhani",
+      "https://medium.com/@shayanthn78"
+    ]
   }
   </script>
-  <!-- CSS Critical Path Optimization -->
+
+  <!-- Critical CSS -->
   <style>
-    /* Critical CSS - Above the fold styles */
     :root {
-      /* Dark Mode (Default) */
       --bg-color: #0D0D0F;
       --card-background: rgba(22, 24, 28, 0.55);
       --border-color: rgba(255, 255, 255, 0.1);
@@ -107,13 +99,7 @@
       --font-heading: 'Cinzel', serif;
       --font-body: 'Manrope', sans-serif;
     }
-    
-    * { 
-      box-sizing: border-box; 
-      margin: 0; 
-      padding: 0; 
-    }
-    
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       background-color: var(--bg-color);
       color: var(--text-primary);
@@ -127,13 +113,11 @@
       position: relative;
       perspective: 1500px;
       transition: background-color 0.4s ease;
-      /* Performance optimizations */
       will-change: background-color;
       transform: translateZ(0);
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
     }
-    
     .glass-card {
       background: var(--card-background);
       backdrop-filter: blur(30px);
@@ -149,57 +133,17 @@
       will-change: transform;
       animation: fadeIn 1s 0.2s ease-out forwards;
       opacity: 0;
-      /* Performance optimizations */
       contain: layout style paint;
       transform: translateZ(0);
     }
-    
-    @keyframes fadeIn { 
-      from { 
-        opacity: 0; 
-        transform: translateY(30px) translateZ(0); 
-      } 
-      to { 
-        opacity: 1; 
-        transform: translateY(0) translateZ(0); 
-      } 
-    }
-    
-    .avatar {
-      width: 80px; 
-      height: 80px;
-      border-radius: 50%;
-      border: 2px solid var(--border-color);
-      margin: 0 auto 20px;
-      object-fit: cover;
-      background-color: rgba(255,255,255,0.05);
-      /* Performance optimizations */
-      will-change: auto;
-      transform: translateZ(0);
-    }
-    
-    h1 {
-      font-family: var(--font-heading);
-      font-size: 40px;
-      font-weight: 700;
-      margin-bottom: 12px;
-      transition: color 0.4s ease;
-      /* Performance optimizations */
-      contain: layout;
-    }
-    
-    p.bio {
-      font-size: 16px;
-      font-weight: 400;
-      color: var(--text-secondary);
-      margin-bottom: 30px;
-      transition: color 0.4s ease;
-    }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(30px) translateZ(0); } to { opacity: 1; transform: translateY(0) translateZ(0); } }
+    .avatar { width: 80px; height: 80px; border-radius: 50%; border: 2px solid var(--border-color); margin: 0 auto 20px; object-fit: cover; background-color: rgba(255,255,255,0.05); will-change: auto; transform: translateZ(0); }
+    h1 { font-family: var(--font-heading); font-size: 40px; font-weight: 700; margin-bottom: 12px; transition: color 0.4s ease; contain: layout; }
+    p.bio { font-size: 16px; font-weight: 400; color: var(--text-secondary); margin-bottom: 30px; transition: color 0.4s ease; }
   </style>
-  
-  <!-- Non-critical CSS loaded after page load -->
+
+  <!-- Non-critical CSS -->
   <style>
-    /* Light Mode Theme */
     body.light-mode {
       --bg-color: #F0F2F5;
       --card-background: rgba(255, 255, 255, 0.5);
@@ -209,249 +153,68 @@
       --accent-hover: rgba(0, 0, 0, 0.05);
       --card-glow: 0 0 50px rgba(0, 0, 0, 0.1);
     }
-    
-    /* Aurora Background Effects */
-    .aurora-background {
-      position: fixed; 
-      top: 0; 
-      left: 0; 
-      width: 100%; 
-      height: 100%; 
-      z-index: -1;
-      will-change: transform;
-      contain: strict;
-    }
-    
-    .aurora-background .shape {
-      position: absolute; 
-      border-radius: 50%; 
-      filter: blur(120px);
-      transition: transform 0.2s ease-out;
-      will-change: transform;
-      contain: layout paint;
-    }
-    
-    .shape.shape-1 {
-      width: 450px; 
-      height: 450px;
-      top: -50px; 
-      left: -100px;
-      background: radial-gradient(circle, rgba(69, 97, 219, 0.4) 0%, rgba(69, 97, 219, 0) 70%);
-      animation: move-1 20s infinite alternate;
-    }
-    
-    .shape.shape-2 {
-      width: 400px; 
-      height: 400px;
-      bottom: -80px; 
-      right: -120px;
-      background: radial-gradient(circle, rgba(144, 53, 212, 0.4) 0%, rgba(144, 53, 212, 0) 70%);
-      animation: move-2 25s infinite alternate-reverse;
-    }
-    
-    @keyframes move-1 { 
-      from { transform: translate(0, 0) rotate(0deg) translateZ(0); } 
-      to { transform: translate(150px, 50px) rotate(60deg) translateZ(0); } 
-    }
-    
-    @keyframes move-2 { 
-      from { transform: translate(0, 0) rotate(0deg) translateZ(0); } 
-      to { transform: translate(-100px, -50px) rotate(-40deg) translateZ(0); } 
-    }
-    
-    /* Link Styles and Effects */
-    .link-container { 
-      display: grid; 
-      grid-template-columns: 1fr 1fr; 
-      gap: 15px; 
-      contain: layout;
-    }
-    
+    .aurora-background { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; will-change: transform; contain: strict; }
+    .aurora-background .shape { position: absolute; border-radius: 50%; filter: blur(120px); transition: transform 0.2s ease-out; will-change: transform; contain: layout paint; }
+    .shape-1 { width: 450px; height: 450px; top: -50px; left: -100px; background: radial-gradient(circle, rgba(69, 97, 219, 0.4) 0%, rgba(69, 97, 219, 0) 70%); animation: move-1 20s infinite alternate; }
+    .shape-2 { width: 400px; height: 400px; bottom: -80px; right: -120px; background: radial-gradient(circle, rgba(144, 53, 212, 0.4) 0%, rgba(144, 53, 212, 0) 70%); animation: move-2 25s infinite alternate-reverse; }
+    @keyframes move-1 { from { transform: translate(0, 0) rotate(0deg) translateZ(0); } to { transform: translate(150px, 50px) rotate(60deg) translateZ(0); } }
+    @keyframes move-2 { from { transform: translate(0, 0) rotate(0deg) translateZ(0); } to { transform: translate(-100px, -50px) rotate(-40deg) translateZ(0); } }
+
+    .link-container { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; contain: layout; }
     .link {
-      position: relative;
-      background: transparent;
-      border-radius: 12px;
-      padding: 14px;
-      color: var(--text-primary);
-      text-decoration: none;
-      font-size: 16px;
-      font-weight: 500;
-      display: flex; 
-      align-items: center; 
-      justify-content: center; 
-      gap: 10px;
-      border: 1px solid var(--border-color);
-      transition: background 0.2s ease, transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-      will-change: transform;
-      overflow: hidden;
-      contain: layout style paint;
-      transform: translateZ(0);
+      position: relative; background: transparent; border-radius: 12px; padding: 14px; color: var(--text-primary);
+      text-decoration: none; font-size: 16px; font-weight: 500; display: flex; align-items: center; justify-content: center;
+      gap: 10px; border: 1px solid var(--border-color); transition: background 0.2s ease, transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      will-change: transform; overflow: hidden; contain: layout style paint; transform: translateZ(0);
     }
-    
     .link::before {
-      content: '';
-      position: absolute;
-      width: 150%; 
-      height: 150%;
+      content: ''; position: absolute; width: 150%; height: 150%;
       background: conic-gradient(from var(--angle), transparent 0%, #89f7fe 10%, #66a6ff 40%, #ff00c1 80%, transparent 100%);
-      animation: rotate 4s linear infinite;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      will-change: transform;
+      animation: rotate 4s linear infinite; opacity: 0; transition: opacity 0.3s ease; will-change: transform;
     }
-    
-    .link:hover::before { 
-      opacity: 0.5; 
-    }
-    
-    .link .content {
-      position: relative;
-      display: flex; 
-      align-items: center; 
-      justify-content: center; 
-      gap: 10px;
-      width: 100%; 
-      height: 100%;
-      background: var(--card-background);
-      border-radius: 11px;
-      contain: layout style;
-    }
-    
-    @property --angle { 
-      syntax: '<angle>'; 
-      inherits: false; 
-      initial-value: 0deg; 
-    }
-    
-    @keyframes rotate { 
-      to { --angle: 360deg; } 
-    }
-    
-    /* Footer and Theme Toggle */
-    footer {
-      margin-top: 30px; 
-      font-size: 11px; 
-      color: var(--text-secondary); 
-      opacity: 0.7; 
-      transition: color 0.4s ease;
-      contain: layout;
-    }
-    
-    footer .company { 
-      font-size: 10px; 
-    }
-    
+    .link:hover::before { opacity: 0.5; }
+    .link .content { position: relative; display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; height: 100%; background: var(--card-background); border-radius: 11px; contain: layout style; }
+    @property --angle { syntax: '<angle>'; inherits: false; initial-value: 0deg; }
+    @keyframes rotate { to { --angle: 360deg; } }
+
+    footer { margin-top: 30px; font-size: 11px; color: var(--text-secondary); opacity: 0.7; transition: color 0.4s ease; contain: layout; }
+    footer .company { font-size: 10px; }
     .theme-toggle {
-      position: absolute; 
-      top: 25px; 
-      right: 25px;
-      background: var(--card-background); 
-      border: 1px solid var(--border-color);
-      width: 40px; 
-      height: 40px; 
-      border-radius: 50%;
-      cursor: pointer; 
-      display: flex; 
-      justify-content: center; 
-      align-items: center;
-      backdrop-filter: blur(10px); 
-      -webkit-backdrop-filter: blur(10px);
-      transition: all 0.3s ease;
-      will-change: transform;
-      contain: layout style paint;
-      transform: translateZ(0);
+      position: absolute; top: 25px; right: 25px; background: var(--card-background); border: 1px solid var(--border-color);
+      width: 40px; height: 40px; border-radius: 50%; cursor: pointer; display: flex; justify-content: center; align-items: center;
+      backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); transition: all 0.3s ease; will-change: transform;
+      contain: layout style paint; transform: translateZ(0);
     }
-    
-    .theme-toggle:hover { 
-      transform: scale(1.1) translateZ(0); 
-    }
-    
-    .theme-toggle .fa-sun { 
-      display: none; 
-    }
-    
-    body.light-mode .theme-toggle .fa-sun { 
-      display: block; 
-    }
-    
-    body.light-mode .theme-toggle .fa-moon { 
-      display: none; 
-    }
-    
-    /* Mobile Responsive Design */
+    .theme-toggle:hover { transform: scale(1.1) translateZ(0); }
+    .theme-toggle .fa-sun { display: none; }
+    body.light-mode .theme-toggle .fa-sun { display: block; }
+    body.light-mode .theme-toggle .fa-moon { display: none; }
+
     @media (max-width: 480px) {
-      .glass-card { 
-        padding: 30px 20px; 
-      }
-      
-      .avatar { 
-        width: 70px; 
-        height: 70px; 
-        margin-bottom: 15px; 
-      }
-      
-      h1 { 
-        font-size: 30px; 
-      }
-      
-      p.bio { 
-        margin-bottom: 30px; 
-      }
-      
-      .link-container { 
-        grid-template-columns: 1fr; 
-        gap: 15px; 
-      }
-      
-      .link { 
-        padding: 16px; 
-        font-size: 16px; 
-      }
-      
-      .theme-toggle { 
-        top: 20px; 
-        right: 20px; 
-      }
+      .glass-card { padding: 30px 20px; }
+      .avatar { width: 70px; height: 70px; margin-bottom: 15px; }
+      h1 { font-size: 30px; }
+      .link-container { grid-template-columns: 1fr; gap: 15px; }
+      .link { padding: 16px; font-size: 16px; }
+      .theme-toggle { top: 20px; right: 20px; }
     }
-    
-    /* Accessibility improvements */
     @media (prefers-reduced-motion: reduce) {
-      .aurora-background .shape {
-        animation: none;
-      }
-      
-      .link::before {
-        animation: none;
-      }
-      
-      .glass-card {
-        animation: none;
-        opacity: 1;
-      }
-    }
-    
-    /* High contrast mode support */
-    @media (prefers-contrast: high) {
-      :root {
-        --border-color: rgba(255, 255, 255, 0.3);
-        --text-primary: #FFFFFF;
-        --text-secondary: #E0E0E0;
-      }
+      .aurora-background .shape, .link::before, .glass-card { animation: none; }
+      .glass-card { opacity: 1; }
     }
   </style>
-  
-  <!-- Google AdSense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1801526381696835" crossorigin="anonymous"></script>
 </head>
 <body>
   <div class="aurora-background">
     <div class="shape shape-1" data-speed="0.1"></div>
     <div class="shape shape-2" data-speed="-0.15"></div>
   </div>
+
   <button class="theme-toggle" aria-label="Toggle theme">
     <i class="fas fa-moon"></i>
     <i class="fas fa-sun"></i>
   </button>
+
   <main class="glass-card" role="main">
     <header>
       <img src="./avatar.png" alt="Shayan Taherkhani - Developer and Tech Explorer" class="avatar">
@@ -461,194 +224,107 @@
     
     <nav aria-label="Social Media Links">
       <div class="link-container">
-        <a class="link" href="https://github.com/shayanthn" target="_blank" rel="noopener noreferrer" aria-label="Visit Shayan's GitHub profile">
+        <a class="link" href="https://github.com/shayanthn" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
           <span class="content"><i class="fab fa-github" aria-hidden="true"></i> GitHub</span>
         </a>
-        <a class="link" href="https://www.researchgate.net/profile/Shayan-Taherkhani" target="_blank" rel="noopener noreferrer" aria-label="Visit Shayan's ResearchGate profile">
-          <span class="content"><i class="fas fa-flask" aria-hidden="true"></i> ResearcherGate</span>
+        <a class="link" href="https://www.researchgate.net/profile/Shayan-Taherkhani" target="_blank" rel="noopener noreferrer" aria-label="ResearchGate">
+          <span class="content"><i class="fas fa-flask" aria-hidden="true"></i> ResearchGate</span>
         </a>
-        <a class="link" href="mailto:admin@shayantaherkhani.ir" aria-label="Send email to Shayan">
+        <a class="link" href="mailto:admin@shayantaherkhani.ir" aria-label="Email">
           <span class="content"><i class="fas fa-envelope" aria-hidden="true"></i> Direct Contact</span>
         </a>
-        <a class="link" href="https://www.linkedin.com/in/shayantaherkhani78" target="_blank" rel="noopener noreferrer" aria-label="Visit Shayan's LinkedIn profile">
+        <a class="link" href="https://www.linkedin.com/in/shayantaherkhani78" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
           <span class="content"><i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn</span>
         </a>
       </div>
     </nav>
     
+    <!-- فقط این قسمت تغییر کرده -->
     <section aria-label="Featured Projects">
       <div class="link-container" style="margin-top:25px; grid-template-columns: 1fr;">
-        <a class="link" href="https://stickerino.ir" target="_blank" rel="noopener noreferrer" aria-label="Visit Sticker online shop">
+        <a class="link" href="https://medium.com/@shayanthn78" target="_blank" rel="noopener noreferrer" aria-label="Read articles on Medium">
           <span class="content" style="font-family: 'Manrope', sans-serif; font-size:1rem; font-weight:500; text-align:center; width:100%; display:flex; align-items:center; gap:10px; justify-content:center;">
-            <i class="fas fa-sticky-note" aria-hidden="true"></i>
-            Sticker online shop
-          </span>
-        </a>
-        <a class="link" href="https://aetherai.ir" target="_blank" rel="noopener noreferrer" aria-label="Play 2048 reward game">
-          <span class="content" style="font-family: 'Manrope', sans-serif; font-size:1rem; font-weight:500; text-align:center; width:100%; display:flex; align-items:center; gap:10px; justify-content:center;">
-            <i class="fas fa-gamepad" aria-hidden="true"></i>
-            2048 reward game
+            <i class="fab fa-medium" aria-hidden="true"></i>
+            Medium Articles
           </span>
         </a>
       </div>
     </section>
-    
+
     <footer>
       <div class="copyright">© 2025 Shayan Taherkhani</div>
       <div class="company">AetherosTech</div>
     </footer>
   </main>
-  <!-- Optimized JavaScript -->
+
   <script>
-    // Performance-optimized interactive effects
     document.addEventListener('DOMContentLoaded', () => {
       const card = document.querySelector('.glass-card');
       const shapes = document.querySelectorAll('.shape');
       const links = document.querySelectorAll('.link');
       const themeToggle = document.querySelector('.theme-toggle');
-      
-      // Throttled mouse move handler for better performance
       let ticking = false;
-      
+
       const handleMouseMove = (e) => {
         if (!ticking) {
           requestAnimationFrame(() => {
-            updateCardTransform(e);
-            updateShapePositions(e);
-            magneticLinks(e);
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            const rotateX = ((y - centerY) / centerY) * -3.5;
+            const rotateY = ((x - centerX) / centerX) * 3.5;
+            card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(0)`;
+
+            shapes.forEach(shape => {
+              const speed = parseFloat(shape.getAttribute('data-speed'));
+              const moveX = (window.innerWidth / 2 - e.clientX) * speed;
+              const moveY = (window.innerHeight / 2 - e.clientY) * speed;
+              shape.style.transform = `translate(${moveX}px, ${moveY}px) translateZ(0)`;
+            });
+
+            links.forEach(link => {
+              const rect = link.getBoundingClientRect();
+              const linkCenterX = rect.left + rect.width / 2;
+              const linkCenterY = rect.top + rect.height / 2;
+              const distance = Math.hypot(e.clientX - linkCenterX, e.clientY - linkCenterY);
+              const maxDistance = 120;
+              if (distance < maxDistance) {
+                const pullFactor = 1 - (distance / maxDistance);
+                const pullX = (e.clientX - linkCenterX) * 0.3 * pullFactor;
+                const pullY = (e.clientY - linkCenterY) * 0.3 * pullFactor;
+                link.style.transform = `translate(${pullX}px, ${pullY}px) translateZ(0)`;
+              } else {
+                link.style.transform = 'translate(0, 0) translateZ(0)';
+              }
+            });
+
             ticking = false;
           });
           ticking = true;
         }
       };
-      
-      const updateCardTransform = (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-        const rotateX = ((y - centerY) / centerY) * -3.5;
-        const rotateY = ((x - centerX) / centerX) * 3.5;
-        card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(0)`;
-      };
-      
-      const updateShapePositions = (e) => {
-        shapes.forEach(shape => {
-          const speed = parseFloat(shape.getAttribute('data-speed'));
-          const moveX = (window.innerWidth / 2 - e.clientX) * speed;
-          const moveY = (window.innerHeight / 2 - e.clientY) * speed;
-          shape.style.transform = `translate(${moveX}px, ${moveY}px) translateZ(0)`;
-        });
-      };
-      
-      const magneticLinks = (e) => {
-        const mouseX = e.clientX;
-        const mouseY = e.clientY;
-        
-        links.forEach(link => {
-          const rect = link.getBoundingClientRect();
-          const linkCenterX = rect.left + rect.width / 2;
-          const linkCenterY = rect.top + rect.height / 2;
-          const distance = Math.sqrt(Math.pow(mouseX - linkCenterX, 2) + Math.pow(mouseY - linkCenterY, 2));
-          const maxDistance = 120;
-          
-          if (distance < maxDistance) {
-            const pullFactor = 1 - (distance / maxDistance);
-            const pullX = (mouseX - linkCenterX) * 0.3 * pullFactor;
-            const pullY = (mouseY - linkCenterY) * 0.3 * pullFactor;
-            link.style.transform = `translate(${pullX}px, ${pullY}px) translateZ(0)`;
-          } else {
-            link.style.transform = 'translate(0, 0) translateZ(0)';
-          }
-        });
-      };
-      
-      // Event listeners with passive option for better performance
+
       document.body.addEventListener('mousemove', handleMouseMove, { passive: true });
-      
       document.body.addEventListener('mouseleave', () => {
         card.style.transform = 'rotateX(0) rotateY(0) translateZ(0)';
-        links.forEach(link => {
-          link.style.transform = 'translate(0, 0) translateZ(0)';
-        });
+        links.forEach(link => link.style.transform = 'translate(0, 0) translateZ(0)');
       }, { passive: true });
-      
-      // Theme toggle functionality with localStorage
-      const initializeTheme = () => {
-        const currentTheme = localStorage.getItem('theme');
-        if (currentTheme === 'light') {
-          document.body.classList.add('light-mode');
-        }
-      };
-      
-      const toggleTheme = () => {
+
+      // Theme toggle
+      const currentTheme = localStorage.getItem('theme');
+      if (currentTheme === 'light') document.body.classList.add('light-mode');
+
+      themeToggle.addEventListener('click', () => {
         document.body.classList.toggle('light-mode');
         const theme = document.body.classList.contains('light-mode') ? 'light' : 'dark';
         localStorage.setItem('theme', theme);
-      };
-      
-      // Initialize theme on load
-      initializeTheme();
-      
-      // Theme toggle event listener
-      themeToggle.addEventListener('click', toggleTheme, { passive: true });
-      
-      // Accessibility: keyboard navigation for theme toggle
-      themeToggle.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          toggleTheme();
-        }
-      });
-      
-      // Performance: Reduce animations on low-end devices
-      const reduceMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-      if (reduceMotionQuery.matches) {
-        document.body.style.setProperty('--animation-duration', '0s');
-      }
-      
-      // Intersection Observer for lazy loading effects
-      const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-      };
-      
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      }, observerOptions);
-      
-      // Observe elements for animations
-      document.querySelectorAll('.link').forEach(link => {
-        observer.observe(link);
-      });
-      
-      // Preload critical resources
-      const preloadImage = (src) => {
-        const img = new Image();
-        img.src = src;
-      };
-      
-      // Preload avatar image
-      preloadImage('./avatar.png');
+      }, { passive: true });
+
+      // Preload avatar
+      new Image().src = './avatar.png';
     });
-    
-    // Google Analytics or any tracking code would go here
-    // Performance monitoring
-    if ('performance' in window) {
-      window.addEventListener('load', () => {
-        setTimeout(() => {
-          const perfData = performance.getEntriesByType('navigation')[0];
-          if (perfData) {
-            console.log('Page Load Time:', perfData.loadEventEnd - perfData.loadEventStart, 'ms');
-          }
-        }, 0);
-      });
-    }
   </script>
 </body>
 </html>
