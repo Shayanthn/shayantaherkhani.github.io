@@ -1,10 +1,10 @@
-# Robots.txt for shayantaherkhani.github.io
+# Robots.txt for shayantaherkhani.ir
 
 User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://shayantaherkhani.github.io/sitemap.xml
+Sitemap: https://shayantaherkhani.ir/sitemap.xml
 
 # Search Engine Crawlers
 User-agent: Googlebot
