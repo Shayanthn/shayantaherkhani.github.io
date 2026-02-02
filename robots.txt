@@ -1,0 +1,90 @@
+# Robots.txt for shayantaherkhani.ir
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://shayantaherkhani.ir/sitemap.xml
+
+# Search Engine Crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# AI Crawlers & LLMs
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Anthropic-AI
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Cohere-AI
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+# Social Media Crawlers
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: Pinterest
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+User-agent: TelegramBot
+Allow: /
+
+# Social & Professional Links
+# GitHub: https://github.com/shayanthn
+# LinkedIn: https://www.linkedin.com/in/shayantaherkhani78
+# YouTube: https://youtube.com/@shayanthn
+# Medium: https://medium.com/@shayanthn78
+# ResearchGate: https://www.researchgate.net/profile/Shayan-Taherkhani
+# ORCID: https://orcid.org/0009-0003-8448-3520
+# Facebook: https://www.facebook.com/Shayan.Thn
+# Twitter/X: https://twitter.com/tah3rkhani
+# Email: admin@shayantaherkhani.ir

@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Primary Meta Tags -->
+  <title>Shayan Taherkhani</title>
+  <meta name="title" content="Shayan Taherkhani" />
+  <meta name="description" content="Shayan Taherkhani's personal portfolio. Developer, researcher and tech explorer." />
+  <meta name="keywords" content="Shayan Taherkhani, developer, programmer, tech explorer, portfolio, web development, research, AetherosTech" />
+  <meta name="author" content="Shayan Taherkhani" />
+  <meta name="robots" content="index, follow" />
+  <meta name="language" content="English" />
+  <meta name="revisit-after" content="7 days" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://shayantaherkhani.github.io/" />
+  <meta property="og:title" content="Shayan Taherkhani - Developer & Tech Explorer" />
+  <meta property="og:description" content="Personal portfolio of Shayan Taherkhani – developer, researcher and tech enthusiast." />
+  <meta property="og:image" content="https://shayantaherkhani.github.io/avatar.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="Shayan Taherkhani Portfolio" />
+  <meta property="og:locale" content="en_US" />
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://shayantaherkhani.github.io/" />
+  <meta property="twitter:title" content="Shayan Taherkhani - Developer & Tech Explorer" />
+  <meta property="twitter:description" content="Personal portfolio of Shayan Taherkhani – developer, researcher and tech enthusiast." />
+  <meta property="twitter:image" content="https://shayantaherkhani.github.io/avatar.png" />
+  <meta name="twitter:creator" content="@shayantaherkhani" />
+  
+  <!-- Additional SEO Meta Tags -->
+  <meta name="theme-color" content="#0D0D0F" />
+  <meta name="msapplication-TileColor" content="#0D0D0F" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://shayantaherkhani.github.io/" />
+  
+  <!-- Favicon and Icons -->
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="./icon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="./avatar.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./avatar.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./avatar.png">
+  
+  <!-- Preconnect for Performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  
+  <!-- DNS Prefetch -->
+  <link rel="dns-prefetch" href="//github.com">
+  <link rel="dns-prefetch" href="//linkedin.com">
+  <link rel="dns-prefetch" href="//researchgate.net">
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Manrope:wght@400;500&family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Shayan Taherkhani",
+    "url": "https://shayantaherkhani.github.io/",
+    "image": "https://shayantaherkhani.github.io/avatar.png",
+    "description": "Developer and tech explorer passionate about innovative projects and research",
+    "jobTitle": "Developer",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "AetherosTech"
+    },
+    "sameAs": [
+      "https://github.com/shayanthn",
+      "https://www.linkedin.com/in/shayantaherkhani78",
+      "https://www.researchgate.net/profile/Shayan-Taherkhani",
+      "https://medium.com/@shayanthn78"
+    ]
+  }
+  </script>
+
+  <!-- Critical CSS -->
+  <style>
+    :root {
+      --bg-color: #0D0D0F;
+      --card-background: rgba(22, 24, 28, 0.55);
+      --border-color: rgba(255, 255, 255, 0.1);
+      --text-primary: #F5F5F7;
+      --text-secondary: #A1A1A6;
+      --accent-hover: rgba(255, 255, 255, 0.08);
+      --card-glow: 0 0 50px rgba(144, 53, 212, 0.15), 0 0 20px rgba(69, 97, 219, 0.15);
+      --font-heading: 'Cinzel', serif;
+      --font-body: 'Manrope', sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 15px;
+      overflow: auto;
+      position: relative;
+      perspective: 1500px;
+      transition: background-color 0.4s ease;
+      will-change: background-color;
+      transform: translateZ(0);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .glass-card {
+      background: var(--card-background);
+      backdrop-filter: blur(30px);
+      -webkit-backdrop-filter: blur(30px);
+      border: 1px solid var(--border-color);
+      border-radius: 24px;
+      padding: 30px;
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
+      box-shadow: var(--card-glow);
+      transition: transform 0.2s ease-out, background-color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+      will-change: transform;
+      animation: fadeIn 1s 0.2s ease-out forwards;
+      opacity: 0;
+      contain: layout style paint;
+      transform: translateZ(0);
+    }
+    
+    .blog-card {
+        background: var(--card-background);
+        backdrop-filter: blur(30px);
+        -webkit-backdrop-filter: blur(30px);
+        border: 1px solid var(--border-color);
+        border-radius: 24px;
+        padding: 30px;
+        max-width: 400px;
+        width: 100%;
+        text-align: right;
+        direction: rtl;
+        box-shadow: var(--card-glow);
+        transition: transform 0.2s ease-out, background-color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+        will-change: transform;
+        animation: fadeIn 1s 0.4s ease-out forwards; /* Delayed fade in */
+        opacity: 0;
+        transform: translateZ(0);
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .main-wrapper {
+        display: flex;
+        gap: 30px;
+        align-items: center; /* Center vertically if needed, or 'flex-start' */
+        justify-content: center;
+        width: 100%;
+        max-width: 1200px;
+        flex-wrap: wrap; 
+        z-index: 10;
+    }
+
+    .blog-header {
+        font-family: var(--font-body); /* Or use Vazirmatn if loaded */
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        color: var(--text-primary);
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 10px;
+    }
+
+    .blog-item {
+        display: block;
+        text-decoration: none;
+        color: var(--text-secondary);
+        padding: 15px;
+        border-radius: 12px;
+        border: 1px solid transparent; /* Invisible border for layout stability */
+        margin-bottom: 10px;
+        transition: all 0.3s ease;
+        background: rgba(255, 255, 255, 0.03);
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .blog-item:hover {
+        background: rgba(255, 255, 255, 0.08); /* Light up */
+        color: var(--text-primary);
+        border-color: rgba(144, 53, 212, 0.3);
+        transform: translateY(-3px) scale(1.02);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    .blog-item h3 {
+        font-size: 1rem;
+        margin-bottom: 5px;
+        font-weight: 600;
+    }
+    
+    .blog-item span {
+        font-size: 0.8rem;
+        opacity: 0.7;
+    }
+
+    @media (max-width: 1024px) {
+        .main-wrapper {
+            flex-direction: column;
+        }
+        .blog-card {
+            max-width: 600px;
+            order: 2; /* Profile first, blog second on mobile */
+        }
+        .glass-card {
+            order: 1;
+        }
+    }
+
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(30px) translateZ(0); } to { opacity: 1; transform: translateY(0) translateZ(0); } }
+    .avatar-wrapper { position: relative; display: inline-block; margin: 0 auto 20px; }
+    .avatar { width: 80px; height: 80px; border-radius: 50%; border: 2px solid var(--border-color); object-fit: cover; background-color: rgba(255,255,255,0.05); will-change: auto; transform: translateZ(0); }
+    .status-indicator { position: absolute; bottom: 5px; right: 5px; width: 16px; height: 16px; background: #22c55e; border-radius: 50%; border: 3px solid var(--bg-color); animation: pulse-status 2s infinite; }
+    @keyframes pulse-status { 0%, 100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.5); } 50% { box-shadow: 0 0 0 6px rgba(34, 197, 94, 0); } }
+    h1 { font-family: var(--font-heading); font-size: 40px; font-weight: 700; margin-bottom: 12px; transition: color 0.4s ease; contain: layout; }
+    p.bio { font-size: 16px; font-weight: 400; color: var(--text-secondary); margin-bottom: 30px; transition: color 0.4s ease; min-height: 24px; }
+    .typing-cursor { display: inline-block; width: 2px; height: 1em; background: var(--text-secondary); margin-left: 2px; animation: blink 1s infinite; vertical-align: text-bottom; }
+    @keyframes blink { 0%, 50% { opacity: 1; } 51%, 100% { opacity: 0; } }
+  </style>
+
+  <!-- Non-critical CSS -->
+  <style>
+    body.light-mode {
+      --bg-color: #F0F2F5;
+      --card-background: rgba(255, 255, 255, 0.5);
+      --border-color: rgba(0, 0, 0, 0.1);
+      --text-primary: #1D1D1F;
+      --text-secondary: #515154;
+      --accent-hover: rgba(0, 0, 0, 0.05);
+      --card-glow: 0 0 50px rgba(0, 0, 0, 0.1);
+    }
+    .aurora-background { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; will-change: transform; contain: strict; }
+    .aurora-background .shape { position: absolute; border-radius: 50%; filter: blur(120px); transition: transform 0.2s ease-out; will-change: transform; contain: layout paint; }
+    .shape-1 { width: 450px; height: 450px; top: -50px; left: -100px; background: radial-gradient(circle, rgba(69, 97, 219, 0.4) 0%, rgba(69, 97, 219, 0) 70%); animation: move-1 20s infinite alternate; }
+    .shape-2 { width: 400px; height: 400px; bottom: -80px; right: -120px; background: radial-gradient(circle, rgba(144, 53, 212, 0.4) 0%, rgba(144, 53, 212, 0) 70%); animation: move-2 25s infinite alternate-reverse; }
+    @keyframes move-1 { from { transform: translate(0, 0) rotate(0deg) translateZ(0); } to { transform: translate(150px, 50px) rotate(60deg) translateZ(0); } }
+    @keyframes move-2 { from { transform: translate(0, 0) rotate(0deg) translateZ(0); } to { transform: translate(-100px, -50px) rotate(-40deg) translateZ(0); } }
+
+    .link-container { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; contain: layout; }
+    .link {
+      position: relative; background: transparent; border-radius: 12px; padding: 14px; color: var(--text-primary);
+      text-decoration: none; font-size: 16px; font-weight: 500; display: flex; align-items: center; justify-content: center;
+      gap: 10px; border: 1px solid var(--border-color); transition: background 0.2s ease, transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      will-change: transform; overflow: hidden; contain: layout style paint; transform: translateZ(0);
+    }
+    .link::before {
+      content: ''; position: absolute; width: 150%; height: 150%;
+      background: conic-gradient(from var(--angle), transparent 0%, #89f7fe 10%, #66a6ff 40%, #ff00c1 80%, transparent 100%);
+      animation: rotate 4s linear infinite; opacity: 0; transition: opacity 0.3s ease; will-change: transform;
+    }
+    .link:hover::before { opacity: 0.5; }
+    .link .ripple {
+      position: absolute; border-radius: 50%; background: rgba(255, 255, 255, 0.4);
+      transform: scale(0); animation: ripple-effect 0.6s ease-out; pointer-events: none;
+    }
+    @keyframes ripple-effect { to { transform: scale(4); opacity: 0; } }
+    .link:hover .fa-github { color: #fff; }
+    .link:hover .fa-linkedin { color: #0A66C2; }
+    .link:hover .fa-medium { color: #00ab6c; }
+    .link:hover .fa-youtube { color: #FF0000; }
+    .link:hover .fa-envelope { color: #EA4335; }
+    .link:hover .fa-flask { color: #00CCBB; }
+    .link .content { position: relative; display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; height: 100%; background: var(--card-background); border-radius: 11px; contain: layout style; }
+    @property --angle { syntax: '<angle>'; inherits: false; initial-value: 0deg; }
+    @keyframes rotate { to { --angle: 360deg; } }
+
+    footer { margin-top: 30px; font-size: 11px; color: var(--text-secondary); opacity: 0.7; transition: color 0.4s ease; contain: layout; }
+    footer .company { font-size: 10px; }
+    .theme-toggle {
+      position: absolute; top: 25px; right: 25px; background: var(--card-background); border: 1px solid var(--border-color);
+      width: 40px; height: 40px; border-radius: 50%; cursor: pointer; display: flex; justify-content: center; align-items: center;
+      backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); transition: all 0.3s ease; will-change: transform;
+      contain: layout style paint; transform: translateZ(0);
+    }
+    .theme-toggle:hover { transform: scale(1.1) translateZ(0); }
+    .theme-toggle .fa-sun { display: none; }
+    body.light-mode .theme-toggle .fa-sun { display: block; }
+    body.light-mode .theme-toggle .fa-moon { display: none; }
+
+    @media (max-width: 480px) {
+      .glass-card { padding: 25px 18px; }
+      .avatar-wrapper { margin-bottom: 15px; }
+      .avatar { width: 70px; height: 70px; }
+      .status-indicator { width: 14px; height: 14px; bottom: 3px; right: 3px; border-width: 2px; }
+      h1 { font-size: 28px; margin-bottom: 10px; }
+      p.bio { font-size: 14px; margin-bottom: 25px; }
+      .link-container { grid-template-columns: 1fr; gap: 12px; }
+      .link { padding: 14px; font-size: 15px; }
+      .theme-toggle { top: 15px; right: 15px; width: 36px; height: 36px; }
+      footer { margin-top: 25px; }
+      .secondary-links { margin-top: 20px !important; }
+    }
+    @media (max-width: 360px) {
+      .glass-card { padding: 20px 15px; }
+      h1 { font-size: 24px; }
+    }
+    .secondary-links { margin-top: 20px; }
+
+    /* Custom Cursor */
+    .cursor-dot { position: fixed; width: 8px; height: 8px; background: #fff; border-radius: 50%; pointer-events: none; z-index: 9999; transition: transform 0.1s ease, opacity 0.3s ease; mix-blend-mode: difference; }
+    .cursor-ring { position: fixed; width: 35px; height: 35px; border: 2px solid rgba(255,255,255,0.5); border-radius: 50%; pointer-events: none; z-index: 9998; transition: transform 0.15s ease-out, width 0.3s ease, height 0.3s ease, border-color 0.3s ease; transform: translate(-50%, -50%); }
+    .cursor-ring.hover { width: 50px; height: 50px; border-color: rgba(144, 53, 212, 0.8); }
+    .cursor-dot.hover { transform: translate(-50%, -50%) scale(0.5); }
+    .cursor-ring.click { transform: translate(-50%, -50%) scale(0.8); }
+    @media (max-width: 768px), (hover: none) { .cursor-dot, .cursor-ring { display: none; } }
+    body.custom-cursor, body.custom-cursor a, body.custom-cursor button { cursor: none; }
+
+    /* Particle Canvas */
+    #particle-canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -2; pointer-events: none; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .aurora-background .shape, .link::before, .glass-card { animation: none; }
+      .glass-card { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <canvas id="particle-canvas"></canvas>
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
+
+  <div class="aurora-background">
+    <div class="shape shape-1" data-speed="0.1"></div>
+    <div class="shape shape-2" data-speed="-0.15"></div>
+  </div>
+
+  <button class="theme-toggle" aria-label="Toggle theme">
+    <i class="fas fa-moon"></i>
+    <i class="fas fa-sun"></i>
+  </button>
+
+  <div class="main-wrapper">
+  <main class="glass-card" role="main">
+    <header>
+      <div class="avatar-wrapper">
+        <img src="./avatar.png" alt="Shayan Taherkhani - Developer and Tech Explorer" class="avatar">
+        <span class="status-indicator" title="Available"></span>
+      </div>
+      <h1>Shayan Taherkhani</h1>
+      <p class="bio">I'm someone who can't stop exploring</p>
+    </header>
+    
+    <nav aria-label="Social Media Links">
+      <div class="link-container">
+        <a class="link" href="https://github.com/shayanthn" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <span class="content"><i class="fab fa-github" aria-hidden="true"></i> GitHub</span>
+        </a>
+        <a class="link" href="https://www.linkedin.com/in/shayantaherkhani78" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <span class="content"><i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn</span>
+        </a>
+        <a class="link" href="https://medium.com/@shayanthn78" target="_blank" rel="noopener noreferrer" aria-label="Medium">
+          <span class="content"><i class="fab fa-medium" aria-hidden="true"></i> Medium</span>
+        </a>
+        <a class="link" href="https://youtube.com/@shayanthn" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+          <span class="content"><i class="fab fa-youtube" aria-hidden="true"></i> YouTube</span>
+        </a>
+      </div>
+    </nav>
+    
+    <!-- Secondary Links -->
+    <section aria-label="Contact & Research">
+      <div class="link-container secondary-links">
+        <a class="link" href="mailto:admin@shayantaherkhani.ir" aria-label="Email">
+          <span class="content"><i class="fas fa-envelope" aria-hidden="true"></i> Direct Contact</span>
+        </a>
+        <a class="link" href="https://www.researchgate.net/profile/Shayan-Taherkhani" target="_blank" rel="noopener noreferrer" aria-label="ResearchGate">
+          <span class="content"><i class="fas fa-flask" aria-hidden="true"></i> ResearchGate</span>
+        </a>
+      </div>
+    </section>
+
+    <footer>
+      <div class="copyright">© 2025 Shayan Taherkhani</div>
+      <a href="https://t.me/aetherostech" target="_blank" rel="noopener noreferrer" class="company" style="text-decoration:none; color:inherit; cursor:pointer;">AetherosTech</a>
+    </footer>
+  </main>
+
+  <aside class="blog-card" style="font-family: 'Vazirmatn', sans-serif;">
+      <div class="blog-header">آخرین مقالات (وبلاگ)</div>
+      <a href="./introverts-winning-ai-era/" class="blog-item">
+          <h3 style="margin:0; font-size:1rem; margin-bottom:5px;">چرا درون‌گراها برندگان خاموش عصر AI هستند؟</h3>
+          <span style="font-size:0.75rem; opacity:0.6;"><i class="far fa-calendar-alt"></i> ۱۴ بهمن ۱۴۰۴</span>
+      </a>
+      <!-- Add more items here -->
+  </aside>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const cards = document.querySelectorAll('.glass-card, .blog-card');
+      const shapes = document.querySelectorAll('.shape');
+      const links = document.querySelectorAll('.link');
+      const themeToggle = document.querySelector('.theme-toggle');
+      let ticking = false;
+
+      const handleMouseMove = (e) => {
+        if (!ticking) {
+          requestAnimationFrame(() => {
+            cards.forEach(card => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                // Only tilt if mouse is somewhat close or over? Actually global movement is fine but maybe clamp it
+                // Logic used previously relies on mouse relative to card.
+                const rotateX = ((y - centerY) / centerY) * -3.5;
+                const rotateY = ((x - centerX) / centerX) * 3.5;
+                card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(0)`;
+            });
+
+            shapes.forEach(shape => {
+              const speed = parseFloat(shape.getAttribute('data-speed'));
+              const moveX = (window.innerWidth / 2 - e.clientX) * speed;
+              const moveY = (window.innerHeight / 2 - e.clientY) * speed;
+              shape.style.transform = `translate(${moveX}px, ${moveY}px) translateZ(0)`;
+            });
+
+            links.forEach(link => {
+              const rect = link.getBoundingClientRect();
+              const linkCenterX = rect.left + rect.width / 2;
+              const linkCenterY = rect.top + rect.height / 2;
+              const distance = Math.hypot(e.clientX - linkCenterX, e.clientY - linkCenterY);
+              const maxDistance = 120;
+              if (distance < maxDistance) {
+                const pullFactor = 1 - (distance / maxDistance);
+                const pullX = (e.clientX - linkCenterX) * 0.3 * pullFactor;
+                const pullY = (e.clientY - linkCenterY) * 0.3 * pullFactor;
+                link.style.transform = `translate(${pullX}px, ${pullY}px) translateZ(0)`;
+              } else {
+                link.style.transform = 'translate(0, 0) translateZ(0)';
+              }
+            });
+
+            ticking = false;
+          });
+          ticking = true;
+        }
+      };
+
+      document.body.addEventListener('mousemove', handleMouseMove, { passive: true });
+      document.body.addEventListener('mouseleave', () => {
+        cards.forEach(c => c.style.transform = 'rotateX(0) rotateY(0) translateZ(0)');
+        links.forEach(link => link.style.transform = 'translate(0, 0) translateZ(0)');
+      }, { passive: true });
+
+      // Theme toggle
+      const currentTheme = localStorage.getItem('theme');
+      if (currentTheme === 'light') document.body.classList.add('light-mode');
+
+      themeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('light-mode');
+        const theme = document.body.classList.contains('light-mode') ? 'light' : 'dark';
+        localStorage.setItem('theme', theme);
+      }, { passive: true });
+
+      // Ripple effect
+      links.forEach(link => {
+        link.addEventListener('click', function(e) {
+          const ripple = document.createElement('span');
+          ripple.classList.add('ripple');
+          const rect = this.getBoundingClientRect();
+          const size = Math.max(rect.width, rect.height);
+          ripple.style.width = ripple.style.height = size + 'px';
+          ripple.style.left = (e.clientX - rect.left - size / 2) + 'px';
+          ripple.style.top = (e.clientY - rect.top - size / 2) + 'px';
+          this.appendChild(ripple);
+          setTimeout(() => ripple.remove(), 600);
+        });
+      });
+
+      // Preload avatar
+      new Image().src = './avatar.png';
+
+      // Custom Cursor
+      const cursorDot = document.querySelector('.cursor-dot');
+      const cursorRing = document.querySelector('.cursor-ring');
+      if (window.matchMedia('(hover: hover)').matches && window.innerWidth > 768) {
+        document.body.classList.add('custom-cursor');
+        let mouseX = 0, mouseY = 0;
+        let ringX = 0, ringY = 0;
+        document.addEventListener('mousemove', (e) => {
+          mouseX = e.clientX; mouseY = e.clientY;
+          cursorDot.style.left = mouseX + 'px';
+          cursorDot.style.top = mouseY + 'px';
+          cursorDot.style.transform = 'translate(-50%, -50%)';
+        }, { passive: true });
+        const animateRing = () => {
+          ringX += (mouseX - ringX) * 0.15;
+          ringY += (mouseY - ringY) * 0.15;
+          cursorRing.style.left = ringX + 'px';
+          cursorRing.style.top = ringY + 'px';
+          requestAnimationFrame(animateRing);
+        };
+        animateRing();
+        document.querySelectorAll('a, button, .link').forEach(el => {
+          el.addEventListener('mouseenter', () => { cursorRing.classList.add('hover'); cursorDot.classList.add('hover'); });
+          el.addEventListener('mouseleave', () => { cursorRing.classList.remove('hover'); cursorDot.classList.remove('hover'); });
+        });
+        document.addEventListener('mousedown', () => cursorRing.classList.add('click'));
+        document.addEventListener('mouseup', () => cursorRing.classList.remove('click'));
+        document.addEventListener('mouseleave', () => { cursorDot.style.opacity = '0'; cursorRing.style.opacity = '0'; });
+        document.addEventListener('mouseenter', () => { cursorDot.style.opacity = '1'; cursorRing.style.opacity = '1'; });
+      }
+
+      // Particle System
+      const canvas = document.getElementById('particle-canvas');
+      const ctx = canvas.getContext('2d');
+      let particles = [];
+      let mouse = { x: null, y: null, radius: 120 };
+      const isLightMode = () => document.body.classList.contains('light-mode');
+
+      const resizeCanvas = () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      };
+      resizeCanvas();
+      window.addEventListener('resize', resizeCanvas);
+
+      document.addEventListener('mousemove', (e) => {
+        mouse.x = e.clientX;
+        mouse.y = e.clientY;
+      });
+      document.addEventListener('mouseleave', () => { mouse.x = null; mouse.y = null; });
+
+      class Particle {
+        constructor() {
+          this.x = Math.random() * canvas.width;
+          this.y = Math.random() * canvas.height;
+          this.size = Math.random() * 2 + 1;
+          this.baseX = this.x;
+          this.baseY = this.y;
+          this.density = Math.random() * 30 + 1;
+          this.vx = (Math.random() - 0.5) * 0.5;
+          this.vy = (Math.random() - 0.5) * 0.5;
+        }
+        draw() {
+          const color = isLightMode() ? 'rgba(100, 100, 120, 0.6)' : 'rgba(255, 255, 255, 0.6)';
+          ctx.fillStyle = color;
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+          ctx.closePath();
+          ctx.fill();
+        }
+        update() {
+          if (mouse.x != null && mouse.y != null) {
+            let dx = mouse.x - this.x;
+            let dy = mouse.y - this.y;
+            let distance = Math.sqrt(dx * dx + dy * dy);
+            let forceDirectionX = dx / distance;
+            let forceDirectionY = dy / distance;
+            let maxDistance = mouse.radius;
+            let force = (maxDistance - distance) / maxDistance;
+            let directionX = forceDirectionX * force * this.density * -1;
+            let directionY = forceDirectionY * force * this.density * -1;
+            if (distance < mouse.radius) {
+              this.x += directionX;
+              this.y += directionY;
+            }
+          }
+          this.x += this.vx;
+          this.y += this.vy;
+          if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+          if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+        }
+      }
+
+      const init = () => {
+        particles = [];
+        const numParticles = Math.min((canvas.width * canvas.height) / 12000, 100);
+        for (let i = 0; i < numParticles; i++) {
+          particles.push(new Particle());
+        }
+      };
+      init();
+
+      const connectParticles = () => {
+        const lineColor = isLightMode() ? 'rgba(100, 100, 140,' : 'rgba(144, 53, 212,';
+        for (let a = 0; a < particles.length; a++) {
+          for (let b = a; b < particles.length; b++) {
+            let dx = particles[a].x - particles[b].x;
+            let dy = particles[a].y - particles[b].y;
+            let distance = Math.sqrt(dx * dx + dy * dy);
+            if (distance < 120) {
+              ctx.strokeStyle = lineColor + (1 - distance / 120) * 0.3 + ')';
+              ctx.lineWidth = 0.5;
+              ctx.beginPath();
+              ctx.moveTo(particles[a].x, particles[a].y);
+              ctx.lineTo(particles[b].x, particles[b].y);
+              ctx.stroke();
+            }
+          }
+        }
+      };
+
+      const animateParticles = () => {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particles.forEach(p => { p.update(); p.draw(); });
+        connectParticles();
+        requestAnimationFrame(animateParticles);
+      };
+      animateParticles();
+
+      // Typing effect
+      const bio = document.querySelector('.bio');
+      const text = "I'm someone who can't stop exploring";
+      bio.innerHTML = '<span class="typing-cursor"></span>';
+      let i = 0;
+      const typeWriter = () => {
+        if (i < text.length) {
+          bio.innerHTML = text.substring(0, i + 1) + '<span class="typing-cursor"></span>';
+          i++;
+          setTimeout(typeWriter, 60);
+        }
+      };
+      setTimeout(typeWriter, 800);
+    });
+  </script>
+</body>
+</html>
