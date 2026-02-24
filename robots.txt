@@ -1,90 +1,42 @@
 # Robots.txt for shayantaherkhani.ir
+# Managed: 2026-02-24
 
+# Global rules
 User-agent: *
 Allow: /
 
-# Sitemap
+# Recommended crawl-delay for non-Google crawlers (Google ignores this directive)
+Crawl-delay: 5
+
+# Sitemap location (required)
 Sitemap: https://shayantaherkhani.ir/sitemap.xml
 
-# Search Engine Crawlers
-User-agent: Googlebot
-Allow: /
+# Preferred host (some crawlers support this)
+Host: shayantaherkhani.ir
 
-User-agent: Bingbot
-Allow: /
+# Security: explicitly block potentially sensitive paths
+Disallow: /.git/
+Disallow: /.github/
+Disallow: /node_modules/
+Disallow: /scripts/
+Disallow: /config/
+Disallow: /private/
 
-User-agent: Slurp
-Allow: /
+# If you host administrative interfaces, block them
+Disallow: /admin/
+Disallow: /wp-admin/
 
-User-agent: DuckDuckBot
-Allow: /
+# Allow common public folders
+Allow: /images/
+Allow: /how-to-speak-with-gpt-5/
+Allow: /introverts-winning-ai-era/
+Allow: /seahorse-ai-bug/
 
-User-agent: Baiduspider
-Allow: /
+# Helpful guidance for crawlers (non-standard comments, ignored by bots)
+# If you want LLM crawlers to index full content, keep Allow rules; to opt-out,
+# add specific Disallow rules for endpoints you don't want scraped.
 
-User-agent: YandexBot
-Allow: /
-
-# AI Crawlers & LLMs
-User-agent: GPTBot
-Allow: /
-
-User-agent: ChatGPT-User
-Allow: /
-
-User-agent: Google-Extended
-Allow: /
-
-User-agent: Anthropic-AI
-Allow: /
-
-User-agent: Claude-Web
-Allow: /
-
-User-agent: CCBot
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: Cohere-AI
-Allow: /
-
-User-agent: FacebookBot
-Allow: /
-
-User-agent: Meta-ExternalAgent
-Allow: /
-
-User-agent: Applebot
-Allow: /
-
-User-agent: Amazonbot
-Allow: /
-
-# Social Media Crawlers
-User-agent: Twitterbot
-Allow: /
-
-User-agent: LinkedInBot
-Allow: /
-
-User-agent: Pinterest
-Allow: /
-
-User-agent: WhatsApp
-Allow: /
-
-User-agent: TelegramBot
-Allow: /
-
-# Social & Professional Links
-# GitHub: https://github.com/shayanthn
-# LinkedIn: https://www.linkedin.com/in/shayantaherkhani78
-# YouTube: https://youtube.com/@shayanthn
-# Medium: https://medium.com/@shayanthn78
-# ResearchGate: https://www.researchgate.net/profile/Shayan-Taherkhani
-# ORCID: https://orcid.org/0009-0003-8448-3520
-# Facebook: https://www.facebook.com/Shayan.Thn
-# Twitter/X: https://twitter.com/tah3rkhani
-# Email: admin@shayantaherkhani.ir
+# Contact / webmaster
+User-agent: *
+Disallow:
+# webmaster: admin@shayantaherkhani.ir
