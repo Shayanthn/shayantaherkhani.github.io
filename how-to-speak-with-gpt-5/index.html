@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>راهنمای جامع کار با GPT-5: چگونه هوشمندانه پرامپت نویسی کنیم؟ | شایان طاهرخانی</title>
+  <meta name="description" content="آموزش تخصصی مهندسی پرامپت برای GPT-5 توسط شایان طاهرخانی. یاد بگیرید چگونه با ساختار XML و مدیریت عمق استدلال، از هوش مصنوعی نتایج دقیق بگیرید." />
+  <meta name="keywords" content="GPT-5, مهندسی پرامپت, هوش مصنوعی, شایان طاهرخانی, پرامپت نویسی حرفه ای, استدلال هوش مصنوعی, آموزش AI" />
+  <meta name="author" content="شایان طاهرخانی" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://shayantaherkhani.ir/how-to-speak-with-gpt-5/" />
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    :root {
+      --bg-color: #0D0D0F;
+      --card-background: rgba(22, 24, 28, 0.9);
+      --border-color: rgba(255, 255, 255, 0.1);
+      --text-primary: #F5F5F7;
+      --text-secondary: #A1A1A6;
+      --accent: #10b981; /* تغییر رنگ به سبز زمردی برای تم GPT-5 */
+      --font-body: 'Vazirmatn', sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      line-height: 1.8;
+      display: flex;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+    .article-container {
+      background: var(--card-background);
+      border: 1px solid var(--border-color);
+      border-radius: 24px;
+      padding: 40px;
+      max-width: 800px;
+      width: 100%;
+      box-shadow: 0 0 50px rgba(0,0,0,0.5);
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    h1, h2, h3 { color: var(--accent); }
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 15px;
+    }
+    h2 {
+      font-size: 1.6rem;
+      margin-top: 35px;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    p, li {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      margin-bottom: 20px;
+      text-align: justify;
+    }
+    strong { color: var(--text-primary); }
+    pre {
+      background: #161b22;
+      padding: 20px;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      overflow-x: auto;
+      margin-bottom: 20px;
+      direction: ltr;
+      text-align: left;
+      font-family: 'Consolas', monospace;
+      font-size: 0.95rem;
+      color: #d1d5db;
+    }
+    blockquote {
+      border-right: 4px solid var(--accent);
+      padding-right: 20px;
+      margin: 25px 0;
+      background: rgba(16, 185, 129, 0.05);
+      padding: 20px;
+      border-radius: 8px;
+    }
+    ul { margin-right: 25px; margin-bottom: 20px; }
+    .author-info {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      margin-bottom: 30px;
+      display: flex;
+      gap: 15px;
+    }
+    .step-number {
+      background: var(--accent);
+      color: #000;
+      width: 28px;
+      height: 28px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      font-weight: bold;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <article class="article-container">
+    <h1>چگونه با GPT-5 صحبت کنیم؟ (راهنمای عملی مهندسی پرامپت هوشمند)</h1>
+    
+    <div class="author-info">
+      <span><i class="fas fa-user"></i> نویسنده: شایان طاهرخانی</span>
+      <span><i class="fas fa-bolt"></i> سطح: پیشرفته</span>
+      <span><i class="fas fa-calendar-alt"></i> فوریه ۲۰۲۶</span>
+    </div>
+
+    <p>کار کردن با <strong>GPT-5</strong> دیگر صرفاً به معنای دستور دادن نیست؛ بلکه درباره ایجاد شفافیت، درک بافتار (Context) و همکاری دوجانبه است. این مدل فقط متن را تکمیل نمی‌کند، بلکه پا‌به‌پای شما «فکر» می‌کند.</p>
+    
+    <p>در این راهنما، من (شایان طاهرخانی) به شما نشان می‌دهم که چگونه پرامپت‌های خود را ساختاردهی کنید تا GPT-5 نتایجی دقیق‌تر، سریع‌تر و نزدیک‌تر به استدلال انسانی ارائه دهد.</p>
+
+    <h2><span class="step-number">۱</span> صریح باشید و از دستورات متناقض دوری کنید</h2>
+    <p>هوش مصنوعی GPT-5 دستورات را با دقت جراحی اجرا می‌کند، اما زمانی که ورودی شما مبهم یا متناقض باشد، دچار چالش می‌شود. قبل از اجرای پرامپت، همیشه فایل‌های تنظیمات خود (مانند <code>.cursor/rules</code> یا <code>AGENTS.md</code>) را از نظر یکپارچگی بررسی کنید.</p>
+    <blockquote>شفافیت همیشه بر پیچیدگی غلبه می‌کند. پرامپت‌های ساده و بدون ابهام، زنجیره‌های استدلال قوی‌تری می‌سازند.</blockquote>
+
+    <h2><span class="step-number">۲</span> تعادل بین عمق استدلال و پیچیدگی کار</h2>
+    <p>مدل GPT-5 همیشه در حال تحلیل است، اما شما می‌توانید تعیین کنید که این تحلیل چقدر عمیق باشد. برای وظایف چندمرحله‌ای یا تحلیلی، درخواست <strong>High Reasoning</strong> (استدلال بالا) بدهید.</p>
+    <p>اگر مدل شروع به «بیش‌از‌حد فکر کردن» روی مسائل ساده کرد، می‌توانید با جزئیات بیشتر دستور را محدود کنید یا سطح استدلال را به متوسط (Medium) یا پایین (Low) کاهش دهید تا بازدهی قربانی تحلیل‌های بیهوده نشود.</p>
+
+    <h2><span class="step-number">۳</span> استفاده از ساختار قدرتمند XML</h2>
+    <p>تجربه من نشان داده که GPT-5 عاشق ساختارهای منطقی است. استفاده از سینتکس شبه‌XML برای کنترل خروجی معجزه می‌کند:</p>
+
+<pre>
+&lt;code_editing_rules&gt;
+  &lt;guiding_principles&gt;
+    - تمام کامپوننت‌ها ماژولار و قابل استفاده مجدد باشند
+    - الگوهای Declarative به Imperative ترجیح داده شوند
+    - توابع زیر ۵۰ خط نگه داشته شوند
+  &lt;/guiding_principles&gt;
+  &lt;frontend_stack_defaults&gt;
+    - Styling: TailwindCSS
+    - Languages: TypeScript, React
+  &lt;/frontend_stack_defaults&gt;
+&lt;/code_editing_rules&gt;
+</pre>
+
+    <p>این کار مانند دادن یک <strong>نقشه ذهنی (Mental Blueprint)</strong> به هوش مصنوعی قبل از شروع عملیات است.</p>
+
+    <h2><span class="step-number">۴</span> از لحن بیش از حد دستوری پرهیز کنید</h2>
+    <p>در مدل‌های قدیمی، عباراتی مثل «بسیار دقیق باش» یا «تمام جزئیات را بررسی کن» رایج بود. اما در <strong>مهندسی پرامپت GPT-5</strong>، این لحن ممکن است باعث شود مدل در تله جمع‌آوری بیش از حد داده یا فراخوانی‌های بیهوده ابزارها (Tool Calls) بیفتد. از عباراتی استفاده کنید که ابتکار عمل را به مدل می‌دهد بدون اینکه او را غرق در جزئیات غیرضروری کند.</p>
+
+    <h2><span class="step-number">۵</span> اجازه برنامه‌ریزی و خود-بازنگری بدهید</h2>
+    <p>وقتی در حال ساختن چیزی از صفر هستید (مثل یک اپلیکیشن یا فریمورک)، GPT-5 بهترین عملکرد را زمانی دارد که اجازه داشته باشد ابتدا به صورت داخلی برنامه‌ریزی و خود-بازنگری (Self-Reflection) انجام دهد:</p>
+
+<pre>
+&lt;self_reflection&gt;
+  - ابتدا یک شاخص کیفی داخلی برای پاسخ طراحی کن.
+  - هر مرحله را با آن شاخص بسنج.
+  - اگر خروجی با معیارها همخوانی نداشت، قبل از پاسخ نهایی اصلاحش کن.
+&lt;/self_reflection&gt;
+</pre>
+
+    <h2><span class="step-number">۶</span> کنترل اشتیاقِ عامل (Agent)</h2>
+    <p>به صورت پیش‌فرض، GPT-5 تمایل دارد بافتار (Context) زیادی جمع‌آوری کند. شما باید تعیین کنید که این مدل چقدر خودرئیس (Autonomous) باشد:</p>
+    <ul>
+      <li><strong>بودجه ابزار:</strong> برای محدود کردن جستجوهای بی‌رویه، سقف تعیین کنید.</li>
+      <li><strong>تاییدیه کاربر:</strong> مشخص کنید کجا باید متوقف شود و سوال بپرسد و کجا می‌تواند مستقلاً اقدام کند.</li>
+    </ul>
+
+    <h2>کلام آخر</h2>
+    <p>در نگاه من، <strong>GPT-5</strong> صرفاً یک ابزار نیست؛ بلکه یک همکار است. وقتی به آن شفافیت، ساختار و فضای استدلال می‌دهید، به افزونه‌ای برای ذهن شما تبدیل می‌شود، نه فقط ابزاری برای تایپ کردن.</p>
+
+    <p style="margin-top: 40px; border-top: 1px solid var(--border-color); padding-top: 20px;">
+      <strong>استراتژی و نگارش: شایان طاهرخانی</strong>
+    </p>
+  </article>
+</body>
+</html>
