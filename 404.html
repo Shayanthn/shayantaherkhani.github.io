@@ -30,17 +30,41 @@
   <div class="card" role="main" aria-labelledby="title">
     <div class="anim-bg" aria-hidden="true"></div>
     <div class="floating" aria-hidden="true"></div>
-    <div class="meta">شایان طاهرخانی — سایت</div>
     <div style="display:flex;gap:28px;align-items:center;flex-wrap:wrap">
       <div class="code">۴۰۴</div>
       <div>
-        <h1 id="title">اوه! صفحه‌ای که دنبال آن بودید یافت نشد.</h1>
-        <p>ممکن است آدرس تغییر کرده یا صفحه حذف شده باشد. با دکمهٔ زیر به صفحهٔ اصلی بازگردید یا از جستجو استفاده کنید.</p>
+        <h1 id="title">اوه! صفحه‌ای که دنبال آن بودید پیدا نشد.</h1>
+        <p>ممکن است آدرس تغییر کرده یا صفحه حذف شده باشد. از جستجو استفاده کنید یا به یکی از صفحات زیر بروید.</p>
+
+        <form action="/" method="get" role="search" aria-label="جستجوی سایت" style="margin-top:14px;display:flex;gap:8px;max-width:520px">
+          <input name="s" type="search" placeholder="جستجو در سایت..." aria-label="جستجو" style="flex:1;padding:10px 12px;border-radius:10px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:var(--text)">
+          <button type="submit" class="btn" style="padding:10px 14px">جستجو</button>
+        </form>
+
         <div class="actions">
           <a class="btn" href="/">بازگشت به صفحه اصلی</a>
-          <a class="ghost" href="/">جستجو در سایت</a>
+          <a class="ghost" href="/">فهرست مقالات</a>
+          <a class="ghost" href="mailto:admin@shayantaherkhani.ir">تماس با ما</a>
         </div>
       </div>
+    </div>
+
+    <!-- animated decorative icon -->
+    <div aria-hidden="true" style="position:absolute;right:18px;top:18px;">
+      <svg width="72" height="72" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <linearGradient id="g" x1="0" x2="1">
+            <stop offset="0" stop-color="#10b981"/>
+            <stop offset="1" stop-color="#34D399"/>
+          </linearGradient>
+        </defs>
+        <circle cx="24" cy="24" r="10" stroke="url(#g)" stroke-width="2" opacity="0.95"></circle>
+        <g transform="translate(24 24)">
+          <circle cx="0" cy="0" r="14" stroke="rgba(255,255,255,0.02)" stroke-width="4"></circle>
+        </g>
+        <path d="M24 8v4" stroke="#fff" stroke-opacity="0.06" stroke-width="1.2" stroke-linecap="round"/>
+        <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 24 24" to="360 24 24" dur="8s" repeatCount="indefinite"/>
+      </svg>
     </div>
   </div>
 </body>

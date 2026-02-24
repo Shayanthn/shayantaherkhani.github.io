@@ -27,8 +27,27 @@
       <div>
         <h1>دسترسی شما به این صفحه محدود شده است.</h1>
         <p>اگر فکر می‌کنید این پیام اشتباه است، لطفاً با مدیر سایت تماس بگیرید یا بعداً مجدداً تلاش کنید.</p>
-        <a class="btn" href="/">بازگشت به صفحه اصلی</a>
+
+        <form action="/" method="get" role="search" aria-label="جستجوی سایت" style="margin-top:12px;display:flex;gap:8px;max-width:480px">
+          <input name="s" type="search" placeholder="جستجو در سایت..." aria-label="جستجو" style="flex:1;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:var(--text)">
+          <button type="submit" class="btn">جستجو</button>
+        </form>
+
+        <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
+          <a class="btn" href="/">بازگشت به صفحه اصلی</a>
+          <a class="ghost" href="/">فهرست مقالات</a>
+          <a class="ghost" href="mailto:admin@shayantaherkhani.ir">تماس</a>
+        </div>
       </div>
+    </div>
+
+    <div aria-hidden="true" style="position:absolute;left:18px;top:18px;">
+      <svg width="60" height="60" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="24" cy="24" r="12" stroke="#ffb86b" stroke-width="2" fill="rgba(255,184,107,0.02)"></circle>
+        <path d="M18 30c4-3 8-3 12 0" stroke="#ffb86b" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <animate attributeName="opacity" values="0.25;1;0.25" dur="3s" repeatCount="indefinite"/>
+        </path>
+      </svg>
     </div>
   </div>
 </body>

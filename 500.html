@@ -27,8 +27,27 @@
       <div>
         <h1>خطای داخلی سرور</h1>
         <p>متاسفیم — مشکلی در سرور پیش آمده و تیم فنی در حال رفع آن است. لطفاً چند دقیقه بعد دوباره تلاش کنید.</p>
-        <a class="btn" href="/">رفتن به صفحه اصلی</a>
+
+        <form action="/" method="get" role="search" aria-label="جستجوی سایت" style="margin-top:12px;display:flex;gap:8px;max-width:480px">
+          <input name="s" type="search" placeholder="جستجو در سایت..." aria-label="جستجو" style="flex:1;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:var(--text)">
+          <button type="submit" class="btn">جستجو</button>
+        </form>
+
+        <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
+          <a class="btn" href="/">رفتن به صفحه اصلی</a>
+          <a class="ghost" href="/">وضعیت سایت</a>
+          <a class="ghost" href="mailto:admin@shayantaherkhani.ir">تماس پشتیبانی</a>
+        </div>
       </div>
+    </div>
+
+    <div aria-hidden="true" style="position:absolute;left:18px;bottom:18px;">
+      <svg width="64" height="64" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="8" y="8" width="32" height="32" rx="8" stroke="#ef4444" stroke-width="2" fill="rgba(239,68,68,0.02)"></rect>
+        <path d="M16 24h16" stroke="#ef4444" stroke-width="1.6" stroke-linecap="round">
+          <animate attributeName="stroke-dashoffset" from="0" to="32" dur="1.6s" repeatCount="indefinite"/>
+        </path>
+      </svg>
     </div>
   </div>
 </body>
