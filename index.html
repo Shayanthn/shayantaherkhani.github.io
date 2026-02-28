@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <!-- Primary Meta Tags -->
-  <title>Shayan Taherkhani</title>
-  <meta name="title" content="Shayan Taherkhani" />
-  <meta name="description" content="Shayan Taherkhani's personal portfolio. Developer, researcher and tech explorer." />
+  <title>Shayan Taherkhani | AI Researcher &amp; Full-Stack Developer</title>
+  <meta name="title" content="Shayan Taherkhani | AI Researcher &amp; Full-Stack Developer" />
+  <meta name="description" content="AI Researcher and Full-Stack Developer specializing in Artificial Intelligence, Prompt Engineering, and modern Web Technologies." />
   <meta name="keywords" content="Shayan Taherkhani, developer, programmer, tech explorer, portfolio, web development, research, AetherosTech" />
   <meta name="author" content="Shayan Taherkhani" />
   <meta name="robots" content="index, follow" />
@@ -16,10 +16,10 @@
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://shayantaherkhani.github.io/" />
-  <meta property="og:title" content="Shayan Taherkhani - Developer & Tech Explorer" />
-  <meta property="og:description" content="Personal portfolio of Shayan Taherkhani – developer, researcher and tech enthusiast." />
-  <meta property="og:image" content="https://shayantaherkhani.github.io/avatar.png" />
+  <meta property="og:url" content="https://shayantaherkhani.ir/" />
+  <meta property="og:title" content="Shayan Taherkhani | AI Researcher & Full-Stack Developer" />
+  <meta property="og:description" content="AI Researcher and Full-Stack Developer specializing in Artificial Intelligence, Prompt Engineering, and modern Web Technologies." />
+  <meta property="og:image" content="https://shayantaherkhani.ir/avatar.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:site_name" content="Shayan Taherkhani Portfolio" />
@@ -27,10 +27,10 @@
   
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:url" content="https://shayantaherkhani.github.io/" />
-  <meta property="twitter:title" content="Shayan Taherkhani - Developer & Tech Explorer" />
-  <meta property="twitter:description" content="Personal portfolio of Shayan Taherkhani – developer, researcher and tech enthusiast." />
-  <meta property="twitter:image" content="https://shayantaherkhani.github.io/avatar.png" />
+  <meta property="twitter:url" content="https://shayantaherkhani.ir/" />
+  <meta property="twitter:title" content="Shayan Taherkhani | AI Researcher & Full-Stack Developer" />
+  <meta property="twitter:description" content="AI Researcher and Full-Stack Developer specializing in Artificial Intelligence, Prompt Engineering, and modern Web Technologies." />
+  <meta property="twitter:image" content="https://shayantaherkhani.ir/avatar.png" />
   <meta name="twitter:creator" content="@shayantaherkhani" />
   
   <!-- Additional SEO Meta Tags -->
@@ -41,6 +41,15 @@
   
   <!-- Canonical URL -->
   <link rel="canonical" href="https://shayantaherkhani.ir/" />
+  <script>
+    (function(){
+      var host = location.hostname || '';
+      if (/github\.io$/.test(host) || host === 'shayantaherkhani.github.io') {
+        var target = 'https://shayantaherkhani.ir' + location.pathname + location.search + location.hash;
+        try { location.replace(target); } catch(e) { location.href = target; }
+      }
+    })();
+  </script>
   
   <!-- Favicon and Icons -->
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
@@ -69,8 +78,8 @@
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Shayan Taherkhani",
-    "url": "https://shayantaherkhani.github.io/",
-    "image": "https://shayantaherkhani.github.io/avatar.png",
+    "url": "https://shayantaherkhani.ir/",
+    "image": "https://shayantaherkhani.ir/avatar.png",
     "description": "Developer and tech explorer passionate about innovative projects and research",
     "jobTitle": "Developer",
     "worksFor": {
@@ -108,7 +117,7 @@
         "@id": "https://shayantaherkhani.ir/#org",
         "name": "Shayan Taherkhani",
         "url": "https://shayantaherkhani.ir/",
-        "logo": "https://shayantaherkhani.github.io/avatar.png",
+        "logo": "https://shayantaherkhani.ir/avatar.png",
         "sameAs": [
           "https://github.com/shayanthn",
           "https://www.linkedin.com/in/shayantaherkhani78"
@@ -244,6 +253,25 @@
         opacity: 0.7;
     }
 
+    /* Section cards for home content to match glass-card style */
+    .section-card {
+      background: var(--card-background);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      padding: 16px;
+      margin-top: 14px;
+      text-align: left;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+    .section-card:hover { transform: translateY(-4px); box-shadow: 0 18px 40px rgba(0,0,0,0.35); }
+    .section-card h2 { font-size: 1.05rem; margin: 6px 0 8px; color: var(--text-primary); font-weight:700; }
+    .section-card h3 { font-size: 0.95rem; margin: 6px 0; color: var(--text-secondary); font-weight:600; }
+    .section-card p, .section-card ul { color: var(--text-secondary); font-size: 0.95rem; }
+    .section-card ul { padding-left: 0.8rem; }
+
     @media (max-width: 1024px) {
         .main-wrapper {
             flex-direction: column;
@@ -346,14 +374,7 @@
     }
     .secondary-links { margin-top: 20px; }
 
-    /* Custom Cursor */
-    .cursor-dot { position: fixed; width: 8px; height: 8px; background: #fff; border-radius: 50%; pointer-events: none; z-index: 9999; transition: transform 0.1s ease, opacity 0.3s ease; mix-blend-mode: difference; }
-    .cursor-ring { position: fixed; width: 35px; height: 35px; border: 2px solid rgba(255,255,255,0.5); border-radius: 50%; pointer-events: none; z-index: 9998; transition: transform 0.15s ease-out, width 0.3s ease, height 0.3s ease, border-color 0.3s ease; transform: translate(-50%, -50%); }
-    .cursor-ring.hover { width: 50px; height: 50px; border-color: rgba(144, 53, 212, 0.8); }
-    .cursor-dot.hover { transform: translate(-50%, -50%) scale(0.5); }
-    .cursor-ring.click { transform: translate(-50%, -50%) scale(0.8); }
-    @media (max-width: 768px), (hover: none) { .cursor-dot, .cursor-ring { display: none; } }
-    body.custom-cursor, body.custom-cursor a, body.custom-cursor button { cursor: none; }
+    /* custom cursor removed to restore native pointer */
 
     /* Particle Canvas */
     #particle-canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -2; pointer-events: none; }
@@ -366,8 +387,6 @@
 </head>
 <body>
   <canvas id="particle-canvas"></canvas>
-  <div class="cursor-dot"></div>
-  <div class="cursor-ring"></div>
 
   <div class="aurora-background">
     <div class="shape shape-1" data-speed="0.1"></div>
@@ -407,6 +426,8 @@
       </div>
     </nav>
     
+    <!-- Home content moved to side-aside for compact layout -->
+
     <!-- Secondary Links -->
     <section aria-label="Contact & Research">
       <div class="link-container secondary-links">
@@ -529,36 +550,7 @@
       // Preload avatar
       new Image().src = './avatar.png';
 
-      // Custom Cursor
-      const cursorDot = document.querySelector('.cursor-dot');
-      const cursorRing = document.querySelector('.cursor-ring');
-      if (window.matchMedia('(hover: hover)').matches && window.innerWidth > 768) {
-        document.body.classList.add('custom-cursor');
-        let mouseX = 0, mouseY = 0;
-        let ringX = 0, ringY = 0;
-        document.addEventListener('mousemove', (e) => {
-          mouseX = e.clientX; mouseY = e.clientY;
-          cursorDot.style.left = mouseX + 'px';
-          cursorDot.style.top = mouseY + 'px';
-          cursorDot.style.transform = 'translate(-50%, -50%)';
-        }, { passive: true });
-        const animateRing = () => {
-          ringX += (mouseX - ringX) * 0.15;
-          ringY += (mouseY - ringY) * 0.15;
-          cursorRing.style.left = ringX + 'px';
-          cursorRing.style.top = ringY + 'px';
-          requestAnimationFrame(animateRing);
-        };
-        animateRing();
-        document.querySelectorAll('a, button, .link').forEach(el => {
-          el.addEventListener('mouseenter', () => { cursorRing.classList.add('hover'); cursorDot.classList.add('hover'); });
-          el.addEventListener('mouseleave', () => { cursorRing.classList.remove('hover'); cursorDot.classList.remove('hover'); });
-        });
-        document.addEventListener('mousedown', () => cursorRing.classList.add('click'));
-        document.addEventListener('mouseup', () => cursorRing.classList.remove('click'));
-        document.addEventListener('mouseleave', () => { cursorDot.style.opacity = '0'; cursorRing.style.opacity = '0'; });
-        document.addEventListener('mouseenter', () => { cursorDot.style.opacity = '1'; cursorRing.style.opacity = '1'; });
-      }
+      // custom cursor behaviour removed to restore native pointer
 
       // Particle System
       const canvas = document.getElementById('particle-canvas');
