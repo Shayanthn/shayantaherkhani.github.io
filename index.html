@@ -41,15 +41,6 @@
   
   <!-- Canonical URL -->
   <link rel="canonical" href="https://shayantaherkhani.ir/" />
-  <script>
-    (function(){
-      var host = location.hostname || '';
-      if (/github\.io$/.test(host) || host === 'shayantaherkhani.github.io') {
-        var target = 'https://shayantaherkhani.ir' + location.pathname + location.search + location.hash;
-        try { location.replace(target); } catch(e) { location.href = target; }
-      }
-    })();
-  </script>
   
   <!-- Favicon and Icons -->
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
@@ -127,6 +118,32 @@
   }
   </script>
 
+  <!-- FAQ JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Who is Shayan Taherkhani?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Shayan Taherkhani is an AI Researcher, Full-Stack Web Developer, and SEO Expert specializing in business automation, smart systems, and designing modern web platforms."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How can we collaborate or get in touch?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can reach out directly via email or connect with me through my social media channels like LinkedIn and GitHub to discuss projects and collaborations."
+        }
+      }
+    ]
+  }
+  </script>
+
   <!-- Critical CSS -->
   <style>
     :root {
@@ -178,27 +195,6 @@
       transform: translateZ(0);
     }
     
-    .blog-card {
-        background: var(--card-background);
-        backdrop-filter: blur(30px);
-        -webkit-backdrop-filter: blur(30px);
-        border: 1px solid var(--border-color);
-        border-radius: 24px;
-        padding: 30px;
-        max-width: 400px;
-        width: 100%;
-        text-align: right;
-        direction: rtl;
-        box-shadow: var(--card-glow);
-        transition: transform 0.2s ease-out, background-color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
-        will-change: transform;
-        animation: fadeIn 1s 0.4s ease-out forwards; /* Delayed fade in */
-        opacity: 0;
-        transform: translateZ(0);
-        display: flex;
-        flex-direction: column;
-    }
-    
     .main-wrapper {
         display: flex;
         gap: 30px;
@@ -208,49 +204,6 @@
         max-width: 1200px;
         flex-wrap: wrap; 
         z-index: 10;
-    }
-
-    .blog-header {
-        font-family: var(--font-body); /* Or use Vazirmatn if loaded */
-        font-size: 1.2rem;
-        font-weight: 700;
-        margin-bottom: 20px;
-        color: var(--text-primary);
-        border-bottom: 1px solid var(--border-color);
-        padding-bottom: 10px;
-    }
-
-    .blog-item {
-        display: block;
-        text-decoration: none;
-        color: var(--text-secondary);
-        padding: 15px;
-        border-radius: 12px;
-        border: 1px solid transparent; /* Invisible border for layout stability */
-        margin-bottom: 10px;
-        transition: all 0.3s ease;
-        background: rgba(255, 255, 255, 0.03);
-        position: relative;
-        overflow: hidden;
-    }
-    
-    .blog-item:hover {
-        background: rgba(255, 255, 255, 0.08); /* Light up */
-        color: var(--text-primary);
-        border-color: rgba(144, 53, 212, 0.3);
-        transform: translateY(-3px) scale(1.02);
-        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    }
-
-    .blog-item h3 {
-        font-size: 1rem;
-        margin-bottom: 5px;
-        font-weight: 600;
-    }
-    
-    .blog-item span {
-        font-size: 0.8rem;
-        opacity: 0.7;
     }
 
     /* Section cards for home content to match glass-card style */
@@ -272,17 +225,52 @@
     .section-card p, .section-card ul { color: var(--text-secondary); font-size: 0.95rem; }
     .section-card ul { padding-left: 0.8rem; }
 
+    /* Removed marquee animation for manual scroll */
+
     @media (max-width: 1024px) {
         .main-wrapper {
             flex-direction: column;
+            align-items: center !important;
         }
-        .blog-card {
-            max-width: 600px;
-            order: 2; /* Profile first, blog second on mobile */
-        }
-        .glass-card {
+        .left-wrapper {
             order: 1;
+            max-width: 100% !important;
         }
+        .side-wrapper {
+            order: 2;
+            max-width: 100% !important;
+        }
+    }
+
+    /* Custom Scrollbars */
+    .yt-slider::-webkit-scrollbar, .blog-scroll::-webkit-scrollbar {
+        height: 6px;
+        width: 6px;
+    }
+    .yt-slider::-webkit-scrollbar-track, .blog-scroll::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 6px;
+    }
+    .yt-slider::-webkit-scrollbar-thumb, .blog-scroll::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 6px;
+    }
+    .yt-slider::-webkit-scrollbar-thumb:hover, .blog-scroll::-webkit-scrollbar-thumb:hover {
+        background: rgba(255, 255, 255, 0.3);
+    }
+    body.light-mode .yt-slider::-webkit-scrollbar-track, body.light-mode .blog-scroll::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0.05);
+    }
+    body.light-mode .yt-slider::-webkit-scrollbar-thumb, body.light-mode .blog-scroll::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, 0.2);
+    }
+    body.light-mode .yt-slider::-webkit-scrollbar-thumb:hover, body.light-mode .blog-scroll::-webkit-scrollbar-thumb:hover {
+        background: rgba(0, 0, 0, 0.4);
+    }
+
+    .yt-slide:hover {
+        transform: translateY(-2px) !important;
+        box-shadow: 0 12px 30px rgba(0,0,0,0.3) !important;
     }
 
     @keyframes fadeIn { from { opacity: 0; transform: translateY(30px) translateZ(0); } to { opacity: 1; transform: translateY(0) translateZ(0); } }
@@ -398,10 +386,12 @@
     <i class="fas fa-sun"></i>
   </button>
 
-  <div class="main-wrapper">
-  <main class="glass-card" role="main">
-    <header>
-      <div class="avatar-wrapper">
+  <div class="main-wrapper" style="align-items: stretch;">
+  
+  <div class="left-wrapper" style="display: flex; flex-direction: column; gap: 30px; width: 100%; max-width: 600px;">
+    <main class="glass-card" role="main" style="max-width: 100%;">
+      <header>
+        <div class="avatar-wrapper">
         <img src="./avatar.png" alt="Shayan Taherkhani - Developer and Tech Explorer" class="avatar">
         <span class="status-indicator" title="Available"></span>
       </div>
@@ -445,27 +435,80 @@
       <a href="https://t.me/aetherostech" target="_blank" rel="noopener noreferrer" class="company" style="text-decoration:none; color:inherit; cursor:pointer;">AetherosTech</a>
     </footer>
   </main>
-
-  <aside class="blog-card" style="font-family: 'Vazirmatn', sans-serif;">
-      <div class="blog-header">آخرین مقالات (وبلاگ)</div>
-      <a href="./introverts-winning-ai-era/" class="blog-item">
-          <h3 style="margin:0; font-size:1rem; margin-bottom:5px;">چرا درون‌گراها برندگان خاموش عصر AI هستند؟</h3>
-          <span style="font-size:0.75rem; opacity:0.6;"><i class="far fa-calendar-alt"></i> ۱۴ بهمن ۱۴۰۴</span>
-      </a>
-      <a href="./seahorse-ai-bug/" class="blog-item">
-          <h3 style="margin:0; font-size:1rem; margin-bottom:5px;">وقتی ChatGPT با یک اسب دریایی روبرو شد: باگی که راز بزرگ هوش مصنوعی را فاش کرد!</h3>
-          <span style="font-size:0.75rem; opacity:0.6;"><i class="far fa-calendar-alt"></i> ۵ اسفند ۱۴۰۴</span>
-      </a>
-      <a href="./how-to-speak-with-gpt-5/" class="blog-item">
-          <h3 style="margin:0; font-size:1rem; margin-bottom:5px;">راهنمای جامع کار با GPT-5: چگونه هوشمندانه پرامپت نویسی کنیم؟</h3>
-          <span style="font-size:0.75rem; opacity:0.6;"><i class="far fa-calendar-alt"></i> ۵ اسفند ۱۴۰۴</span>
-      </a>
+  
+  <aside class="glass-card yt-container" style="max-width: 100%; padding: 15px 20px; display: flex; flex-direction: column; flex: 1;" aria-label="Latest YouTube Videos">
+    <header style="text-align: left; margin-bottom: 10px; flex-shrink: 0; display: flex; justify-content: space-between; align-items: center;">
+      <h2 style="font-family: var(--font-heading); font-size: 16px; font-weight: 700; display:flex; align-items: center; justify-content: flex-start; gap:8px; margin: 0;">
+        <i class="fab fa-youtube" style="color: #FF0000; font-size: 18px;"></i> Latest Videos
+      </h2>
+      <a href="https://youtube.com/@shayanthn" target="_blank" rel="noopener noreferrer" style="font-size: 0.8rem; color: var(--text-secondary); text-decoration: none; display: flex; align-items: center; gap: 5px; transition: color 0.2s;"><i class="fas fa-external-link-alt"></i> Channel</a>
+    </header>
+    
+    <div id="yt-slider-container" class="yt-slider" style="display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 12px; padding-bottom: 12px; flex: 1; scrollbar-width: thin; scrollbar-color: rgba(255, 255, 255, 0.15) transparent;">
+      <div style="display: flex; justify-content: center; align-items: center; width: 100%; min-height: 100px;">
+        <i class="fas fa-circle-notch fa-spin" style="font-size: 24px; color: var(--text-secondary);"></i>
+      </div>
+    </div>
   </aside>
+  </div>
+  
+  <div class="side-wrapper" style="display: flex; flex-direction: column; gap: 30px; height: 100%;">
+    <aside class="glass-card" style="text-align: left; padding-top: 20px; max-width: 450px; flex-shrink: 0;" role="complementary">
+      <header style="text-align: center;">
+        <h2 style="font-family: var(--font-heading); font-size: 24px; font-weight: 700; margin-bottom: 15px;">Explore</h2>
+      </header>
+      
+      <a href="./projects/" style="text-decoration: none; color: inherit; display: block;">
+        <div class="section-card">
+          <h2><i class="fas fa-project-diagram"></i> Projects</h2>
+          <p>Explore my latest AI, web development, and software engineering projects.</p>
+        </div>
+      </a>
+
+      <a href="./research/" style="text-decoration: none; color: inherit; display: block;">
+        <div class="section-card">
+          <h2><i class="fas fa-flask"></i> Research</h2>
+          <p>Read about my academic research in Artificial Intelligence and published papers.</p>
+        </div>
+      </a>
+    </aside>
+
+    <aside class="glass-card" style="text-align: left; padding-top: 20px; max-width: 450px; flex-shrink: 0;" aria-label="FAQ Section">
+      <header style="text-align: left;">
+        <h2 style="font-family: var(--font-heading); font-size: 20px; font-weight: 700; margin-bottom: 5px;"><i class="fas fa-question-circle" style="color: var(--text-primary);"></i> FAQ</h2>
+      </header>
+      
+      <div style="margin-top: 15px;">
+        <h3 style="font-size: 1rem; color: var(--text-primary); margin-bottom: 5px;">Who is Shayan Taherkhani?</h3>
+        <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 15px;">An AI Researcher, Full-Stack Web Developer, and SEO Expert specializing in business automation, smart systems, and designing modern web platforms.</p>
+        
+        <h3 style="font-size: 1rem; color: var(--text-primary); margin-bottom: 5px;">How can we collaborate or get in touch?</h3>
+        <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0;">You can reach out directly via email or connect with me through my social media channels like LinkedIn and GitHub to discuss projects and collaborations.</p>
+      </div>
+    </aside>
+
+    <aside class="glass-card" style="text-align: left; padding-top: 20px; max-width: 450px; overflow: hidden; display: flex; flex-direction: column; flex: 1;" role="complementary">
+      <header style="text-align: center; flex-shrink: 0;">
+        <h2 style="font-family: var(--font-heading); font-size: 24px; font-weight: 700; margin-bottom: 15px;"><i class="fas fa-blog"></i> Latest Blog Posts</h2>
+      </header>
+      
+      <div class="blog-scroll" style="position: relative; flex: 1; min-height: 200px; overflow-y: auto; overflow-x: hidden; margin-top: 10px; padding-right: 8px; scrollbar-width: thin; scrollbar-color: rgba(255, 255, 255, 0.15) transparent;">
+        <div style="width: 100%; padding-bottom: 10px;">
+          <a href="./blog/ai-dopamine-dilemma/" style="text-decoration: none; color: inherit; display: block;">
+            <div class="section-card">
+              <h2>AI and the Dopamine Dilemma</h2>
+              <p>Is Technology Rewiring Your Brain’s Happiness?</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </aside>
+  </div>
   </div>
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const cards = document.querySelectorAll('.glass-card, .blog-card');
+      const cards = document.querySelectorAll('.glass-card');
       const shapes = document.querySelectorAll('.shape');
       const links = document.querySelectorAll('.link');
       const themeToggle = document.querySelector('.theme-toggle');
@@ -663,6 +706,71 @@
         }
       };
       setTimeout(typeWriter, 800);
+
+      // Fetch Latest YouTube Videos dynamically via RSS
+      async function fetchYouTubeVideos() {
+        const sliderContainer = document.getElementById('yt-slider-container');
+        const channelId = 'UCtKLAOzXdeSt1CBK2uGfoIg'; // Using the channel ID provided
+        const rssUrl = encodeURIComponent(`https://www.youtube.com/feeds/videos.xml?channel_id=${channelId}`);
+        const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${rssUrl}`;
+
+        try {
+          const response = await fetch(apiUrl);
+          if (!response.ok) throw new Error('Network response was not ok');
+          
+          const data = await response.json();
+          if (data.status !== 'ok' || !data.items || data.items.length === 0) {
+            throw new Error('No videos found or limit reached');
+          }
+
+          sliderContainer.innerHTML = ''; // Clear loader
+          
+          // Get the latest 5 videos
+          const videos = data.items.slice(0, 5);
+
+          videos.forEach(video => {
+            // Extract video ID using regex from the video link
+            const videoIdMatch = video.link.match(/v=([^&]*)|youtu\.be\/([^&]*)|youtube\.com\/shorts\/([^&]*)/);
+            let videoId = null;
+            if (videoIdMatch) {
+              videoId = videoIdMatch[1] || videoIdMatch[2] || videoIdMatch[3];
+            } else {
+              // Extract from GUID if URL regex didn't catch it
+              const guidMatch = video.guid.match(/yt:video:(.*)/);
+              if (guidMatch) videoId = guidMatch[1];
+            }
+            
+            const thumbUrl = videoId ? `https://img.youtube.com/vi/${videoId}/mqdefault.jpg` : video.thumbnail;
+
+            const slide = document.createElement('a');
+            slide.href = video.link;
+            slide.target = "_blank";
+            slide.rel = "noopener noreferrer";
+            slide.className = "yt-slide section-card";
+            slide.style.cssText = "flex: 0 0 calc(55% - 10px); scroll-snap-align: start; margin-top: 5px; display: block; text-decoration: none; padding: 10px; transition: transform 0.2s;";
+            
+            slide.innerHTML = `
+              <div style="width: 100%; border-radius: 6px; overflow: hidden; position: relative; padding-bottom: 56.25%;">
+                <img src="${thumbUrl}" alt="Video Thumbnail" style="position: absolute; top:0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.9;" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=600&auto=format&fit=crop';">
+                <i class="fab fa-youtube" style="position: absolute; top:50%; left:50%; transform:translate(-50%, -50%); color:rgba(255,0,0,0.8); font-size:24px; filter:drop-shadow(0 2px 4px rgba(0,0,0,0.5));"></i>
+              </div>
+              <h3 style="font-size: 0.85rem; margin-top: 10px; margin-bottom:0; color: var(--text-primary); text-overflow: ellipsis; white-space: nowrap; overflow: hidden; text-align: left;" title="${video.title.replace(/"/g, '&quot;')}">${video.title}</h3>
+            `;
+            
+            sliderContainer.appendChild(slide);
+          });
+        } catch(error) {
+          console.error('Error fetching YouTube RSS:', error);
+          sliderContainer.innerHTML = `
+            <div style="text-align: center; width: 100%; padding: 15px 0;">
+              <p style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 5px;">Currently unable to load videos.</p>
+              <a href="https://youtube.com/@shayanthn" target="_blank" style="color: #ff4a4a; text-decoration: none; font-size: 0.85rem;"><i class="fab fa-youtube"></i> Visit Channel</a>
+            </div>
+          `;
+        }
+      }
+
+      fetchYouTubeVideos();
     });
   </script>
 </body>

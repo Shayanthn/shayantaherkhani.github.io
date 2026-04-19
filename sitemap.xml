@@ -1,42 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-
-  <!-- Generated: 2026-02-24 — keep this up-to-date when publishing new pages -->
-
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://shayantaherkhani.ir/</loc>
-    <lastmod>2026-02-24</lastmod>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
   <url>
-    <loc>https://shayantaherkhani.ir/how-to-speak-with-gpt-5/</loc>
-    <lastmod>2026-02-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://shayantaherkhani.ir/images/howtospeakwithgpt5.png</image:loc>
-      <image:caption>راهنمای جامع کار با GPT-5 توسط شایان طاهرخانی</image:caption>
-    </image:image>
-  </url>
-
-  <url>
-    <loc>https://shayantaherkhani.ir/introverts-winning-ai-era/</loc>
+    <loc>https://shayantaherkhani.ir/about/</loc>
     <lastmod>2026-02-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
   <url>
-    <loc>https://shayantaherkhani.ir/seahorse-ai-bug/</loc>
+    <loc>https://shayantaherkhani.ir/projects/</loc>
     <lastmod>2026-02-24</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
-
+  <url>
+    <loc>https://shayantaherkhani.ir/research/</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://shayantaherkhani.ir/contact/</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://shayantaherkhani.ir/blog/ai-dopamine-dilemma/</loc>
+    <lastmod>2026-04-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
 </urlset>

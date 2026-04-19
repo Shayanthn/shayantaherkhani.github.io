@@ -10,8 +10,6 @@ URLS=(
   "http://www.shayantaherkhani.ir/"
   "https://www.shayantaherkhani.ir/"
   "https://shayantaherkhani.github.io/"
-  "https://shayantaherkhani.github.io/how-to-speak-with-gpt-5/"
-  "https://shayantaherkhani.ir/how-to-speak-with-gpt-5/"
 )
 
 echo "CHECK_REDIRECTS: testing ${#URLS[@]} URLs"

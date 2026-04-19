@@ -11,18 +11,467 @@
   <meta property="og:title" content="Projects — Shayan Taherkhani | AI & Web" />
   <meta property="og:description" content="Selected projects by Shayan Taherkhani: AI systems, web apps, and prompt engineering examples." />
   <meta property="og:image" content="https://shayantaherkhani.ir/avatar.png" />
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Manrope:wght@400;500;600&family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <style>
+    :root {
+      --bg-color: #0D0D0F;
+      --card-background: rgba(22, 24, 28, 0.55);
+      --border-color: rgba(255, 255, 255, 0.1);
+      --text-primary: #F5F5F7;
+      --text-secondary: #A1A1A6;
+      --accent-hover: rgba(255, 255, 255, 0.08);
+      --card-glow: 0 0 50px rgba(144, 53, 212, 0.15), 0 0 20px rgba(69, 97, 219, 0.15);
+      --font-heading: 'Cinzel', serif;
+      --font-body: 'Manrope', sans-serif;
+    }
+    
+    body.light-mode {
+      --bg-color: #F0F2F5;
+      --card-background: rgba(255, 255, 255, 0.5);
+      --border-color: rgba(0, 0, 0, 0.1);
+      --text-primary: #1D1D1F;
+      --text-secondary: #515154;
+      --accent-hover: rgba(0, 0, 0, 0.05);
+      --card-glow: 0 0 50px rgba(0, 0, 0, 0.1);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+      transition: background-color 0.4s ease;
+    }
+
+    /* Background Animation */
+    .aurora-background { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
+    .aurora-background .shape { position: absolute; border-radius: 50%; filter: blur(120px); transition: transform 0.2s ease-out; }
+    .shape-1 { width: 450px; height: 450px; top: -50px; left: -100px; background: radial-gradient(circle, rgba(69, 97, 219, 0.4) 0%, rgba(69, 97, 219, 0) 70%); animation: move-1 20s infinite alternate; }
+    .shape-2 { width: 400px; height: 400px; bottom: -80px; right: -120px; background: radial-gradient(circle, rgba(144, 53, 212, 0.4) 0%, rgba(144, 53, 212, 0) 70%); animation: move-2 25s infinite alternate-reverse; }
+    @keyframes move-1 { from { transform: translate(0, 0) rotate(0deg); } to { transform: translate(150px, 50px) rotate(60deg); } }
+    @keyframes move-2 { from { transform: translate(0, 0) rotate(0deg); } to { transform: translate(-100px, -50px) rotate(-40deg); } }
+    #particle-canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -2; pointer-events: none; }
+
+    /* Layout */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .header-section {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 50px;
+      animation: fadeInDown 0.8s ease-out forwards;
+    }
+
+    .header-section h1 {
+      font-family: var(--font-heading);
+      font-size: 48px;
+      margin-bottom: 15px;
+      background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline-block;
+    }
+
+    .header-section p {
+      color: var(--text-secondary);
+      font-size: 18px;
+    }
+
+    .back-btn {
+      position: absolute;
+      top: 30px;
+      left: 30px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-primary);
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 500;
+      padding: 10px 18px;
+      background: var(--card-background);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+      z-index: 10;
+    }
+    .back-btn:hover {
+      transform: translateX(-5px);
+      background: var(--accent-hover);
+    }
+
+    /* Projects Grid */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 30px;
+      width: 100%;
+    }
+
+    .project-card {
+      background: var(--card-background);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 25px;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      position: relative;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+    
+    .project-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      border-radius: 20px;
+      padding: 2px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0));
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+      border-color: rgba(137, 247, 254, 0.3);
+    }
+
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 20px;
+    }
+
+    .project-icon {
+      font-size: 32px;
+      color: #89f7fe;
+      background: rgba(137, 247, 254, 0.1);
+      padding: 15px;
+      border-radius: 14px;
+    }
+
+    .project-links {
+      display: flex;
+      gap: 12px;
+    }
+    
+    .project-links a {
+      color: var(--text-secondary);
+      font-size: 20px;
+      transition: color 0.3s ease;
+    }
+    
+    .project-links a:hover {
+      color: #89f7fe;
+    }
+
+    .project-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+    }
+
+    .project-desc {
+      color: var(--text-secondary);
+      font-size: 15px;
+      line-height: 1.6;
+      margin-bottom: 25px;
+      flex-grow: 1;
+    }
+
+    .project-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: auto;
+    }
+
+    .tech-tag {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      color: var(--text-secondary);
+      font-family: monospace;
+    }
+    
+    .project-stats {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+      padding-top: 15px;
+      border-top: 1px solid var(--border-color);
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+    
+    .project-stats span {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    /* Loading State */
+    .loader {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 300px;
+      width: 100%;
+    }
+    .spinner {
+      width: 50px;
+      height: 50px;
+      border: 3px solid rgba(255,255,255,0.1);
+      border-radius: 50%;
+      border-top-color: #89f7fe;
+      animation: spin 1s ease-in-out infinite;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeInDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
+
+    @media (max-width: 768px) {
+      .projects-grid { grid-template-columns: 1fr; }
+      .back-btn { top: 20px; left: 20px; padding: 8px 14px; font-size: 14px; }
+      .header-section h1 { font-size: 36px; margin-top: 40px; }
+      .container { padding: 30px 15px; }
+    }
+  </style>
 </head>
 <body>
-  <nav>
-    <a href="/">Home</a> • <a href="/about/">About</a> • <a href="/blog/">Blog</a> • <a href="/research/">Research</a> • <a href="/contact/">Contact</a>
-  </nav>
-  <main>
-    <h1>Projects</h1>
-    <p>This page will showcase selected projects: AI prototypes, open-source tools, and web apps demonstrating modern full-stack patterns and prompt-engineering techniques.</p>
-  </main>
-  <footer>
-    <p>&copy; <span id="year"></span> Shayan Taherkhani</p>
-    <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
-  </footer>
+  <canvas id="particle-canvas"></canvas>
+
+  <div class="aurora-background">
+    <div class="shape shape-1" data-speed="0.1"></div>
+    <div class="shape shape-2" data-speed="-0.15"></div>
+  </div>
+
+  <a href="../" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Home</a>
+
+  <div class="container">
+    <div class="header-section">
+      <h1>My GitHub Projects</h1>
+      <p>A collection of my recent open-source repositories and explorations.</p>
+    </div>
+
+    <!-- Container for dynamic projects -->
+    <div id="projects-container" class="projects-grid">
+      <div class="loader"><div class="spinner"></div></div>
+    </div>
+  </div>
+
+  <script>
+    // GitHub Username to fetch projects for
+    const GITHUB_USERNAME = 'shayanthn';
+
+    // Particle System (reused from index.html)
+    const initParticles = () => {
+      const canvas = document.getElementById('particle-canvas');
+      const ctx = canvas.getContext('2d');
+      let particles = [];
+      
+      const resizeCanvas = () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      };
+      resizeCanvas();
+      window.addEventListener('resize', resizeCanvas);
+
+      class Particle {
+        constructor() {
+          this.x = Math.random() * canvas.width;
+          this.y = Math.random() * canvas.height;
+          this.size = Math.random() * 2 + 1;
+          this.vx = (Math.random() - 0.5) * 0.5;
+          this.vy = (Math.random() - 0.5) * 0.5;
+        }
+        draw() {
+          ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+          ctx.fill();
+        }
+        update() {
+          this.x += this.vx;
+          this.y += this.vy;
+          if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+          if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+        }
+      }
+
+      for (let i = 0; i < 50; i++) particles.push(new Particle());
+
+      const animateParticles = () => {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particles.forEach(p => { p.update(); p.draw(); });
+        requestAnimationFrame(animateParticles);
+      };
+      animateParticles();
+    };
+
+    // Tech icon mapping based on language
+    const getTechIcon = (language) => {
+      const icons = {
+        'JavaScript': 'fa-js',
+        'TypeScript': 'fa-js',
+        'Python': 'fa-python',
+        'HTML': 'fa-html5',
+        'CSS': 'fa-css3-alt',
+        'Java': 'fa-java',
+        'C++': 'fa-cuttlefish',
+        'Jupyter Notebook': 'fa-python',
+        'PHP': 'fa-php',
+        'Ruby': 'fa-gem'
+      };
+      return icons[language] || 'fa-code';
+    };
+
+    // Format date
+    const formatDate = (dateString) => {
+      const options = { year: 'numeric', month: 'short', day: 'numeric' };
+      return new Date(dateString).toLocaleDateString('en-US', options);
+    };
+
+    // Fetch GitHub Repos
+    async function fetchGitHubProjects() {
+      const container = document.getElementById('projects-container');
+      
+      try {
+        // Fetch up to 100 repositories
+        const response = await fetch(`https://api.github.com/users/${GITHUB_USERNAME}/repos?per_page=100`);
+        
+        if (!response.ok) {
+          throw new Error('Failed to fetch repositories');
+        }
+        
+        let repos = await response.json();
+        
+        // Sort repositories by number of stars (descending)
+        repos.sort((a, b) => b.stargazers_count - a.stargazers_count);
+        
+        // Filter repos: only show non-forks, or all if you prefer
+        // Here we just use the fetched repos
+        const originalRepos = repos;
+        
+        container.innerHTML = ''; // Clear loader
+        
+        if (originalRepos.length === 0) {
+          container.innerHTML = '<p style="text-align: center; width: 100%; color: var(--text-secondary);">No public repositories found.</p>';
+          return;
+        }
+
+        originalRepos.forEach((repo, index) => {
+          // Delay animation slightly for each card
+          const animationDelay = `${index * 0.15}s`;
+          
+          const card = document.createElement('div');
+          card.className = 'project-card';
+          card.style.animationDelay = animationDelay;
+          
+          // Use language for icon, default to code icon
+          const languageIcon = getTechIcon(repo.language);
+          
+          card.innerHTML = `
+            <div class="project-header">
+              <div class="project-icon">
+                <i class="fab ${languageIcon}"></i>
+              </div>
+              <div class="project-links">
+                ${repo.homepage ? `<a href="${repo.homepage}" target="_blank" title="Live Demo" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i></a>` : ''}
+                <a href="${repo.html_url}" target="_blank" title="GitHub Repo" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+              </div>
+            </div>
+            
+            <h3 class="project-title">${repo.name.replace(/-/g, ' ')}</h3>
+            <p class="project-desc">${repo.description || 'No description provided for this repository. Better check it out directly!'}</p>
+            
+            <div class="project-tech">
+              ${repo.language ? `<span class="tech-tag">${repo.language}</span>` : ''}
+              ${repo.topics ? repo.topics.slice(0,3).map(t => `<span class="tech-tag">${t}</span>`).join('') : ''}
+            </div>
+            
+            <div class="project-stats">
+              <span title="Stars"><i class="far fa-star"></i> ${repo.stargazers_count}</span>
+              <span title="Forks"><i class="fas fa-code-branch"></i> ${repo.forks_count}</span>
+              <span title="Last Updated"><i class="far fa-clock"></i> ${formatDate(repo.updated_at)}</span>
+            </div>
+          `;
+          
+          // Make entire card clickabble to go to repo
+          card.style.cursor = 'pointer';
+          card.onclick = (e) => {
+            // Prevent trigger if clicking on the specific links
+            if(e.target.closest('.project-links')) return;
+            window.open(repo.html_url, '_blank', 'noopener,noreferrer');
+          };
+
+          container.appendChild(card);
+        });
+
+      } catch (error) {
+        console.error('Error fetching projects:', error);
+        container.innerHTML = `
+          <div style="text-align: center; width: 100%;">
+            <i class="fas fa-exclamation-triangle" style="font-size: 40px; color: #ff4757; margin-bottom: 20px;"></i>
+            <p style="color: var(--text-secondary);">Oops! Couldn't load projects from GitHub. You can still check my <a href="https://github.com/${GITHUB_USERNAME}" target="_blank" style="color: #89f7fe;">GitHub Profile</a>.</p>
+          </div>
+        `;
+      }
+    }
+
+    // Check Theme
+    const applyTheme = () => {
+      const currentTheme = localStorage.getItem('theme');
+      if (currentTheme === 'light') document.body.classList.add('light-mode');
+    };
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', () => {
+      applyTheme();
+      initParticles();
+      fetchGitHubProjects();
+      
+      // Floating animation effect on mouse move
+      document.addEventListener('mousemove', (e) => {
+        const shapes = document.querySelectorAll('.shape');
+        shapes.forEach(shape => {
+          const speed = parseFloat(shape.getAttribute('data-speed'));
+          const moveX = (window.innerWidth / 2 - e.clientX) * speed;
+          const moveY = (window.innerHeight / 2 - e.clientY) * speed;
+          shape.style.transform = `translate(${moveX}px, ${moveY}px)`;
+        });
+      });
+    });
+  </script>
 </body>
 </html>
