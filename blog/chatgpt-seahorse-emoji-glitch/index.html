@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Primary Meta Tags -->
+  <title>When ChatGPT Met a Seahorse: The Emoji Glitch That Exposed the Limits of AI | Shayan Taherkhani</title>
+  <meta name="title" content="When ChatGPT Met a Seahorse: The Emoji Glitch That Exposed the Limits of AI" />
+  <meta name="description" content="A tiny emoji exposed a massive AI blind spot. Learn about token prediction, LLM neural confusion, and why ChatGPT hallucinates when asked if a seahorse emoji exists." />
+  <meta name="keywords" content="ChatGPT seahorse emoji glitch, AI hallucinations, LLM neural confusion, token prediction error, Shayan Taherkhani, AI development, artificial intelligence, machine learning logic, OpenAI" />
+  <meta name="author" content="Shayan Taherkhani" />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="When ChatGPT Met a Seahorse: The Emoji Glitch That Exposed the Limits of AI" />
+  <meta property="og:description" content="A tiny emoji exposed a massive AI blind spot. Learn about token prediction, LLM neural confusion, and why ChatGPT hallucinates when asked if a seahorse emoji exists." />
+  <!-- TODO: Update og:image once you upload the image -->
+  <!-- <meta property="og:image" content="https://shayantaherkhani.github.io/blog/chatgpt-seahorse-emoji-glitch/1.webp" /> -->
+  
+  <meta name="theme-color" content="#0D0D0F" />
+  
+  <!-- Structured Data / JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "headline": "When ChatGPT Met a Seahorse: The Emoji Glitch That Exposed the Limits of AI",
+        "image": "https://shayantaherkhani.github.io/blog/chatgpt-seahorse-emoji-glitch/1.webp",
+        "author": {
+          "@type": "Person",
+          "name": "Shayan Taherkhani",
+          "url": "https://shayantaherkhani.github.io/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Shayan Taherkhani",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://shayantaherkhani.github.io/avatar.png"
+          }
+        },
+        "datePublished": "2026-04-28T08:00:00+00:00",
+        "dateModified": "2026-04-28T08:00:00+00:00",
+        "description": "A tiny emoji exposed a massive AI blind spot. Learn about token prediction, LLM neural confusion, and why ChatGPT hallucinates when asked if a seahorse emoji exists.",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://shayantaherkhani.github.io/blog/chatgpt-seahorse-emoji-glitch/"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://shayantaherkhani.github.io/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": "https://shayantaherkhani.github.io/blog/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "When ChatGPT Met a Seahorse"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Does a seahorse emoji actually exist in 2026?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "As of the latest Unicode updates, there is no dedicated seahorse emoji. Most users substitute the Tropical Fish (🐠) or the Dragon (🐉) emoji to represent one."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why does ChatGPT hallucinate when asked about emojis?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "AI models predict the next token based on patterns. If the training data contains conflicting or ambiguous information about a specific topic (like a missing emoji), the model's confidence drops, leading to 'hallucinations' or erratic outputs."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the 'Seahorse Incident' in AI circles?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It refers to a specific type of logic failure where an AI fails a simple binary 'True/False' test because the statistical probability of both answers is too similar in its training set."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this a sign that ChatGPT is broken?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Not broken — just architecturally transparent. It reveals that the model generates text by prediction, not by accessing a database of facts. Without a separate fact-checking layer, contradictory training data leads to unstable answers."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Manrope:wght@400;500;700&family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  
+  <!-- Add KaTeX for math formulas -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+
+  <!-- Critical CSS -->
+  <style>
+    :root {
+      --bg-color: #0D0D0F;
+      --card-background: rgba(22, 24, 28, 0.55);
+      --border-color: rgba(255, 255, 255, 0.1);
+      --text-primary: #F5F5F7;
+      --text-secondary: #A1A1A6;
+      --accent-hover: rgba(255, 255, 255, 0.08);
+      --card-glow: 0 0 50px rgba(144, 53, 212, 0.15), 0 0 20px rgba(69, 97, 219, 0.15);
+      --font-heading: 'Cinzel', serif;
+      --font-body: 'Manrope', sans-serif;
+    }
+    body.light-mode {
+      --bg-color: #F0F2F5;
+      --card-background: rgba(255, 255, 255, 0.6);
+      --border-color: rgba(0, 0, 0, 0.15);
+      --text-primary: #1D1D1F;
+      --text-secondary: #424245;
+      --card-glow: 0 0 50px rgba(0, 0, 0, 0.1);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      min-height: 100vh;
+      padding: 30px 15px;
+      overflow-x: hidden;
+      position: relative;
+      transition: background-color 0.4s ease;
+      line-height: 1.7;
+    }
+    
+    .aurora-background { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
+    .aurora-background .shape { position: absolute; border-radius: 50%; filter: blur(120px); }
+    .shape-1 { width: 450px; height: 450px; top: -50px; left: -100px; background: radial-gradient(circle, rgba(69, 97, 219, 0.3) 0%, rgba(69, 97, 219, 0) 70%); animation: move-1 20s infinite alternate; }
+    .shape-2 { width: 400px; height: 400px; bottom: -80px; right: -120px; background: radial-gradient(circle, rgba(144, 53, 212, 0.3) 0%, rgba(144, 53, 212, 0) 70%); animation: move-2 25s infinite alternate-reverse; }
+    @keyframes move-1 { from { transform: translate(0, 0) rotate(0deg); } to { transform: translate(150px, 50px) rotate(60deg); } }
+    @keyframes move-2 { from { transform: translate(0, 0) rotate(0deg); } to { transform: translate(-100px, -50px) rotate(-40deg); } }
+
+    .glass-card {
+      background: var(--card-background);
+      backdrop-filter: blur(30px);
+      -webkit-backdrop-filter: blur(30px);
+      border: 1px solid var(--border-color);
+      border-radius: 24px;
+      padding: 40px;
+      max-width: 800px;
+      width: 100%;
+      margin: 0 auto;
+      box-shadow: var(--card-glow);
+      animation: fadeIn 0.8s 0.1s ease-out forwards;
+      opacity: 0;
+    }
+    
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+    .back-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      color: var(--text-secondary); text-decoration: none;
+      font-weight: 500; margin-bottom: 30px; transition: color 0.3s;
+    }
+    .back-btn:hover { color: var(--text-primary); }
+
+    h1 { font-family: var(--font-heading); font-size: 32px; font-weight: 700; margin-bottom: 25px; line-height: 1.3; }
+    h2 { font-family: var(--font-heading); font-size: 24px; font-weight: 700; margin: 40px 0 15px; color: var(--text-primary); }
+    h3 { font-size: 20px; font-weight: 700; margin: 25px 0 10px; color: var(--text-primary); }
+    
+    p { color: var(--text-secondary); font-size: 17px; margin-bottom: 20px; text-rendering: optimizeLegibility; }
+    
+    ul, ol { margin: 0 0 25px 25px; color: var(--text-secondary); }
+    li { margin-bottom: 10px; font-size: 17px; }
+    li strong { color: var(--text-primary); font-weight: 700; }
+    
+    blockquote {
+      border-left: 4px solid #4561DB;
+      padding-left: 15px;
+      margin: 25px 0;
+      color: var(--text-primary);
+      font-style: italic;
+      background: rgba(69, 97, 219, 0.05);
+      padding: 15px;
+      border-radius: 0 8px 8px 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 30px 0;
+      font-size: 16px;
+    }
+    th, td {
+      border: 1px solid var(--border-color);
+      padding: 12px;
+      text-align: left;
+    }
+    th {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-primary);
+      font-weight: 700;
+    }
+    td {
+      color: var(--text-secondary);
+    }
+    
+    code {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: monospace;
+      font-size: 14px;
+      color: #bfa1ff;
+    }
+    
+    pre {
+      background: rgba(0, 0, 0, 0.3);
+      padding: 15px;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+      overflow-x: auto;
+      margin-bottom: 25px;
+    }
+    
+    pre code {
+      background: transparent;
+      padding: 0;
+      color: #A1A1A6;
+    }
+
+    .math-container {
+      background: rgba(0, 0, 0, 0.2);
+      padding: 15px;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+      margin: 25px 0;
+      text-align: center;
+      overflow-x: auto;
+    }
+
+    .author-info {
+        display: flex; align-items: center; gap: 15px; margin-top: 50px; padding-top: 30px; border-top: 1px solid var(--border-color);
+    }
+    .author-info img { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; }
+    .author-text { display: flex; flex-direction: column; }
+    .author-name { font-weight: 700; color: var(--text-primary); }
+    .author-meta { font-size: 14px; color: var(--text-secondary); }
+
+    .theme-toggle {
+      position: absolute; top: 25px; right: 25px; background: var(--card-background); border: 1px solid var(--border-color);
+      width: 40px; height: 40px; border-radius: 50%; cursor: pointer; display: flex; justify-content: center; align-items: center;
+      transition: transform 0.3s; color: var(--text-primary);
+    }
+    .theme-toggle:hover { transform: scale(1.1); }
+    .theme-toggle .fa-sun { display: none; }
+    body.light-mode .theme-toggle .fa-sun { display: block; }
+    body.light-mode .theme-toggle .fa-moon { display: none; }
+
+    @media (max-width: 600px) {
+      .glass-card { padding: 25px 20px; }
+      h1 { font-size: 26px; }
+      h2 { font-size: 20px; }
+      p, li, td, th { font-size: 15px; }
+      .theme-toggle { top: 15px; right: 15px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="aurora-background">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+  </div>
+
+  <button class="theme-toggle" aria-label="Toggle Dark/Light Mode" title="Toggle Theme">
+    <i class="fas fa-moon"></i>
+    <i class="fas fa-sun"></i>
+  </button>
+
+  <article class="glass-card">
+    <a href="../../" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Home</a>
+    
+    <h1>When ChatGPT Met a Seahorse: The Emoji Glitch That Exposed the Limits of AI</h1>
+    
+    <div style="margin-bottom: 25px;">
+        <span style="display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 20px; color: var(--text-secondary); font-size: 14px;">
+            <i class="far fa-clock" style="color: #4561DB;"></i> 9 min read
+        </span>
+        <a href="https://pub.towardsai.net/when-chatgpt-met-with-a-seahorse-the-little-emoji-that-uncovered-a-big-ai-problem-0448b63638c2" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 20px; text-decoration: none; color: var(--text-primary); font-size: 14px; transition: background 0.2s ease, transform 0.2s ease; margin-left: 10px;" onmouseover="this.style.background='var(--accent-hover)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.background='rgba(255,255,255,0.05)'; this.style.transform='translateY(0)';">
+            <i class="fab fa-medium" style="color: #00ab6c; font-size: 16px;"></i> Also published on Medium
+        </a>
+    </div>
+
+    <p>The quest for a tiny aquatic icon—the <strong>seahorse emoji</strong>—recently triggered a digital "nervous breakdown" in ChatGPT. What began as a simple user query ended in a cascade of random symbols, providing a rare, unmasked look at the internal mechanics of Large Language Models (LLMs).</p>
+
+    <!-- Featured Image / Main Image -->
+    <img src="The Seahorse Incident Token Probabilities and AI Hallucination.webp" alt="Visual representation of The Seahorse Incident showing ChatGPT's token probabilities, LLM neural confusion, and AI hallucination" loading="lazy" style="width: 100%; border-radius: 14px; margin-bottom: 25px; box-shadow: 0 8px 25px rgba(0,0,0,0.15); border: 1px solid var(--border-color);">
+
+    <p>As an AI developer, I find these glitches more informative than the successes. They act as a "stress test" for the architecture of neural networks, revealing exactly where statistical prediction fails to meet human reality. Let's unpack the "Seahorse Incident" from a technical perspective while exploring what it teaches us about modern AI’s relationship with the truth.</p>
+    
+    <h2>The Mystery: Why the Seahorse Caused a Spiral</h2>
+    <p>The question was remarkably straightforward: <em>“Does a seahorse emoji exist?”</em></p>
+    
+    <p>Instead of a simple "No" (the correct answer according to the Unicode Consortium), ChatGPT went into a state of <strong>neural confusion</strong>. It began emitting strings of loosely related emojis with no clear connection — 🐠, 🐡, 🦄, 🐴, even 💫 — flooding the screen as if the model had short-circuited.</p>
+    
+    <p>This isn’t a hardware bug. It is a fundamental byproduct of how <strong>Transformer-based models</strong> process information and make decisions.</p>
+
+    <h3>Human Reasoning vs. LLM Prediction</h3>
+    <p>To understand why this happens, we must look at the difference between "knowing" and "predicting."</p>
+
+    <div style="overflow-x: auto;">
+      <table>
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Human Intelligence</th>
+            <th>Large Language Models (LLMs)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Source of Truth</strong></td>
+            <td>Visual memory and verified facts.</td>
+            <td>Statistical patterns in training data.</td>
+          </tr>
+          <tr>
+            <td><strong>Processing</strong></td>
+            <td>Intentional retrieval of information.</td>
+            <td>Next-token probability distribution.</td>
+          </tr>
+          <tr>
+            <td><strong>Handling Doubt</strong></td>
+            <td>Admits ignorance or searches for a source.</td>
+            <td>Often "hallucinates" to satisfy the prompt.</td>
+          </tr>
+          <tr>  
+            <td><strong>Goal</strong></td>
+            <td>Accuracy and communication.</td>
+            <td>Maximizing the "likelihood" of the sequence.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Technical Deep-Dive: Tokens, Logits, and Softmax</h2>
+    <p>When you ask about a seahorse, ChatGPT doesn't "look up" a database of emojis. It calculates the most probable next character (a token) based on everything it has read. In its training data, the concept of a <em>seahorse + emoji</em> wasn’t cleanly defined. Three conflicting patterns emerged:</p>
+    
+    <ol>
+      <li><strong>Confirmation bias via substitution:</strong> Thousands of casual users and articles used 🐠 (tropical fish) to mean “seahorse,” simply because it was the closest available marine creature.</li>
+      <li><strong>Explicit denial:</strong> Official Unicode documentation and hard-coded lists correctly stated that no seahorse codepoint existed.</li>
+      <li><strong>Creative repurposing:</strong> In memes and forums, people combined 🐴 (horse) with 🌊 (water wave) to joke about a seahorse.</li>
+    </ol>
+
+    <p>This creates a <strong>statistical impasse</strong>. The "logits" (raw scores) for "Yes" and "No" are nearly identical. When the confidence threshold is low, the model’s <strong>Softmax function</strong>—which turns these scores into probabilities—flattens dramatically.</p>
+
+    <div class="math-container">
+      <span id="softmax-eq"></span>
+    </div>
+
+    <p>If the score for a specific emoji isn't significantly higher than the others, the model begins to "babble." Without a confidence mechanism to halt generation, it samples from a murky probability pool and selects tokens that are semantically close (like other sea animals) but factually incorrect.</p>
+
+    <blockquote>
+      <strong>Key Concept:</strong> This is known as <strong>Stochastic Parroting</strong>. As detailed in the influential paper by Emily M. Bender and Timnit Gebru (<a href="https://dl.acm.org/doi/10.1145/3442188.3445922" target="_blank" rel="noopener noreferrer" style="color: #bfa1ff;">On the Dangers of Stochastic Parrots</a>), these models are systems for <em>"haphazardly stitching together sequences of linguistic forms... without any reference to meaning."</em> The model is repeating the "noise" of the internet's conflicting data without a grounding in physical reality. Fluency masks ignorance.
+    </blockquote>
+
+    <h2>Why This "Glitch" is an Essential Lesson for AI Safety</h2>
+    <p>This incident highlights the <strong>hallucination problem</strong> in AI. If a model can’t reliably confirm the existence of a 16-pixel emoji, we must be exceedingly cautious when relying on it for high-stakes data analysis, legal precedent, or medical advice.</p>
+
+    <h3>The Path to Calmer, More Honest AI</h3>
+    <p>To solve this, the industry is moving toward a few specific architectural shifts:</p>
+    
+    <ul>
+      <li><strong>RAG (Retrieval-Augmented Generation):</strong> As defined by <a href="https://aws.amazon.com/what-is/retrieval-augmented-generation/" target="_blank" rel="noopener noreferrer" style="color: #bfa1ff;">AWS</a>, RAG optimizes an LLM's output so it <em>"references an authoritative knowledge base outside of its training data sources before generating a response."</em> Connecting the model to a live database (like official Unicode tables) allows it to fact-check itself before answering, acting as an external anchor.</li>
+      <li><strong>Confidence Calibration:</strong> Training models to recognize when their probability scores are too close. The goal is to make <em>"I am not sure"</em> a first-class response rather than forcing a hallucination.</li>
+      <li><strong>Data Provenance:</strong> Moving away from "scraping the whole web" toward curated, high-quality datasets to reduce contradictory training noise. <em>Garbage in, garbage out.</em></li>
+    </ul>
+
+    <p>Implementation of confidence awareness can be conceptually straightforward:</p>
+    
+<pre><code>next_token_probabilities = softmax(logits)
+if max(next_token_probabilities) < CONFIDENCE_THRESHOLD:
+    return "I’m not sure about that — the evidence seems mixed."</code></pre>
+
+    <h2>Conclusion: The Beauty of the Error</h2>
+    <p>So, to close the loop: there is no dedicated, official seahorse emoji. According to the <a href="https://home.unicode.org/emoji/about-emoji/" target="_blank" rel="noopener noreferrer" style="color: #bfa1ff;">Unicode Consortium</a>—the official body that governs that <em>"the Unicode Standard must provide a unique number for every character"</em>—no such codepoint currently exists in Unicode 16.0, and likely not anytime soon.</p>
+    
+    <p>But the real takeaway isn't about emojis. The seahorse glitch is a humble reminder that AI, for all its power, lacks <strong>grounded understanding</strong>. It is a master of syntax, not a master of truth. As we continue to integrate AI into our daily lives, these moments of confusion are gifts. They remind us that the most advanced systems in the world can still get lost between a 🐠 and a 🐡—and that the human ability to say "I don't know" is perhaps our most sophisticated feature.</p>
+
+    <!-- FAQ Section -->
+    <div style="margin-top: 50px; font-family: var(--font-body);">
+      <h2 style="margin-bottom: 25px;">Frequently Asked Questions (FAQ)</h2>
+      
+      <div style="margin-bottom: 20px; background: rgba(255, 255, 255, 0.05); padding: 20px; border-radius: 12px; border: 1px solid var(--border-color);">
+        <h3 style="margin-top: 0; font-size: 18px; color: var(--text-primary);">Does a seahorse emoji actually exist in 2026?</h3>
+        <p style="margin-bottom: 0; font-size: 16px;">As of the latest Unicode updates, there is no dedicated seahorse emoji. Most users substitute the Tropical Fish (🐠) or the Dragon (🐉) emoji to represent one.</p>
+      </div>
+
+      <div style="margin-bottom: 20px; background: rgba(255, 255, 255, 0.05); padding: 20px; border-radius: 12px; border: 1px solid var(--border-color);">
+        <h3 style="margin-top: 0; font-size: 18px; color: var(--text-primary);">Why does ChatGPT hallucinate when asked about emojis?</h3>
+        <p style="margin-bottom: 0; font-size: 16px;">AI models predict the next token based on patterns. If the training data contains conflicting or ambiguous information about a specific topic (like a missing emoji), the model's confidence drops, leading to "hallucinations" or erratic outputs.</p>
+      </div>
+
+      <div style="margin-bottom: 20px; background: rgba(255, 255, 255, 0.05); padding: 20px; border-radius: 12px; border: 1px solid var(--border-color);">
+        <h3 style="margin-top: 0; font-size: 18px; color: var(--text-primary);">What is the "Seahorse Incident" in AI circles?</h3>
+        <p style="margin-bottom: 0; font-size: 16px;">It refers to a specific type of logic failure where an AI fails a simple binary "True/False" test because the statistical probability of both answers is too similar in its training set.</p>
+      </div>
+
+      <div style="background: rgba(255, 255, 255, 0.05); padding: 20px; border-radius: 12px; border: 1px solid var(--border-color);">
+        <h3 style="margin-top: 0; font-size: 18px; color: var(--text-primary);">Is this a sign that ChatGPT is broken?</h3>
+        <p style="margin-bottom: 0; font-size: 16px;">Not broken — just architecturally transparent. It reveals that the model generates text by prediction, not by accessing a database of facts. Without a separate fact-checking layer, contradictory training data leads to unstable answers.</p>
+      </div>
+    </div>
+
+    <div class="author-info">
+        <a href="../../"><img src="../../avatar.png" alt="Shayan Taherkhani" loading="lazy" onerror="this.src='https://shayantaherkhani.ir/avatar.png'"></a>
+        <div class="author-text">
+            <span class="author-name">Shayan Taherkhani</span>
+            <span class="author-meta">AI Researcher & Full-Stack Developer</span>
+            <span class="author-meta" style="margin-top:4px; font-style:italic;">Writing about the hidden mechanics of artificial intelligence — the strange, human moments that emerge when probability meets language.</span>
+        </div>
+    </div>
+  </article>
+
+  <!-- Load KaTeX Script -->
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
+  <script>
+    // Theme toggle logic
+    const toggleBtn = document.querySelector('.theme-toggle');
+    const body = document.body;
+    
+    if(localStorage.getItem('theme') === 'light') {
+      body.classList.add('light-mode');
+    }
+    
+    toggleBtn.addEventListener('click', () => {
+      body.classList.toggle('light-mode');
+      if (body.classList.contains('light-mode')) {
+        localStorage.setItem('theme', 'light');
+      } else {
+        localStorage.setItem('theme', 'dark');
+      }
+    });
+
+    // Render exact math equation via JS element to ensure correct formatting
+    document.addEventListener("DOMContentLoaded", function() {
+        katex.render("P(token_i) = \\frac{e^{z_i}}{\\sum_{j} e^{z_j}}", document.getElementById("softmax-eq"), {
+            throwOnError: false,
+            displayMode: true
+        });
+    });
+  </script>
+</body>
+</html>

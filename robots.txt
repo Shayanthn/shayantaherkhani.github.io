@@ -1,163 +1,33 @@
-# Robots.txt for shayantaherkhani.ir
-# Generated: 2026-02-24
-
-# This file is intentionally permissive for public content so search engines
-# and modern AI/LLM crawlers can extract and index site resources. Sensitive
-# or private paths are still blocked below.
-
-#############################
-# Global default (apply to all crawlers)
-#############################
 User-agent: *
 Allow: /
+Disallow: /404.html
+Disallow: /yt.html
+Disallow: /codepen.html
+Disallow: /redirect-http.html
+Disallow: /redirect-www.html
+Disallow: /.git/
+Disallow: /node_modules/
 
-# Sitemap (recommended)
-Sitemap: https://shayantaherkhani.ir/sitemap.xml
-
-# Preferred host (supported by some crawlers)
-Host: shayantaherkhani.ir
-
-# Crawl delay guidance (many crawlers ignore this; Google ignores it)
-# Keep it low to allow indexing but avoid accidental overload.
-Crawl-delay: 1
-
-#############################
-# Explicit crawler entries (major search engines + AI/LLM crawlers)
-#############################
-# Note: These entries reinforce the intent to allow indexing; duplicates
-# are harmless and help some crawlers that prefer explicit blocks.
-
-User-agent: Googlebot
-Allow: /
-User-agent: Googlebot-Image
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: DuckDuckBot
-Allow: /
-
-User-agent: Baiduspider
-Allow: /
-
-User-agent: Yandex
-Allow: /
-
-User-agent: Sogou
-Allow: /
-
-User-agent: Exabot
-Allow: /
-
-User-agent: PetalBot
-Allow: /
-
-User-agent: Applebot
-Allow: /
-
-User-agent: AppleNews
-Allow: /
-
-User-agent: FacebookExternalHit
-Allow: /
-
-User-agent: Facebot
-Allow: /
-
-User-agent: Twitterbot
-Allow: /
-
-User-agent: LinkedInBot
-Allow: /
-
-User-agent: Pinterest
-Allow: /
-
-User-agent: WhatsApp
-Allow: /
-
-User-agent: TelegramBot
-Allow: /
-
-User-agent: Slackbot
-Allow: /
-
-User-agent: SemrushBot
-Allow: /
-
-User-agent: AhrefsBot
-Allow: /
-
-User-agent: MJ12bot
-Allow: /
-
-User-agent: CCBot
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
+# -------------------------------------------------------------
+# You can explicitly block or allow AI/LLM crawlers here if needed,
+# but User-agent: * already allows them by default.
+# -------------------------------------------------------------
 User-agent: GPTBot
 Allow: /
 
-User-agent: OpenAI (OpenAI-Image-Generator)
-Allow: /
-
-User-agent: Anthropic
-Allow: /
-
-User-agent: Claude-Web
-Allow: /
-
-User-agent: Cohere
+User-agent: ChatGPT-User
 Allow: /
 
 User-agent: Google-Extended
 Allow: /
 
-User-agent: Googlebot-News
+User-agent: Anthropic-ai
 Allow: /
 
-User-agent: Amazonbot
+User-agent: Claude-Web
 Allow: /
 
-User-agent: AdsBot-Google
+User-agent: PerplexityBot
 Allow: /
 
-User-agent: *-crawler
-Allow: /
-
-#############################
-# Security: explicit disallow for sensitive system folders (still recommended)
-#############################
-# These prevent accidental indexing of repository metadata, build artifacts,
-# or administrative interfaces. If your server serves these files publicly,
-# consider moving them outside webroot or protecting with auth.
-Disallow: /.git/
-Disallow: /.github/
-Disallow: /node_modules/
-Disallow: /config/
-Disallow: /private/
-Disallow: /secrets/
-Disallow: /env/
-Disallow: /admin/
-Disallow: /wp-admin/
-
-#############################
-# Resource hints (encourage indexing of static assets)
-#############################
-Allow: /images/
-Allow: /assets/
-Allow: /css/
-Allow: /js/
-Allow: /fonts/
-
-#############################
-# Notes and contact
-#############################
-# If you are operating crawlers or a research project and need special
-# instructions (rate limits, whitelisting IPs, or API access), contact:
-# webmaster: admin@shayantaherkhani.ir
-
-# EOF
+Sitemap: https://shayantaherkhani.ir/sitemap.xml

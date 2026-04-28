@@ -33,13 +33,27 @@
   </url>
   <url>
     <loc>https://shayantaherkhani.ir/blog/ai-dopamine-dilemma/</loc>
-    <lastmod>2026-04-19</lastmod>
+    <lastmod>2026-04-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://shayantaherkhani.github.io/blog/ai-dopamine-dilemma/AI%20and%20the%20Dopamine%20Dilemma%20Is%20Technology%20Rewiring%20Your%20Brain's%20Happiness.webp</image:loc>
+      <image:title>AI and the Dopamine Dilemma</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://shayantaherkhani.ir/blog/introverts-advantage-ai-era/</loc>
-    <lastmod>2026-04-20</lastmod>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://shayantaherkhani.github.io/blog/introverts-advantage-ai-era/The%20Introvert%E2%80%99s%20Advantage%20Why%20Introverts%20Are%20Low-Key%20Winning%20the%20AI%20Era.webp</image:loc>
+      <image:title>The Introvert's Advantage in AI</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://shayantaherkhani.ir/blog/chatgpt-seahorse-emoji-glitch/</loc>
+    <lastmod>2026-04-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>

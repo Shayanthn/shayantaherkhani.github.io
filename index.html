@@ -381,7 +381,7 @@
     <div class="shape shape-2" data-speed="-0.15"></div>
   </div>
 
-  <button class="theme-toggle" aria-label="Toggle theme">
+  <button class="theme-toggle" aria-label="Toggle Dark/Light Mode" title="Toggle Theme">
     <i class="fas fa-moon"></i>
     <i class="fas fa-sun"></i>
   </button>
@@ -392,7 +392,7 @@
     <main class="glass-card" role="main" style="max-width: 100%;">
       <header>
         <div class="avatar-wrapper">
-        <img src="./avatar.png" alt="Shayan Taherkhani - Developer and Tech Explorer" class="avatar">
+        <img src="./avatar.png" alt="Shayan Taherkhani - Developer and Tech Explorer" loading="lazy" class="avatar">
         <span class="status-indicator" title="Available"></span>
       </div>
       <h1>Shayan Taherkhani</h1>
@@ -487,28 +487,44 @@
       </div>
     </aside>
 
-    <aside class="glass-card" style="text-align: left; padding-top: 20px; max-width: 450px; overflow: hidden; display: flex; flex-direction: column; flex: 1;" role="complementary">
+    <aside class="glass-card" style="text-align: left; padding-top: 20px; max-width: 450px; overflow: hidden; display: flex; flex-direction: column; flex: 1; height: 100%;" role="complementary">
       <header style="text-align: center; flex-shrink: 0;">
         <h2 style="font-family: var(--font-heading); font-size: 24px; font-weight: 700; margin-bottom: 15px;"><i class="fas fa-blog"></i> Latest Blog Posts</h2>
       </header>
       
-      <div class="blog-scroll" style="position: relative; flex: 1; min-height: 200px; overflow-y: auto; overflow-x: hidden; margin-top: 10px; padding-right: 8px; scrollbar-width: thin; scrollbar-color: rgba(255, 255, 255, 0.15) transparent;">
-        <div style="width: 100%; padding-bottom: 10px; display: flex; flex-direction: column; gap: 10px;">
+      <div class="blog-scroll" style="position: relative; flex: 1; min-height: 250px; max-height: 360px; overflow-y: auto; overflow-x: hidden; margin-top: 5px; padding-right: 8px; scrollbar-width: thin; scrollbar-color: rgba(255, 255, 255, 0.15) transparent;">
+        <div style="width: 100%; display: flex; flex-direction: column; gap: 12px;">
           
-          <a href="./blog/introverts-advantage-ai-era/" style="text-decoration: none; color: inherit; display: block;">
-            <div class="section-card" style="margin-top: 0;">
-              <h2>The Introvert's Advantage in AI</h2>
-              <p>Why Artificial Intelligence is the ultimate ally for the introverted mind.</p>
+          <a href="./blog/chatgpt-seahorse-emoji-glitch/" style="text-decoration: none; color: inherit; display: block; border-bottom: 1px solid var(--border-color); padding-bottom: 12px;">
+            <div class="section-card" style="margin: 0; padding: 12px; background: rgba(255, 255, 255, 0.03); transition: background 0.3s;" onmouseover="this.style.background='rgba(255, 255, 255, 0.08)'" onmouseout="this.style.background='rgba(255, 255, 255, 0.03)'">
+              <div style="font-size: 13px; color: #bfa1ff; margin-bottom: 6px; font-weight: 500;"><i class="far fa-calendar-alt"></i> Apr 28, 2026</div>
+              <h2 style="font-size: 17px; margin-bottom: 6px; color: var(--text-primary); font-family: var(--font-body); line-height: 1.4;">When ChatGPT Met a Seahorse: The Emoji Glitch That Exposed the Limits of AI</h2>
+              <p style="font-size: 14px; margin: 0; line-height: 1.5; color: var(--text-secondary);">A tiny emoji exposed a massive AI blind spot. Learn about token prediction and why ChatGPT hallucinates.</p>
+            </div>
+          </a>
+          
+          <a href="./blog/ai-dopamine-dilemma/" style="text-decoration: none; color: inherit; display: block; border-bottom: 1px solid var(--border-color); padding-bottom: 12px;">
+            <div class="section-card" style="margin: 0; padding: 12px; background: rgba(255, 255, 255, 0.03); transition: background 0.3s;" onmouseover="this.style.background='rgba(255, 255, 255, 0.08)'" onmouseout="this.style.background='rgba(255, 255, 255, 0.03)'">
+              <div style="font-size: 13px; color: #bfa1ff; margin-bottom: 6px; font-weight: 500;"><i class="far fa-calendar-alt"></i> May 1, 2024</div>
+              <h2 style="font-size: 17px; margin-bottom: 6px; color: var(--text-primary); font-family: var(--font-body); line-height: 1.4;">AI and the Dopamine Dilemma</h2>
+              <p style="font-size: 14px; margin: 0; line-height: 1.5; color: var(--text-secondary);">Is Technology Rewiring Your Brain’s Happiness?</p>
             </div>
           </a>
 
-          <a href="./blog/ai-dopamine-dilemma/" style="text-decoration: none; color: inherit; display: block;">
-            <div class="section-card" style="margin-top: 0;">
-              <h2>AI and the Dopamine Dilemma</h2>
-              <p>Is Technology Rewiring Your Brain’s Happiness?</p>
+          <a href="./blog/introverts-advantage-ai-era/" style="text-decoration: none; color: inherit; display: block; padding-bottom: 5px;">
+            <div class="section-card" style="margin: 0; padding: 12px; background: rgba(255, 255, 255, 0.03); transition: background 0.3s;" onmouseover="this.style.background='rgba(255, 255, 255, 0.08)'" onmouseout="this.style.background='rgba(255, 255, 255, 0.03)'">
+              <div style="font-size: 13px; color: #bfa1ff; margin-bottom: 6px; font-weight: 500;"><i class="far fa-calendar-alt"></i> May 1, 2024</div>
+              <h2 style="font-size: 17px; margin-bottom: 6px; color: var(--text-primary); font-family: var(--font-body); line-height: 1.4;">The Introvert's Advantage in AI</h2>
+              <p style="font-size: 14px; margin: 0; line-height: 1.5; color: var(--text-secondary);">Why Artificial Intelligence is the ultimate ally for the introverted mind.</p>
             </div>
           </a>
         </div>
+      </div>
+      
+      <div style="text-align: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid var(--border-color); flex-shrink: 0;">
+        <a href="https://medium.com/@shayanthn78" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: var(--text-primary); font-family: var(--font-heading); font-weight: 700; font-size: 15px; display: inline-flex; align-items: center; gap: 8px; transition: color 0.3s;" onmouseover="this.style.color='#bfa1ff'" onmouseout="this.style.color='var(--text-primary)'">
+          Read All Posts on Medium <i class="fas fa-arrow-right" style="font-size: 13px;"></i>
+        </a>
       </div>
     </aside>
   </div>

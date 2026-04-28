@@ -19,7 +19,94 @@
   
   <meta name="theme-color" content="#0D0D0F" />
   
+  <!-- Structured Data / JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "headline": "AI and the Dopamine Dilemma: Is Technology Rewiring Your Brain’s Happiness?",
+        "image": "https://shayantaherkhani.github.io/blog/ai-dopamine-dilemma/1.webp",
+        "author": {
+          "@type": "Person",
+          "name": "Shayan Taherkhani",
+          "url": "https://shayantaherkhani.github.io/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Shayan Taherkhani",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://shayantaherkhani.github.io/avatar.png"
+          }
+        },
+        "datePublished": "2024-05-01T08:00:00+00:00",
+        "dateModified": "2024-05-01T08:00:00+00:00",
+        "description": "Is Technology Rewiring Your Brain’s Happiness? An exploration of AI's interface with our neurobiological reward systems.",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://shayantaherkhani.github.io/blog/ai-dopamine-dilemma/"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://shayantaherkhani.github.io/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": "https://shayantaherkhani.github.io/blog/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "AI and the Dopamine Dilemma"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does AI affect our brain's dopamine levels?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "AI systems can provide instant gratification without the 'effort-cost' our brains evolved to expect. By eliminating the friction of learning and creating, AI may lower our dopamine baseline, potentially leading to Anhedonia—the inability to feel pleasure from everyday activities."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can frequent AI use lead to depression?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, research indicates a significant association between frequent AI interaction and increased depressive symptoms. This is due to social displacement (replacing human connection with chatbots) and cognitive shortcutting (a decrease in cognitive agency and sense of purpose)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is a Bio-Digital Balance?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A Bio-Digital Balance is a set of strategies to protect your mental health in the AI era. It includes using AI as a collaborator rather than a replacement to maintain cognitive effort, scheduling dopamine fasting periods without AI tools, and practicing mindful prompting."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
   <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Manrope:wght@400;500;700&family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
@@ -132,7 +219,7 @@
     <div class="shape shape-2"></div>
   </div>
 
-  <button class="theme-toggle" aria-label="Toggle theme">
+  <button class="theme-toggle" aria-label="Toggle Dark/Light Mode" title="Toggle Theme">
     <i class="fas fa-moon"></i>
     <i class="fas fa-sun"></i>
   </button>
@@ -150,14 +237,14 @@
 
     <p>In an era where algorithms predict our next move, a silent transformation is occurring within the human cranium. While Generative AI offers unprecedented productivity, it is simultaneously interfacing with our neurobiological reward systems in ways we are only beginning to understand. Recent research from Harvard and JAMA suggests a sobering correlation: our digital efficiency might be costing us our biological joy.</p>
 
-    <img src="./AI%20and%20the%20Dopamine%20Dilemma%20Is%20Technology%20Rewiring%20Your%20Brain's%20Happiness.webp" alt="AI and the Dopamine Dilemma" style="width: 100%; border-radius: 14px; margin-bottom: 25px; box-shadow: 0 8px 25px rgba(0,0,0,0.15); border: 1px solid var(--border-color);">
+    <img src="./AI%20and%20the%20Dopamine%20Dilemma%20Is%20Technology%20Rewiring%20Your%20Brain's%20Happiness.webp" alt="AI and the Dopamine Dilemma" loading="lazy" style="width: 100%; border-radius: 14px; margin-bottom: 25px; box-shadow: 0 8px 25px rgba(0,0,0,0.15); border: 1px solid var(--border-color);">
 
     <h2>The Science of the Shortcut: How AI Hijacks Reward Circuits</h2>
     <p>The human brain is wired for “Reward Prediction Error” — the dopamine spike we get when a result is better than expected. According to neuroscientific insights from DeepMind, AI systems are often modeled after these very circuits. However, the problem arises when AI provides instant gratification without the “effort-cost” the brain evolved to expect.</p>
     <p>When you use AI to solve every problem, you bypass the struggle. In neurology, the struggle is the prerequisite for a meaningful dopamine release. By eliminating the friction of learning and creating, AI may be lowering our dopamine baseline, leading to a state of “Anhedonia” — the inability to feel pleasure from everyday activities.</p>
 
     <div style="margin: 35px 0; border-radius: 12px; box-shadow: 0 8px 25px rgba(0,0,0,0.15);">
-        <iframe style="border-radius:12px; display: block;" src="https://open.spotify.com/embed/episode/6pfu5LTERhW1ZJNhJudmEX?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <iframe style="border-radius:12px; display: block;" src="https://open.spotify.com/embed/episode/6pfu5LTERhW1ZJNhJudmEX?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" sandbox="allow-scripts allow-same-origin allow-popups allow-forms"></iframe>
     </div>
 
     <h2>The “Audience of One”: Personalization or Addiction?</h2>
@@ -189,7 +276,7 @@
     </div>
     
     <div class="author-info">
-        <a href="../../"><img src="../../avatar.png" alt="Shayan Taherkhani" onerror="this.src='https://shayantaherkhani.ir/avatar.png'"></a>
+        <a href="../../"><img src="../../avatar.png" alt="Shayan Taherkhani" loading="lazy" onerror="this.src='https://shayantaherkhani.ir/avatar.png'"></a>
         <div class="author-text">
             <span class="author-name">Shayan Taherkhani</span>
             <span class="author-meta">AI Researcher & Full-Stack Developer</span>
