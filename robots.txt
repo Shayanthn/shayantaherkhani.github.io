@@ -8,7 +8,6 @@ Disallow: /redirect-www.html
 Disallow: /.git/
 Disallow: /node_modules/
 
-# -------------------------------------------------------------
 # You can explicitly block or allow AI/LLM crawlers here if needed,
 # but User-agent: * already allows them by default.
 # -------------------------------------------------------------
