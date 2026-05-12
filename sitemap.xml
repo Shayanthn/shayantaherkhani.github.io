@@ -3,7 +3,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://shayantaherkhani.ir/</loc>
-    <lastmod>2026-04-19</lastmod>
+    <lastmod>2026-05-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -59,12 +59,26 @@
   </url>
   <url>
     <loc>https://shayantaherkhani.ir/blog/one-way-intimacy/</loc>
-    <lastmod>2026-05-04</lastmod>
+    <lastmod>2026-05-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
-      <image:loc>https://shayantaherkhani.github.io/blog/one-way-intimacy/the%20paradox%20of%20parasocial%20ao%20and%20one%20way%20intimacy.webp</image:loc>
-      <image:title>One-Way Intimacy: How AI Companions Are Quietly Reshaping Human Loneliness</image:title>
+      <image:loc>https://shayantaherkhani.github.io/blog/one-way-intimacy/1.webp</image:loc>
+      <image:title>One-Way Intimacy: Are AI Companions Curing or Causing Loneliness?</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://shayantaherkhani.ir/blog/ai-politeness-paradox/</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://shayantaherkhani.github.io/blog/ai-politeness-paradox/1.webp</image:loc>
+      <image:title>The AI Politeness Paradox: How Synthetic Empathy Is Quietly Killing Your Human Edge</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://shayantaherkhani.github.io/blog/ai-politeness-paradox/AI%20paradox.webp</image:loc>
+      <image:title>The AI Politeness Paradox Visualization</image:title>
     </image:image>
   </url>
 </urlset>
