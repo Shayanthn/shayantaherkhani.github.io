@@ -20,6 +20,9 @@ concurrency:
   group: "pages"
   cancel-in-progress: false
 
+env:
+  CUSTOM_DOMAIN: shayantaherkhani.ir
+
 jobs:
   # Build job
   build:
@@ -37,8 +40,8 @@ jobs:
             echo "Error: CNAME file not found in repository root. Custom domain configuration requires a CNAME file at the root directory."
             exit 1
           fi
-          if ! grep -Fxq "shayantaherkhani.ir" CNAME; then
-            echo "Error: CNAME file content mismatch. Expected: shayantaherkhani.ir"
+          if ! grep -Fxq "${CUSTOM_DOMAIN}" CNAME; then
+            echo "Error: CNAME file content mismatch. Expected: ${CUSTOM_DOMAIN}"
             echo "Found:"
             cat CNAME
             exit 1
