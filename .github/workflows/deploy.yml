@@ -34,11 +34,13 @@ jobs:
       - name: Verify custom domain
         run: |
           if [ ! -f CNAME ]; then
-            echo "CNAME file is missing from the repository root."
+            echo "Error: CNAME file not found in repository root. Custom domain configuration requires a CNAME file at the root directory."
             exit 1
           fi
           if ! grep -Fxq "shayantaherkhani.ir" CNAME; then
-            echo "CNAME must contain exactly: shayantaherkhani.ir"
+            echo "Error: CNAME file content mismatch. Expected: shayantaherkhani.ir"
+            echo "Found:"
+            cat CNAME
             exit 1
           fi
 
