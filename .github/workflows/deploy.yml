@@ -42,7 +42,8 @@ jobs:
             echo "Error: CNAME file not found in Pages publish root. A root-level CNAME file is required when uploading the repository root as the artifact."
             exit 1
           fi
-          if ! grep -Fxq "${CUSTOM_DOMAIN}" CNAME; then
+          cname_value="$(sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//' CNAME | head -n 1)"
+          if [ "${cname_value}" != "${CUSTOM_DOMAIN}" ]; then
             echo "Error: CNAME file content mismatch. Expected: ${CUSTOM_DOMAIN}"
             echo "Found:"
             cat CNAME
