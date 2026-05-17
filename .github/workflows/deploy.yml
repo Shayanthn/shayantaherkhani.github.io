@@ -36,8 +36,10 @@ jobs:
 
       - name: Verify custom domain
         run: |
+          # The published Pages artifact is uploaded from repository root (`path: '.'`),
+          # so the authoritative CNAME file must exist at that same root.
           if [ ! -f CNAME ]; then
-            echo "Error: CNAME file not found in repository root. Custom domain configuration requires a CNAME file at the root directory."
+            echo "Error: CNAME file not found in Pages publish root. A root-level CNAME file is required when uploading the repository root as the artifact."
             exit 1
           fi
           if ! grep -Fxq "${CUSTOM_DOMAIN}" CNAME; then
